@@ -9,7 +9,7 @@
       "source_file": "start-backend.ps1",
       "source_location": "L1",
       "id": "start_backend_ps1",
-      "community": 59,
+      "community": 66,
       "norm_label": "start-backend.ps1"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "backend\\start.ps1",
       "source_location": "L1",
       "id": "backend_start_ps1",
-      "community": 60,
+      "community": 67,
       "norm_label": "start.ps1"
     },
     {
@@ -27,8 +27,17 @@
       "source_file": "backend\\src\\app.ts",
       "source_location": "L1",
       "id": "backend_src_app_ts",
-      "community": 61,
+      "community": 68,
       "norm_label": "app.ts"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\index.ts",
+      "source_location": "L1",
+      "id": "backend_src_index_ts",
+      "community": 69,
+      "norm_label": "index.ts"
     },
     {
       "label": "server.ts",
@@ -36,8 +45,17 @@
       "source_file": "backend\\src\\server.ts",
       "source_location": "L1",
       "id": "backend_src_server_ts",
-      "community": 62,
+      "community": 21,
       "norm_label": "server.ts"
+    },
+    {
+      "label": "bootstrap()",
+      "file_type": "code",
+      "source_file": "backend\\src\\server.ts",
+      "source_location": "L10",
+      "id": "src_server_bootstrap",
+      "community": 21,
+      "norm_label": "bootstrap()"
     },
     {
       "label": "app.ts",
@@ -45,35 +63,8 @@
       "source_file": "backend\\src\\config\\app.ts",
       "source_location": "L1",
       "id": "backend_src_config_app_ts",
-      "community": 63,
+      "community": 70,
       "norm_label": "app.ts"
-    },
-    {
-      "label": "auth.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\config\\auth.ts",
-      "source_location": "L1",
-      "id": "backend_src_config_auth_ts",
-      "community": 64,
-      "norm_label": "auth.ts"
-    },
-    {
-      "label": "database.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\config\\database.ts",
-      "source_location": "L1",
-      "id": "backend_src_config_database_ts",
-      "community": 12,
-      "norm_label": "database.ts"
-    },
-    {
-      "label": "connectDatabase()",
-      "file_type": "code",
-      "source_file": "backend\\src\\config\\database.ts",
-      "source_location": "L4",
-      "id": "config_database_connectdatabase",
-      "community": 12,
-      "norm_label": "connectdatabase()"
     },
     {
       "label": "supabase.ts",
@@ -81,350 +72,602 @@
       "source_file": "backend\\src\\config\\supabase.ts",
       "source_location": "L1",
       "id": "backend_src_config_supabase_ts",
-      "community": 12,
+      "community": 21,
       "norm_label": "supabase.ts"
+    },
+    {
+      "label": "createUserClient()",
+      "file_type": "code",
+      "source_file": "backend\\src\\config\\supabase.ts",
+      "source_location": "L44",
+      "id": "config_supabase_createuserclient",
+      "community": 21,
+      "norm_label": "createuserclient()"
     },
     {
       "label": "testConnection()",
       "file_type": "code",
       "source_file": "backend\\src\\config\\supabase.ts",
-      "source_location": "L32",
+      "source_location": "L59",
       "id": "config_supabase_testconnection",
-      "community": 12,
+      "community": 21,
       "norm_label": "testconnection()"
     },
     {
-      "label": "equipment.controller.ts",
+      "label": "activity.controller.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
+      "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L1",
-      "id": "backend_src_controllers_equipment_controller_ts",
-      "community": 7,
-      "norm_label": "equipment.controller.ts"
+      "id": "backend_src_controllers_activity_controller_ts",
+      "community": 15,
+      "norm_label": "activity.controller.ts"
     },
     {
-      "label": "EquipmentController",
+      "label": "ActivityController",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
+      "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L5",
-      "id": "controllers_equipment_controller_equipmentcontroller",
-      "community": 7,
-      "norm_label": "equipmentcontroller"
+      "id": "controllers_activity_controller_activitycontroller",
+      "community": 15,
+      "norm_label": "activitycontroller"
     },
     {
-      "label": ".getAll()",
+      "label": ".list()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
-      "source_location": "L10",
-      "id": "controllers_equipment_controller_equipmentcontroller_getall",
-      "community": 7,
-      "norm_label": ".getall()"
-    },
-    {
-      "label": ".getById()",
-      "file_type": "code",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
-      "source_location": "L42",
-      "id": "controllers_equipment_controller_equipmentcontroller_getbyid",
-      "community": 7,
-      "norm_label": ".getbyid()"
-    },
-    {
-      "label": ".create()",
-      "file_type": "code",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
-      "source_location": "L72",
-      "id": "controllers_equipment_controller_equipmentcontroller_create",
-      "community": 7,
-      "norm_label": ".create()"
-    },
-    {
-      "label": ".update()",
-      "file_type": "code",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
-      "source_location": "L124",
-      "id": "controllers_equipment_controller_equipmentcontroller_update",
-      "community": 7,
-      "norm_label": ".update()"
-    },
-    {
-      "label": ".delete()",
-      "file_type": "code",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
-      "source_location": "L178",
-      "id": "controllers_equipment_controller_equipmentcontroller_delete",
-      "community": 7,
-      "norm_label": ".delete()"
-    },
-    {
-      "label": "maintenance-request.controller.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L1",
-      "id": "backend_src_controllers_maintenance_request_controller_ts",
-      "community": 1,
-      "norm_label": "maintenance-request.controller.ts"
-    },
-    {
-      "label": "MaintenanceRequestController",
-      "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
+      "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L6",
-      "id": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "community": 1,
-      "norm_label": "maintenancerequestcontroller"
-    },
-    {
-      "label": ".getAll()",
-      "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L11",
-      "id": "controllers_maintenance_request_controller_maintenancerequestcontroller_getall",
-      "community": 1,
-      "norm_label": ".getall()"
+      "id": "controllers_activity_controller_activitycontroller_list",
+      "community": 15,
+      "norm_label": ".list()"
     },
     {
       "label": ".getById()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
+      "source_file": "backend\\src\\controllers\\activity.controller.ts",
+      "source_location": "L20",
+      "id": "controllers_activity_controller_activitycontroller_getbyid",
+      "community": 15,
+      "norm_label": ".getbyid()"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\activity.controller.ts",
+      "source_location": "L28",
+      "id": "controllers_activity_controller_activitycontroller_create",
+      "community": 15,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\activity.controller.ts",
+      "source_location": "L37",
+      "id": "controllers_activity_controller_activitycontroller_delete",
+      "community": 15,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": "community.controller.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\community.controller.ts",
+      "source_location": "L1",
+      "id": "backend_src_controllers_community_controller_ts",
+      "community": 16,
+      "norm_label": "community.controller.ts"
+    },
+    {
+      "label": "CommunityController",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\community.controller.ts",
+      "source_location": "L5",
+      "id": "controllers_community_controller_communitycontroller",
+      "community": 16,
+      "norm_label": "communitycontroller"
+    },
+    {
+      "label": ".list()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\community.controller.ts",
+      "source_location": "L6",
+      "id": "controllers_community_controller_communitycontroller_list",
+      "community": 16,
+      "norm_label": ".list()"
+    },
+    {
+      "label": ".getById()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\community.controller.ts",
+      "source_location": "L16",
+      "id": "controllers_community_controller_communitycontroller_getbyid",
+      "community": 16,
+      "norm_label": ".getbyid()"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\community.controller.ts",
+      "source_location": "L24",
+      "id": "controllers_community_controller_communitycontroller_create",
+      "community": 16,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\community.controller.ts",
+      "source_location": "L33",
+      "id": "controllers_community_controller_communitycontroller_delete",
+      "community": 16,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": "destination.controller.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L1",
+      "id": "backend_src_controllers_destination_controller_ts",
+      "community": 9,
+      "norm_label": "destination.controller.ts"
+    },
+    {
+      "label": "DestinationController",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L5",
+      "id": "controllers_destination_controller_destinationcontroller",
+      "community": 9,
+      "norm_label": "destinationcontroller"
+    },
+    {
+      "label": ".list()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L6",
+      "id": "controllers_destination_controller_destinationcontroller_list",
+      "community": 9,
+      "norm_label": ".list()"
+    },
+    {
+      "label": ".getById()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L16",
+      "id": "controllers_destination_controller_destinationcontroller_getbyid",
+      "community": 9,
+      "norm_label": ".getbyid()"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L24",
+      "id": "controllers_destination_controller_destinationcontroller_create",
+      "community": 9,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L33",
+      "id": "controllers_destination_controller_destinationcontroller_update",
+      "community": 9,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L40",
+      "id": "controllers_destination_controller_destinationcontroller_delete",
+      "community": 9,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": "invoice.controller.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L1",
+      "id": "backend_src_controllers_invoice_controller_ts",
+      "community": 2,
+      "norm_label": "invoice.controller.ts"
+    },
+    {
+      "label": "InvoiceController",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L5",
+      "id": "controllers_invoice_controller_invoicecontroller",
+      "community": 2,
+      "norm_label": "invoicecontroller"
+    },
+    {
+      "label": ".listByTrip()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L6",
+      "id": "controllers_invoice_controller_invoicecontroller_listbytrip",
+      "community": 2,
+      "norm_label": ".listbytrip()"
+    },
+    {
+      "label": ".getById()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L13",
+      "id": "controllers_invoice_controller_invoicecontroller_getbyid",
+      "community": 2,
+      "norm_label": ".getbyid()"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L21",
+      "id": "controllers_invoice_controller_invoicecontroller_create",
+      "community": 2,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L30",
+      "id": "controllers_invoice_controller_invoicecontroller_update",
+      "community": 2,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L39",
+      "id": "controllers_invoice_controller_invoicecontroller_delete",
+      "community": 2,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": ".addItem()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
       "source_location": "L46",
-      "id": "controllers_maintenance_request_controller_maintenancerequestcontroller_getbyid",
-      "community": 1,
+      "id": "controllers_invoice_controller_invoicecontroller_additem",
+      "community": 2,
+      "norm_label": ".additem()"
+    },
+    {
+      "label": ".removeItem()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L55",
+      "id": "controllers_invoice_controller_invoicecontroller_removeitem",
+      "community": 2,
+      "norm_label": ".removeitem()"
+    },
+    {
+      "label": "itinerary.controller.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L1",
+      "id": "backend_src_controllers_itinerary_controller_ts",
+      "community": 4,
+      "norm_label": "itinerary.controller.ts"
+    },
+    {
+      "label": "ItineraryController",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L5",
+      "id": "controllers_itinerary_controller_itinerarycontroller",
+      "community": 4,
+      "norm_label": "itinerarycontroller"
+    },
+    {
+      "label": ".listByTrip()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L6",
+      "id": "controllers_itinerary_controller_itinerarycontroller_listbytrip",
+      "community": 4,
+      "norm_label": ".listbytrip()"
+    },
+    {
+      "label": ".getById()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L13",
+      "id": "controllers_itinerary_controller_itinerarycontroller_getbyid",
+      "community": 4,
       "norm_label": ".getbyid()"
     },
     {
       "label": ".create()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L70",
-      "id": "controllers_maintenance_request_controller_maintenancerequestcontroller_create",
-      "community": 1,
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L21",
+      "id": "controllers_itinerary_controller_itinerarycontroller_create",
+      "community": 4,
       "norm_label": ".create()"
     },
     {
       "label": ".update()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L131",
-      "id": "controllers_maintenance_request_controller_maintenancerequestcontroller_update",
-      "community": 1,
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L30",
+      "id": "controllers_itinerary_controller_itinerarycontroller_update",
+      "community": 4,
       "norm_label": ".update()"
-    },
-    {
-      "label": ".updateStage()",
-      "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L163",
-      "id": "controllers_maintenance_request_controller_maintenancerequestcontroller_updatestage",
-      "community": 1,
-      "norm_label": ".updatestage()"
     },
     {
       "label": ".delete()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L194",
-      "id": "controllers_maintenance_request_controller_maintenancerequestcontroller_delete",
-      "community": 1,
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L39",
+      "id": "controllers_itinerary_controller_itinerarycontroller_delete",
+      "community": 4,
       "norm_label": ".delete()"
     },
     {
-      "label": ".getOverdue()",
+      "label": ".reorder()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L218",
-      "id": "controllers_maintenance_request_controller_maintenancerequestcontroller_getoverdue",
-      "community": 1,
-      "norm_label": ".getoverdue()"
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L46",
+      "id": "controllers_itinerary_controller_itinerarycontroller_reorder",
+      "community": 4,
+      "norm_label": ".reorder()"
     },
     {
-      "label": "maintenance-team.controller.ts",
+      "label": "note.controller.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
       "source_location": "L1",
-      "id": "backend_src_controllers_maintenance_team_controller_ts",
-      "community": 2,
-      "norm_label": "maintenance-team.controller.ts"
+      "id": "backend_src_controllers_note_controller_ts",
+      "community": 10,
+      "norm_label": "note.controller.ts"
     },
     {
-      "label": "MaintenanceTeamController",
+      "label": "NoteController",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
       "source_location": "L5",
-      "id": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "community": 2,
-      "norm_label": "maintenanceteamcontroller"
+      "id": "controllers_note_controller_notecontroller",
+      "community": 10,
+      "norm_label": "notecontroller"
     },
     {
-      "label": ".getAll()",
+      "label": ".listByTrip()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L10",
-      "id": "controllers_maintenance_team_controller_maintenanceteamcontroller_getall",
-      "community": 2,
-      "norm_label": ".getall()"
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
+      "source_location": "L6",
+      "id": "controllers_note_controller_notecontroller_listbytrip",
+      "community": 10,
+      "norm_label": ".listbytrip()"
     },
     {
       "label": ".getById()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L35",
-      "id": "controllers_maintenance_team_controller_maintenanceteamcontroller_getbyid",
-      "community": 2,
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
+      "source_location": "L13",
+      "id": "controllers_note_controller_notecontroller_getbyid",
+      "community": 10,
       "norm_label": ".getbyid()"
     },
     {
       "label": ".create()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L59",
-      "id": "controllers_maintenance_team_controller_maintenanceteamcontroller_create",
-      "community": 2,
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
+      "source_location": "L21",
+      "id": "controllers_note_controller_notecontroller_create",
+      "community": 10,
       "norm_label": ".create()"
     },
     {
       "label": ".update()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L83",
-      "id": "controllers_maintenance_team_controller_maintenanceteamcontroller_update",
-      "community": 2,
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
+      "source_location": "L30",
+      "id": "controllers_note_controller_notecontroller_update",
+      "community": 10,
       "norm_label": ".update()"
     },
     {
       "label": ".delete()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L108",
-      "id": "controllers_maintenance_team_controller_maintenanceteamcontroller_delete",
-      "community": 2,
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
+      "source_location": "L39",
+      "id": "controllers_note_controller_notecontroller_delete",
+      "community": 10,
       "norm_label": ".delete()"
     },
     {
-      "label": ".addMember()",
+      "label": "packing.controller.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L132",
-      "id": "controllers_maintenance_team_controller_maintenanceteamcontroller_addmember",
-      "community": 2,
-      "norm_label": ".addmember()"
-    },
-    {
-      "label": ".removeMember()",
-      "file_type": "code",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L163",
-      "id": "controllers_maintenance_team_controller_maintenanceteamcontroller_removemember",
-      "community": 2,
-      "norm_label": ".removemember()"
-    },
-    {
-      "label": "user.controller.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\controllers\\user.controller.ts",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L1",
-      "id": "backend_src_controllers_user_controller_ts",
-      "community": 13,
-      "norm_label": "user.controller.ts"
+      "id": "backend_src_controllers_packing_controller_ts",
+      "community": 5,
+      "norm_label": "packing.controller.ts"
     },
     {
-      "label": "UserController",
+      "label": "PackingController",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\user.controller.ts",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L5",
-      "id": "controllers_user_controller_usercontroller",
-      "community": 13,
-      "norm_label": "usercontroller"
+      "id": "controllers_packing_controller_packingcontroller",
+      "community": 5,
+      "norm_label": "packingcontroller"
     },
     {
-      "label": ".getAll()",
+      "label": ".listByTrip()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\user.controller.ts",
-      "source_location": "L10",
-      "id": "controllers_user_controller_usercontroller_getall",
-      "community": 13,
-      "norm_label": ".getall()"
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
+      "source_location": "L6",
+      "id": "controllers_packing_controller_packingcontroller_listbytrip",
+      "community": 5,
+      "norm_label": ".listbytrip()"
     },
     {
-      "label": ".getById()",
+      "label": ".create()",
       "file_type": "code",
-      "source_file": "backend\\src\\controllers\\user.controller.ts",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
+      "source_location": "L13",
+      "id": "controllers_packing_controller_packingcontroller_create",
+      "community": 5,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
+      "source_location": "L22",
+      "id": "controllers_packing_controller_packingcontroller_update",
+      "community": 5,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".togglePacked()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
+      "source_location": "L31",
+      "id": "controllers_packing_controller_packingcontroller_togglepacked",
+      "community": 5,
+      "norm_label": ".togglepacked()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L38",
-      "id": "controllers_user_controller_usercontroller_getbyid",
-      "community": 13,
+      "id": "controllers_packing_controller_packingcontroller_delete",
+      "community": 5,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": ".bulkCreate()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
+      "source_location": "L45",
+      "id": "controllers_packing_controller_packingcontroller_bulkcreate",
+      "community": 5,
+      "norm_label": ".bulkcreate()"
+    },
+    {
+      "label": "profile.controller.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\profile.controller.ts",
+      "source_location": "L1",
+      "id": "backend_src_controllers_profile_controller_ts",
+      "community": 22,
+      "norm_label": "profile.controller.ts"
+    },
+    {
+      "label": "ProfileController",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\profile.controller.ts",
+      "source_location": "L5",
+      "id": "controllers_profile_controller_profilecontroller",
+      "community": 22,
+      "norm_label": "profilecontroller"
+    },
+    {
+      "label": ".getMe()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\profile.controller.ts",
+      "source_location": "L6",
+      "id": "controllers_profile_controller_profilecontroller_getme",
+      "community": 22,
+      "norm_label": ".getme()"
+    },
+    {
+      "label": ".updateMe()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\profile.controller.ts",
+      "source_location": "L17",
+      "id": "controllers_profile_controller_profilecontroller_updateme",
+      "community": 22,
+      "norm_label": ".updateme()"
+    },
+    {
+      "label": ".list()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\profile.controller.ts",
+      "source_location": "L26",
+      "id": "controllers_profile_controller_profilecontroller_list",
+      "community": 22,
+      "norm_label": ".list()"
+    },
+    {
+      "label": "trip.controller.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L1",
+      "id": "backend_src_controllers_trip_controller_ts",
+      "community": 6,
+      "norm_label": "trip.controller.ts"
+    },
+    {
+      "label": "TripController",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L5",
+      "id": "controllers_trip_controller_tripcontroller",
+      "community": 6,
+      "norm_label": "tripcontroller"
+    },
+    {
+      "label": ".list()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L6",
+      "id": "controllers_trip_controller_tripcontroller_list",
+      "community": 6,
+      "norm_label": ".list()"
+    },
+    {
+      "label": ".getById()",
+      "file_type": "code",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L21",
+      "id": "controllers_trip_controller_tripcontroller_getbyid",
+      "community": 6,
       "norm_label": ".getbyid()"
     },
     {
-      "label": "index.ts",
+      "label": ".create()",
       "file_type": "code",
-      "source_file": "backend\\src\\jobs\\index.ts",
-      "source_location": "L1",
-      "id": "backend_src_jobs_index_ts",
-      "community": 14,
-      "norm_label": "index.ts"
-    },
-    {
-      "label": "startOverdueCheckJob()",
-      "file_type": "code",
-      "source_file": "backend\\src\\jobs\\index.ts",
-      "source_location": "L9",
-      "id": "jobs_index_startoverduecheckjob",
-      "community": 14,
-      "norm_label": "startoverduecheckjob()"
-    },
-    {
-      "label": "startPreventiveGeneratorJob()",
-      "file_type": "code",
-      "source_file": "backend\\src\\jobs\\index.ts",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
       "source_location": "L29",
-      "id": "jobs_index_startpreventivegeneratorjob",
-      "community": 14,
-      "norm_label": "startpreventivegeneratorjob()"
+      "id": "controllers_trip_controller_tripcontroller_create",
+      "community": 6,
+      "norm_label": ".create()"
     },
     {
-      "label": "startCronJobs()",
+      "label": ".update()",
       "file_type": "code",
-      "source_file": "backend\\src\\jobs\\index.ts",
-      "source_location": "L43",
-      "id": "jobs_index_startcronjobs",
-      "community": 14,
-      "norm_label": "startcronjobs()"
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L38",
+      "id": "controllers_trip_controller_tripcontroller_update",
+      "community": 6,
+      "norm_label": ".update()"
     },
     {
-      "label": "overdue-check.job.ts",
+      "label": ".delete()",
       "file_type": "code",
-      "source_file": "backend\\src\\jobs\\overdue-check.job.ts",
-      "source_location": "L1",
-      "id": "backend_src_jobs_overdue_check_job_ts",
-      "community": 25,
-      "norm_label": "overdue-check.job.ts"
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L47",
+      "id": "controllers_trip_controller_tripcontroller_delete",
+      "community": 6,
+      "norm_label": ".delete()"
     },
     {
-      "label": "startOverdueCheckJob()",
+      "label": ".stats()",
       "file_type": "code",
-      "source_file": "backend\\src\\jobs\\overdue-check.job.ts",
-      "source_location": "L4",
-      "id": "jobs_overdue_check_job_startoverduecheckjob",
-      "community": 25,
-      "norm_label": "startoverduecheckjob()"
-    },
-    {
-      "label": "preventive-generator.job.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\jobs\\preventive-generator.job.ts",
-      "source_location": "L1",
-      "id": "backend_src_jobs_preventive_generator_job_ts",
-      "community": 26,
-      "norm_label": "preventive-generator.job.ts"
-    },
-    {
-      "label": "startPreventiveGeneratorJob()",
-      "file_type": "code",
-      "source_file": "backend\\src\\jobs\\preventive-generator.job.ts",
-      "source_location": "L4",
-      "id": "jobs_preventive_generator_job_startpreventivegeneratorjob",
-      "community": 26,
-      "norm_label": "startpreventivegeneratorjob()"
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L54",
+      "id": "controllers_trip_controller_tripcontroller_stats",
+      "community": 6,
+      "norm_label": ".stats()"
     },
     {
       "label": "auth.middleware.ts",
@@ -432,25 +675,25 @@
       "source_file": "backend\\src\\middleware\\auth.middleware.ts",
       "source_location": "L1",
       "id": "backend_src_middleware_auth_middleware_ts",
-      "community": 6,
+      "community": 27,
       "norm_label": "auth.middleware.ts"
     },
     {
       "label": "authenticate()",
       "file_type": "code",
       "source_file": "backend\\src\\middleware\\auth.middleware.ts",
-      "source_location": "L12",
+      "source_location": "L26",
       "id": "middleware_auth_middleware_authenticate",
-      "community": 6,
+      "community": 27,
       "norm_label": "authenticate()"
     },
     {
       "label": "authorize()",
       "file_type": "code",
       "source_file": "backend\\src\\middleware\\auth.middleware.ts",
-      "source_location": "L52",
+      "source_location": "L76",
       "id": "middleware_auth_middleware_authorize",
-      "community": 6,
+      "community": 27,
       "norm_label": "authorize()"
     },
     {
@@ -459,7 +702,7 @@
       "source_file": "backend\\src\\middleware\\error.middleware.ts",
       "source_location": "L1",
       "id": "backend_src_middleware_error_middleware_ts",
-      "community": 15,
+      "community": 24,
       "norm_label": "error.middleware.ts"
     },
     {
@@ -468,7 +711,7 @@
       "source_file": "backend\\src\\middleware\\error.middleware.ts",
       "source_location": "L4",
       "id": "middleware_error_middleware_apperror",
-      "community": 15,
+      "community": 24,
       "norm_label": "apperror"
     },
     {
@@ -477,7 +720,7 @@
       "source_file": "backend\\src\\middleware\\error.middleware.ts",
       "source_location": "L9",
       "id": "middleware_error_middleware_apperror_constructor",
-      "community": 15,
+      "community": 24,
       "norm_label": ".constructor()"
     },
     {
@@ -486,7 +729,7 @@
       "source_file": "backend\\src\\middleware\\error.middleware.ts",
       "source_location": "L19",
       "id": "middleware_error_middleware_errorhandler",
-      "community": 15,
+      "community": 24,
       "norm_label": "errorhandler()"
     },
     {
@@ -495,7 +738,7 @@
       "source_file": "backend\\src\\middleware\\logger.middleware.ts",
       "source_location": "L1",
       "id": "backend_src_middleware_logger_middleware_ts",
-      "community": 27,
+      "community": 34,
       "norm_label": "logger.middleware.ts"
     },
     {
@@ -504,7 +747,7 @@
       "source_file": "backend\\src\\middleware\\logger.middleware.ts",
       "source_location": "L4",
       "id": "middleware_logger_middleware_requestlogger",
-      "community": 27,
+      "community": 34,
       "norm_label": "requestlogger()"
     },
     {
@@ -513,7 +756,7 @@
       "source_file": "backend\\src\\middleware\\notFound.middleware.ts",
       "source_location": "L1",
       "id": "backend_src_middleware_notfound_middleware_ts",
-      "community": 28,
+      "community": 35,
       "norm_label": "notfound.middleware.ts"
     },
     {
@@ -522,7 +765,7 @@
       "source_file": "backend\\src\\middleware\\notFound.middleware.ts",
       "source_location": "L3",
       "id": "middleware_notfound_middleware_notfoundhandler",
-      "community": 28,
+      "community": 35,
       "norm_label": "notfoundhandler()"
     },
     {
@@ -531,7 +774,7 @@
       "source_file": "backend\\src\\middleware\\validation.middleware.ts",
       "source_location": "L1",
       "id": "backend_src_middleware_validation_middleware_ts",
-      "community": 29,
+      "community": 36,
       "norm_label": "validation.middleware.ts"
     },
     {
@@ -540,287 +783,701 @@
       "source_file": "backend\\src\\middleware\\validation.middleware.ts",
       "source_location": "L4",
       "id": "middleware_validation_middleware_validate",
-      "community": 29,
+      "community": 36,
       "norm_label": "validate()"
     },
     {
-      "label": "equipment.routes.ts",
+      "label": "activity.routes.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\routes\\equipment.routes.ts",
+      "source_file": "backend\\src\\routes\\activity.routes.ts",
       "source_location": "L1",
-      "id": "backend_src_routes_equipment_routes_ts",
-      "community": 65,
-      "norm_label": "equipment.routes.ts"
+      "id": "backend_src_routes_activity_routes_ts",
+      "community": 71,
+      "norm_label": "activity.routes.ts"
     },
     {
-      "label": "maintenance-request.routes.ts",
+      "label": "community.routes.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\routes\\maintenance-request.routes.ts",
+      "source_file": "backend\\src\\routes\\community.routes.ts",
       "source_location": "L1",
-      "id": "backend_src_routes_maintenance_request_routes_ts",
-      "community": 66,
-      "norm_label": "maintenance-request.routes.ts"
+      "id": "backend_src_routes_community_routes_ts",
+      "community": 72,
+      "norm_label": "community.routes.ts"
     },
     {
-      "label": "maintenance-team.routes.ts",
+      "label": "destination.routes.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\routes\\maintenance-team.routes.ts",
+      "source_file": "backend\\src\\routes\\destination.routes.ts",
       "source_location": "L1",
-      "id": "backend_src_routes_maintenance_team_routes_ts",
-      "community": 67,
-      "norm_label": "maintenance-team.routes.ts"
+      "id": "backend_src_routes_destination_routes_ts",
+      "community": 73,
+      "norm_label": "destination.routes.ts"
     },
     {
-      "label": "user.routes.ts",
+      "label": "invoice.routes.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\routes\\user.routes.ts",
+      "source_file": "backend\\src\\routes\\invoice.routes.ts",
       "source_location": "L1",
-      "id": "backend_src_routes_user_routes_ts",
-      "community": 68,
-      "norm_label": "user.routes.ts"
+      "id": "backend_src_routes_invoice_routes_ts",
+      "community": 74,
+      "norm_label": "invoice.routes.ts"
     },
     {
-      "label": "equipment.service.ts",
+      "label": "itinerary.routes.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
+      "source_file": "backend\\src\\routes\\itinerary.routes.ts",
       "source_location": "L1",
-      "id": "backend_src_services_equipment_service_ts",
-      "community": 5,
-      "norm_label": "equipment.service.ts"
+      "id": "backend_src_routes_itinerary_routes_ts",
+      "community": 75,
+      "norm_label": "itinerary.routes.ts"
     },
     {
-      "label": "EquipmentService",
+      "label": "note.routes.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
+      "source_file": "backend\\src\\routes\\note.routes.ts",
+      "source_location": "L1",
+      "id": "backend_src_routes_note_routes_ts",
+      "community": 76,
+      "norm_label": "note.routes.ts"
+    },
+    {
+      "label": "packing.routes.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\routes\\packing.routes.ts",
+      "source_location": "L1",
+      "id": "backend_src_routes_packing_routes_ts",
+      "community": 77,
+      "norm_label": "packing.routes.ts"
+    },
+    {
+      "label": "profile.routes.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\routes\\profile.routes.ts",
+      "source_location": "L1",
+      "id": "backend_src_routes_profile_routes_ts",
+      "community": 78,
+      "norm_label": "profile.routes.ts"
+    },
+    {
+      "label": "trip.routes.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\routes\\trip.routes.ts",
+      "source_location": "L1",
+      "id": "backend_src_routes_trip_routes_ts",
+      "community": 79,
+      "norm_label": "trip.routes.ts"
+    },
+    {
+      "label": "activity.service.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\activity.service.ts",
+      "source_location": "L1",
+      "id": "backend_src_services_activity_service_ts",
+      "community": 11,
+      "norm_label": "activity.service.ts"
+    },
+    {
+      "label": "ActivityService",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\activity.service.ts",
+      "source_location": "L4",
+      "id": "services_activity_service_activityservice",
+      "community": 11,
+      "norm_label": "activityservice"
+    },
+    {
+      "label": ".list()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\activity.service.ts",
       "source_location": "L5",
-      "id": "services_equipment_service_equipmentservice",
-      "community": 5,
-      "norm_label": "equipmentservice"
-    },
-    {
-      "label": ".getAll()",
-      "file_type": "code",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
-      "source_location": "L9",
-      "id": "services_equipment_service_equipmentservice_getall",
-      "community": 5,
-      "norm_label": ".getall()"
+      "id": "services_activity_service_activityservice_list",
+      "community": 11,
+      "norm_label": ".list()"
     },
     {
       "label": ".getById()",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
-      "source_location": "L47",
-      "id": "services_equipment_service_equipmentservice_getbyid",
-      "community": 5,
+      "source_file": "backend\\src\\services\\activity.service.ts",
+      "source_location": "L24",
+      "id": "services_activity_service_activityservice_getbyid",
+      "community": 11,
       "norm_label": ".getbyid()"
     },
     {
       "label": ".create()",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
-      "source_location": "L70",
-      "id": "services_equipment_service_equipmentservice_create",
-      "community": 5,
+      "source_file": "backend\\src\\services\\activity.service.ts",
+      "source_location": "L34",
+      "id": "services_activity_service_activityservice_create",
+      "community": 11,
       "norm_label": ".create()"
     },
     {
       "label": ".update()",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
-      "source_location": "L94",
-      "id": "services_equipment_service_equipmentservice_update",
-      "community": 5,
+      "source_file": "backend\\src\\services\\activity.service.ts",
+      "source_location": "L44",
+      "id": "services_activity_service_activityservice_update",
+      "community": 11,
       "norm_label": ".update()"
     },
     {
       "label": ".delete()",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
-      "source_location": "L123",
-      "id": "services_equipment_service_equipmentservice_delete",
-      "community": 5,
+      "source_file": "backend\\src\\services\\activity.service.ts",
+      "source_location": "L55",
+      "id": "services_activity_service_activityservice_delete",
+      "community": 11,
       "norm_label": ".delete()"
     },
     {
-      "label": ".getOpenRequestsCount()",
+      "label": "community.service.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
-      "source_location": "L146",
-      "id": "services_equipment_service_equipmentservice_getopenrequestscount",
-      "community": 5,
-      "norm_label": ".getopenrequestscount()"
-    },
-    {
-      "label": "maintenance-request.service.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
+      "source_file": "backend\\src\\services\\community.service.ts",
       "source_location": "L1",
-      "id": "backend_src_services_maintenance_request_service_ts",
-      "community": 3,
-      "norm_label": "maintenance-request.service.ts"
+      "id": "backend_src_services_community_service_ts",
+      "community": 17,
+      "norm_label": "community.service.ts"
     },
     {
-      "label": "MaintenanceRequestService",
+      "label": "CommunityService",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
+      "source_file": "backend\\src\\services\\community.service.ts",
+      "source_location": "L4",
+      "id": "services_community_service_communityservice",
+      "community": 17,
+      "norm_label": "communityservice"
+    },
+    {
+      "label": ".list()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\community.service.ts",
       "source_location": "L5",
-      "id": "services_maintenance_request_service_maintenancerequestservice",
-      "community": 3,
-      "norm_label": "maintenancerequestservice"
-    },
-    {
-      "label": ".getAll()",
-      "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L9",
-      "id": "services_maintenance_request_service_maintenancerequestservice_getall",
-      "community": 3,
-      "norm_label": ".getall()"
+      "id": "services_community_service_communityservice_list",
+      "community": 17,
+      "norm_label": ".list()"
     },
     {
       "label": ".getById()",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L74",
-      "id": "services_maintenance_request_service_maintenancerequestservice_getbyid",
-      "community": 3,
+      "source_file": "backend\\src\\services\\community.service.ts",
+      "source_location": "L19",
+      "id": "services_community_service_communityservice_getbyid",
+      "community": 17,
       "norm_label": ".getbyid()"
     },
     {
       "label": ".create()",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L109",
-      "id": "services_maintenance_request_service_maintenancerequestservice_create",
-      "community": 3,
+      "source_file": "backend\\src\\services\\community.service.ts",
+      "source_location": "L25",
+      "id": "services_community_service_communityservice_create",
+      "community": 17,
       "norm_label": ".create()"
-    },
-    {
-      "label": ".update()",
-      "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L141",
-      "id": "services_maintenance_request_service_maintenancerequestservice_update",
-      "community": 3,
-      "norm_label": ".update()"
     },
     {
       "label": ".delete()",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L177",
-      "id": "services_maintenance_request_service_maintenancerequestservice_delete",
-      "community": 3,
+      "source_file": "backend\\src\\services\\community.service.ts",
+      "source_location": "L31",
+      "id": "services_community_service_communityservice_delete",
+      "community": 17,
       "norm_label": ".delete()"
     },
     {
-      "label": ".getOverdue()",
+      "label": "destination.service.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L200",
-      "id": "services_maintenance_request_service_maintenancerequestservice_getoverdue",
-      "community": 3,
-      "norm_label": ".getoverdue()"
-    },
-    {
-      "label": ".updateStage()",
-      "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L207",
-      "id": "services_maintenance_request_service_maintenancerequestservice_updatestage",
-      "community": 3,
-      "norm_label": ".updatestage()"
-    },
-    {
-      "label": "maintenance-team.service.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
+      "source_file": "backend\\src\\services\\destination.service.ts",
       "source_location": "L1",
-      "id": "backend_src_services_maintenance_team_service_ts",
-      "community": 4,
-      "norm_label": "maintenance-team.service.ts"
+      "id": "backend_src_services_destination_service_ts",
+      "community": 12,
+      "norm_label": "destination.service.ts"
     },
     {
-      "label": "MaintenanceTeamService",
+      "label": "DestinationService",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
+      "source_file": "backend\\src\\services\\destination.service.ts",
+      "source_location": "L4",
+      "id": "services_destination_service_destinationservice",
+      "community": 12,
+      "norm_label": "destinationservice"
+    },
+    {
+      "label": ".list()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\destination.service.ts",
       "source_location": "L5",
-      "id": "services_maintenance_team_service_maintenanceteamservice",
-      "community": 4,
-      "norm_label": "maintenanceteamservice"
-    },
-    {
-      "label": ".getAll()",
-      "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L9",
-      "id": "services_maintenance_team_service_maintenanceteamservice_getall",
-      "community": 4,
-      "norm_label": ".getall()"
+      "id": "services_destination_service_destinationservice_list",
+      "community": 12,
+      "norm_label": ".list()"
     },
     {
       "label": ".getById()",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L50",
-      "id": "services_maintenance_team_service_maintenanceteamservice_getbyid",
-      "community": 4,
+      "source_file": "backend\\src\\services\\destination.service.ts",
+      "source_location": "L24",
+      "id": "services_destination_service_destinationservice_getbyid",
+      "community": 12,
       "norm_label": ".getbyid()"
     },
     {
       "label": ".create()",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L86",
-      "id": "services_maintenance_team_service_maintenanceteamservice_create",
-      "community": 4,
+      "source_file": "backend\\src\\services\\destination.service.ts",
+      "source_location": "L34",
+      "id": "services_destination_service_destinationservice_create",
+      "community": 12,
       "norm_label": ".create()"
     },
     {
       "label": ".update()",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L110",
-      "id": "services_maintenance_team_service_maintenanceteamservice_update",
-      "community": 4,
+      "source_file": "backend\\src\\services\\destination.service.ts",
+      "source_location": "L44",
+      "id": "services_destination_service_destinationservice_update",
+      "community": 12,
       "norm_label": ".update()"
     },
     {
       "label": ".delete()",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L135",
-      "id": "services_maintenance_team_service_maintenanceteamservice_delete",
-      "community": 4,
+      "source_file": "backend\\src\\services\\destination.service.ts",
+      "source_location": "L55",
+      "id": "services_destination_service_destinationservice_delete",
+      "community": 12,
       "norm_label": ".delete()"
     },
     {
-      "label": ".addMember()",
+      "label": "invoice.service.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L158",
-      "id": "services_maintenance_team_service_maintenanceteamservice_addmember",
-      "community": 4,
-      "norm_label": ".addmember()"
-    },
-    {
-      "label": ".removeMember()",
-      "file_type": "code",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L186",
-      "id": "services_maintenance_team_service_maintenanceteamservice_removemember",
-      "community": 4,
-      "norm_label": ".removemember()"
-    },
-    {
-      "label": "database.types.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\types\\database.types.ts",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
       "source_location": "L1",
-      "id": "backend_src_types_database_types_ts",
-      "community": 69,
-      "norm_label": "database.types.ts"
+      "id": "backend_src_services_invoice_service_ts",
+      "community": 1,
+      "norm_label": "invoice.service.ts"
+    },
+    {
+      "label": "InvoiceService",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L4",
+      "id": "services_invoice_service_invoiceservice",
+      "community": 1,
+      "norm_label": "invoiceservice"
+    },
+    {
+      "label": ".listByTrip()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L5",
+      "id": "services_invoice_service_invoiceservice_listbytrip",
+      "community": 1,
+      "norm_label": ".listbytrip()"
+    },
+    {
+      "label": ".getById()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L15",
+      "id": "services_invoice_service_invoiceservice_getbyid",
+      "community": 1,
+      "norm_label": ".getbyid()"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L25",
+      "id": "services_invoice_service_invoiceservice_create",
+      "community": 1,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L52",
+      "id": "services_invoice_service_invoiceservice_update",
+      "community": 1,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L63",
+      "id": "services_invoice_service_invoiceservice_delete",
+      "community": 1,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": ".addItem()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L73",
+      "id": "services_invoice_service_invoiceservice_additem",
+      "community": 1,
+      "norm_label": ".additem()"
+    },
+    {
+      "label": ".removeItem()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L87",
+      "id": "services_invoice_service_invoiceservice_removeitem",
+      "community": 1,
+      "norm_label": ".removeitem()"
+    },
+    {
+      "label": ".recalculateTotal()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L98",
+      "id": "services_invoice_service_invoiceservice_recalculatetotal",
+      "community": 1,
+      "norm_label": ".recalculatetotal()"
+    },
+    {
+      "label": "itinerary.service.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L1",
+      "id": "backend_src_services_itinerary_service_ts",
+      "community": 7,
+      "norm_label": "itinerary.service.ts"
+    },
+    {
+      "label": "ItineraryService",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L4",
+      "id": "services_itinerary_service_itineraryservice",
+      "community": 7,
+      "norm_label": "itineraryservice"
+    },
+    {
+      "label": ".listByTrip()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L6",
+      "id": "services_itinerary_service_itineraryservice_listbytrip",
+      "community": 7,
+      "norm_label": ".listbytrip()"
+    },
+    {
+      "label": ".getById()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L17",
+      "id": "services_itinerary_service_itineraryservice_getbyid",
+      "community": 7,
+      "norm_label": ".getbyid()"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L27",
+      "id": "services_itinerary_service_itineraryservice_create",
+      "community": 7,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L37",
+      "id": "services_itinerary_service_itineraryservice_update",
+      "community": 7,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L48",
+      "id": "services_itinerary_service_itineraryservice_delete",
+      "community": 7,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": ".reorder()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L57",
+      "id": "services_itinerary_service_itineraryservice_reorder",
+      "community": 7,
+      "norm_label": ".reorder()"
+    },
+    {
+      "label": "note.service.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L1",
+      "id": "backend_src_services_note_service_ts",
+      "community": 13,
+      "norm_label": "note.service.ts"
+    },
+    {
+      "label": "NoteService",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L4",
+      "id": "services_note_service_noteservice",
+      "community": 13,
+      "norm_label": "noteservice"
+    },
+    {
+      "label": ".listByTrip()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L5",
+      "id": "services_note_service_noteservice_listbytrip",
+      "community": 13,
+      "norm_label": ".listbytrip()"
+    },
+    {
+      "label": ".getById()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L15",
+      "id": "services_note_service_noteservice_getbyid",
+      "community": 13,
+      "norm_label": ".getbyid()"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L25",
+      "id": "services_note_service_noteservice_create",
+      "community": 13,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L35",
+      "id": "services_note_service_noteservice_update",
+      "community": 13,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L46",
+      "id": "services_note_service_noteservice_delete",
+      "community": 13,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": "packing.service.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L1",
+      "id": "backend_src_services_packing_service_ts",
+      "community": 8,
+      "norm_label": "packing.service.ts"
+    },
+    {
+      "label": "PackingService",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L4",
+      "id": "services_packing_service_packingservice",
+      "community": 8,
+      "norm_label": "packingservice"
+    },
+    {
+      "label": ".listByTrip()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L5",
+      "id": "services_packing_service_packingservice_listbytrip",
+      "community": 8,
+      "norm_label": ".listbytrip()"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L16",
+      "id": "services_packing_service_packingservice_create",
+      "community": 8,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L26",
+      "id": "services_packing_service_packingservice_update",
+      "community": 8,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L37",
+      "id": "services_packing_service_packingservice_delete",
+      "community": 8,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": ".togglePacked()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L46",
+      "id": "services_packing_service_packingservice_togglepacked",
+      "community": 8,
+      "norm_label": ".togglepacked()"
+    },
+    {
+      "label": ".bulkCreate()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L66",
+      "id": "services_packing_service_packingservice_bulkcreate",
+      "community": 8,
+      "norm_label": ".bulkcreate()"
+    },
+    {
+      "label": "profile.service.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\profile.service.ts",
+      "source_location": "L1",
+      "id": "backend_src_services_profile_service_ts",
+      "community": 18,
+      "norm_label": "profile.service.ts"
+    },
+    {
+      "label": "ProfileService",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\profile.service.ts",
+      "source_location": "L4",
+      "id": "services_profile_service_profileservice",
+      "community": 18,
+      "norm_label": "profileservice"
+    },
+    {
+      "label": ".getById()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\profile.service.ts",
+      "source_location": "L6",
+      "id": "services_profile_service_profileservice_getbyid",
+      "community": 18,
+      "norm_label": ".getbyid()"
+    },
+    {
+      "label": ".upsert()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\profile.service.ts",
+      "source_location": "L17",
+      "id": "services_profile_service_profileservice_upsert",
+      "community": 18,
+      "norm_label": ".upsert()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\profile.service.ts",
+      "source_location": "L28",
+      "id": "services_profile_service_profileservice_update",
+      "community": 18,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".list()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\profile.service.ts",
+      "source_location": "L40",
+      "id": "services_profile_service_profileservice_list",
+      "community": 18,
+      "norm_label": ".list()"
+    },
+    {
+      "label": "trip.service.ts",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L1",
+      "id": "backend_src_services_trip_service_ts",
+      "community": 3,
+      "norm_label": "trip.service.ts"
+    },
+    {
+      "label": "TripService",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L4",
+      "id": "services_trip_service_tripservice",
+      "community": 3,
+      "norm_label": "tripservice"
+    },
+    {
+      "label": ".listByOwner()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L6",
+      "id": "services_trip_service_tripservice_listbyowner",
+      "community": 3,
+      "norm_label": ".listbyowner()"
+    },
+    {
+      "label": ".getById()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L28",
+      "id": "services_trip_service_tripservice_getbyid",
+      "community": 3,
+      "norm_label": ".getbyid()"
+    },
+    {
+      "label": ".getByIdAdmin()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L40",
+      "id": "services_trip_service_tripservice_getbyidadmin",
+      "community": 3,
+      "norm_label": ".getbyidadmin()"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L51",
+      "id": "services_trip_service_tripservice_create",
+      "community": 3,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L62",
+      "id": "services_trip_service_tripservice_update",
+      "community": 3,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L75",
+      "id": "services_trip_service_tripservice_delete",
+      "community": 3,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": ".getStats()",
+      "file_type": "code",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L85",
+      "id": "services_trip_service_tripservice_getstats",
+      "community": 3,
+      "norm_label": ".getstats()"
     },
     {
       "label": "index.ts",
@@ -828,7 +1485,7 @@
       "source_file": "backend\\src\\types\\index.ts",
       "source_location": "L1",
       "id": "backend_src_types_index_ts",
-      "community": 70,
+      "community": 80,
       "norm_label": "index.ts"
     },
     {
@@ -877,121 +1534,22 @@
       "norm_label": "formatdate()"
     },
     {
-      "label": "encryption.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\utils\\encryption.ts",
-      "source_location": "L1",
-      "id": "backend_src_utils_encryption_ts",
-      "community": 18,
-      "norm_label": "encryption.ts"
-    },
-    {
-      "label": "hashPassword()",
-      "file_type": "code",
-      "source_file": "backend\\src\\utils\\encryption.ts",
-      "source_location": "L4",
-      "id": "utils_encryption_hashpassword",
-      "community": 18,
-      "norm_label": "hashpassword()"
-    },
-    {
-      "label": "comparePassword()",
-      "file_type": "code",
-      "source_file": "backend\\src\\utils\\encryption.ts",
-      "source_location": "L8",
-      "id": "utils_encryption_comparepassword",
-      "community": 18,
-      "norm_label": "comparepassword()"
-    },
-    {
-      "label": "jwt.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\utils\\jwt.ts",
-      "source_location": "L1",
-      "id": "backend_src_utils_jwt_ts",
-      "community": 6,
-      "norm_label": "jwt.ts"
-    },
-    {
-      "label": "generateToken()",
-      "file_type": "code",
-      "source_file": "backend\\src\\utils\\jwt.ts",
-      "source_location": "L11",
-      "id": "utils_jwt_generatetoken",
-      "community": 6,
-      "norm_label": "generatetoken()"
-    },
-    {
-      "label": "generateRefreshToken()",
-      "file_type": "code",
-      "source_file": "backend\\src\\utils\\jwt.ts",
-      "source_location": "L17",
-      "id": "utils_jwt_generaterefreshtoken",
-      "community": 6,
-      "norm_label": "generaterefreshtoken()"
-    },
-    {
-      "label": "verifyToken()",
-      "file_type": "code",
-      "source_file": "backend\\src\\utils\\jwt.ts",
-      "source_location": "L23",
-      "id": "utils_jwt_verifytoken",
-      "community": 6,
-      "norm_label": "verifytoken()"
-    },
-    {
-      "label": "verifyRefreshToken()",
-      "file_type": "code",
-      "source_file": "backend\\src\\utils\\jwt.ts",
-      "source_location": "L27",
-      "id": "utils_jwt_verifyrefreshtoken",
-      "community": 6,
-      "norm_label": "verifyrefreshtoken()"
-    },
-    {
       "label": "logger.ts",
       "file_type": "code",
       "source_file": "backend\\src\\utils\\logger.ts",
       "source_location": "L1",
       "id": "backend_src_utils_logger_ts",
-      "community": 71,
+      "community": 81,
       "norm_label": "logger.ts"
     },
     {
-      "label": "auth.validator.ts",
+      "label": "schemas.ts",
       "file_type": "code",
-      "source_file": "backend\\src\\validators\\auth.validator.ts",
+      "source_file": "backend\\src\\validators\\schemas.ts",
       "source_location": "L1",
-      "id": "backend_src_validators_auth_validator_ts",
-      "community": 72,
-      "norm_label": "auth.validator.ts"
-    },
-    {
-      "label": "equipment.validator.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\validators\\equipment.validator.ts",
-      "source_location": "L1",
-      "id": "backend_src_validators_equipment_validator_ts",
-      "community": 73,
-      "norm_label": "equipment.validator.ts"
-    },
-    {
-      "label": "request.validator.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\validators\\request.validator.ts",
-      "source_location": "L1",
-      "id": "backend_src_validators_request_validator_ts",
-      "community": 74,
-      "norm_label": "request.validator.ts"
-    },
-    {
-      "label": "team.validator.ts",
-      "file_type": "code",
-      "source_file": "backend\\src\\validators\\team.validator.ts",
-      "source_location": "L1",
-      "id": "backend_src_validators_team_validator_ts",
-      "community": 75,
-      "norm_label": "team.validator.ts"
+      "id": "backend_src_validators_schemas_ts",
+      "community": 82,
+      "norm_label": "schemas.ts"
     },
     {
       "label": "postcss.config.js",
@@ -999,7 +1557,7 @@
       "source_file": "frontend\\postcss.config.js",
       "source_location": "L1",
       "id": "frontend_postcss_config_js",
-      "community": 76,
+      "community": 83,
       "norm_label": "postcss.config.js"
     },
     {
@@ -1008,7 +1566,7 @@
       "source_file": "frontend\\tailwind.config.js",
       "source_location": "L1",
       "id": "frontend_tailwind_config_js",
-      "community": 77,
+      "community": 84,
       "norm_label": "tailwind.config.js"
     },
     {
@@ -1017,7 +1575,7 @@
       "source_file": "frontend\\vite.config.ts",
       "source_location": "L1",
       "id": "frontend_vite_config_ts",
-      "community": 78,
+      "community": 85,
       "norm_label": "vite.config.ts"
     },
     {
@@ -1026,7 +1584,7 @@
       "source_file": "frontend\\src\\App.tsx",
       "source_location": "L1",
       "id": "frontend_src_app_tsx",
-      "community": 19,
+      "community": 28,
       "norm_label": "app.tsx"
     },
     {
@@ -1035,7 +1593,7 @@
       "source_file": "frontend\\src\\App.tsx",
       "source_location": "L27",
       "id": "src_app_app",
-      "community": 19,
+      "community": 28,
       "norm_label": "app()"
     },
     {
@@ -1044,7 +1602,7 @@
       "source_file": "frontend\\src\\env.d.ts",
       "source_location": "L1",
       "id": "frontend_src_env_d_ts",
-      "community": 79,
+      "community": 86,
       "norm_label": "env.d.ts"
     },
     {
@@ -1053,7 +1611,7 @@
       "source_file": "frontend\\src\\main.tsx",
       "source_location": "L1",
       "id": "frontend_src_main_tsx",
-      "community": 19,
+      "community": 28,
       "norm_label": "main.tsx"
     },
     {
@@ -1062,7 +1620,7 @@
       "source_file": "frontend\\src\\components\\AppearanceDropdown.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_appearancedropdown_tsx",
-      "community": 20,
+      "community": 29,
       "norm_label": "appearancedropdown.tsx"
     },
     {
@@ -1071,7 +1629,7 @@
       "source_file": "frontend\\src\\components\\AppearanceDropdown.tsx",
       "source_location": "L7",
       "id": "components_appearancedropdown_getinitialtheme",
-      "community": 20,
+      "community": 29,
       "norm_label": "getinitialtheme()"
     },
     {
@@ -1080,7 +1638,7 @@
       "source_file": "frontend\\src\\components\\AppearanceDropdown.tsx",
       "source_location": "L12",
       "id": "components_appearancedropdown_appearancedropdown",
-      "community": 20,
+      "community": 29,
       "norm_label": "appearancedropdown()"
     },
     {
@@ -1089,7 +1647,7 @@
       "source_file": "frontend\\src\\components\\ComingSoonPage.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_comingsoonpage_tsx",
-      "community": 30,
+      "community": 37,
       "norm_label": "comingsoonpage.tsx"
     },
     {
@@ -1098,7 +1656,7 @@
       "source_file": "frontend\\src\\components\\ComingSoonPage.tsx",
       "source_location": "L10",
       "id": "components_comingsoonpage_comingsoonpage",
-      "community": 30,
+      "community": 37,
       "norm_label": "comingsoonpage()"
     },
     {
@@ -1107,7 +1665,7 @@
       "source_file": "frontend\\src\\components\\ConfirmDialog.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_confirmdialog_tsx",
-      "community": 31,
+      "community": 38,
       "norm_label": "confirmdialog.tsx"
     },
     {
@@ -1116,7 +1674,7 @@
       "source_file": "frontend\\src\\components\\ConfirmDialog.tsx",
       "source_location": "L14",
       "id": "components_confirmdialog_confirmdialog",
-      "community": 31,
+      "community": 38,
       "norm_label": "confirmdialog()"
     },
     {
@@ -1125,7 +1683,7 @@
       "source_file": "frontend\\src\\components\\DocumentTitle.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_documenttitle_tsx",
-      "community": 32,
+      "community": 39,
       "norm_label": "documenttitle.tsx"
     },
     {
@@ -1134,7 +1692,7 @@
       "source_file": "frontend\\src\\components\\DocumentTitle.tsx",
       "source_location": "L25",
       "id": "components_documenttitle_documenttitle",
-      "community": 32,
+      "community": 39,
       "norm_label": "documenttitle()"
     },
     {
@@ -1143,7 +1701,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_filterbar_tsx",
-      "community": 8,
+      "community": 14,
       "norm_label": "filterbar.tsx"
     },
     {
@@ -1152,7 +1710,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L13",
       "id": "components_filterbar_handletypechange",
-      "community": 8,
+      "community": 14,
       "norm_label": "handletypechange()"
     },
     {
@@ -1161,7 +1719,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L20",
       "id": "components_filterbar_handlestagechange",
-      "community": 8,
+      "community": 14,
       "norm_label": "handlestagechange()"
     },
     {
@@ -1170,7 +1728,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L27",
       "id": "components_filterbar_handlesearchchange",
-      "community": 8,
+      "community": 14,
       "norm_label": "handlesearchchange()"
     },
     {
@@ -1179,7 +1737,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L34",
       "id": "components_filterbar_handletoggleassigned",
-      "community": 8,
+      "community": 14,
       "norm_label": "handletoggleassigned()"
     },
     {
@@ -1188,7 +1746,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L41",
       "id": "components_filterbar_handletoggleoverdue",
-      "community": 8,
+      "community": 14,
       "norm_label": "handletoggleoverdue()"
     },
     {
@@ -1197,7 +1755,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L48",
       "id": "components_filterbar_clearallfilters",
-      "community": 8,
+      "community": 14,
       "norm_label": "clearallfilters()"
     },
     {
@@ -1206,7 +1764,7 @@
       "source_file": "frontend\\src\\components\\Layout.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_layout_tsx",
-      "community": 21,
+      "community": 30,
       "norm_label": "layout.tsx"
     },
     {
@@ -1215,7 +1773,7 @@
       "source_file": "frontend\\src\\components\\Layout.tsx",
       "source_location": "L41",
       "id": "components_layout_navlink",
-      "community": 21,
+      "community": 30,
       "norm_label": "navlink()"
     },
     {
@@ -1224,7 +1782,7 @@
       "source_file": "frontend\\src\\components\\Layout.tsx",
       "source_location": "L70",
       "id": "components_layout_handlelayoutchange",
-      "community": 21,
+      "community": 30,
       "norm_label": "handlelayoutchange()"
     },
     {
@@ -1233,7 +1791,7 @@
       "source_file": "frontend\\src\\components\\NotificationDropdown.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_notificationdropdown_tsx",
-      "community": 33,
+      "community": 40,
       "norm_label": "notificationdropdown.tsx"
     },
     {
@@ -1242,7 +1800,7 @@
       "source_file": "frontend\\src\\components\\NotificationDropdown.tsx",
       "source_location": "L13",
       "id": "components_notificationdropdown_notificationdropdown",
-      "community": 33,
+      "community": 40,
       "norm_label": "notificationdropdown()"
     },
     {
@@ -1251,7 +1809,7 @@
       "source_file": "frontend\\src\\components\\ProtectedRoute.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_protectedroute_tsx",
-      "community": 34,
+      "community": 41,
       "norm_label": "protectedroute.tsx"
     },
     {
@@ -1260,7 +1818,7 @@
       "source_file": "frontend\\src\\components\\ProtectedRoute.tsx",
       "source_location": "L10",
       "id": "components_protectedroute_protectedroute",
-      "community": 34,
+      "community": 41,
       "norm_label": "protectedroute()"
     },
     {
@@ -1269,7 +1827,7 @@
       "source_file": "frontend\\src\\components\\UserMenuDropdown.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_usermenudropdown_tsx",
-      "community": 22,
+      "community": 31,
       "norm_label": "usermenudropdown.tsx"
     },
     {
@@ -1278,7 +1836,7 @@
       "source_file": "frontend\\src\\components\\UserMenuDropdown.tsx",
       "source_location": "L6",
       "id": "components_usermenudropdown_getinitials",
-      "community": 22,
+      "community": 31,
       "norm_label": "getinitials()"
     },
     {
@@ -1287,7 +1845,7 @@
       "source_file": "frontend\\src\\components\\UserMenuDropdown.tsx",
       "source_location": "L19",
       "id": "components_usermenudropdown_usermenudropdown",
-      "community": 22,
+      "community": 31,
       "norm_label": "usermenudropdown()"
     },
     {
@@ -1296,7 +1854,7 @@
       "source_file": "frontend\\src\\components\\ui\\Badge.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_ui_badge_tsx",
-      "community": 35,
+      "community": 42,
       "norm_label": "badge.tsx"
     },
     {
@@ -1305,7 +1863,7 @@
       "source_file": "frontend\\src\\components\\ui\\Badge.tsx",
       "source_location": "L7",
       "id": "ui_badge_badge",
-      "community": 35,
+      "community": 42,
       "norm_label": "badge()"
     },
     {
@@ -1314,7 +1872,7 @@
       "source_file": "frontend\\src\\components\\ui\\Button.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_ui_button_tsx",
-      "community": 36,
+      "community": 43,
       "norm_label": "button.tsx"
     },
     {
@@ -1323,7 +1881,7 @@
       "source_file": "frontend\\src\\components\\ui\\Button.tsx",
       "source_location": "L12",
       "id": "ui_button_button",
-      "community": 36,
+      "community": 43,
       "norm_label": "button()"
     },
     {
@@ -1332,7 +1890,7 @@
       "source_file": "frontend\\src\\components\\ui\\Card.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_ui_card_tsx",
-      "community": 80,
+      "community": 87,
       "norm_label": "card.tsx"
     },
     {
@@ -1341,7 +1899,7 @@
       "source_file": "frontend\\src\\components\\ui\\Input.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_ui_input_tsx",
-      "community": 37,
+      "community": 44,
       "norm_label": "input.tsx"
     },
     {
@@ -1350,7 +1908,7 @@
       "source_file": "frontend\\src\\components\\ui\\Input.tsx",
       "source_location": "L12",
       "id": "ui_input_input",
-      "community": 37,
+      "community": 44,
       "norm_label": "input()"
     },
     {
@@ -1359,7 +1917,7 @@
       "source_file": "frontend\\src\\components\\ui\\Modal.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_ui_modal_tsx",
-      "community": 81,
+      "community": 88,
       "norm_label": "modal.tsx"
     },
     {
@@ -1368,7 +1926,7 @@
       "source_file": "frontend\\src\\components\\ui\\Select.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_ui_select_tsx",
-      "community": 38,
+      "community": 45,
       "norm_label": "select.tsx"
     },
     {
@@ -1377,7 +1935,7 @@
       "source_file": "frontend\\src\\components\\ui\\Select.tsx",
       "source_location": "L11",
       "id": "ui_select_select",
-      "community": 38,
+      "community": 45,
       "norm_label": "select()"
     },
     {
@@ -1386,7 +1944,7 @@
       "source_file": "frontend\\src\\components\\ui\\TextArea.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_ui_textarea_tsx",
-      "community": 82,
+      "community": 89,
       "norm_label": "textarea.tsx"
     },
     {
@@ -1395,7 +1953,7 @@
       "source_file": "frontend\\src\\components\\ui\\Toast.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_ui_toast_tsx",
-      "community": 39,
+      "community": 46,
       "norm_label": "toast.tsx"
     },
     {
@@ -1404,7 +1962,7 @@
       "source_file": "frontend\\src\\components\\ui\\Toast.tsx",
       "source_location": "L8",
       "id": "ui_toast_toast",
-      "community": 39,
+      "community": 46,
       "norm_label": "toast()"
     },
     {
@@ -1413,7 +1971,7 @@
       "source_file": "frontend\\src\\config\\app.config.ts",
       "source_location": "L1",
       "id": "frontend_src_config_app_config_ts",
-      "community": 83,
+      "community": 90,
       "norm_label": "app.config.ts"
     },
     {
@@ -1422,7 +1980,7 @@
       "source_file": "frontend\\src\\context\\AppContext.tsx",
       "source_location": "L1",
       "id": "frontend_src_context_appcontext_tsx",
-      "community": 40,
+      "community": 47,
       "norm_label": "appcontext.tsx"
     },
     {
@@ -1431,7 +1989,7 @@
       "source_file": "frontend\\src\\context\\AppContext.tsx",
       "source_location": "L67",
       "id": "context_appcontext_appprovider",
-      "community": 40,
+      "community": 47,
       "norm_label": "appprovider()"
     },
     {
@@ -1440,7 +1998,7 @@
       "source_file": "frontend\\src\\context\\AuthContext.tsx",
       "source_location": "L1",
       "id": "frontend_src_context_authcontext_tsx",
-      "community": 41,
+      "community": 48,
       "norm_label": "authcontext.tsx"
     },
     {
@@ -1449,7 +2007,7 @@
       "source_file": "frontend\\src\\context\\AuthContext.tsx",
       "source_location": "L14",
       "id": "context_authcontext_authprovider",
-      "community": 41,
+      "community": 48,
       "norm_label": "authprovider()"
     },
     {
@@ -1458,7 +2016,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L1",
       "id": "frontend_src_lib_supabase_ts",
-      "community": 9,
+      "community": 19,
       "norm_label": "supabase.ts"
     },
     {
@@ -1467,7 +2025,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L9",
       "id": "lib_supabase_createdemosession",
-      "community": 9,
+      "community": 19,
       "norm_label": "createdemosession()"
     },
     {
@@ -1476,7 +2034,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L37",
       "id": "lib_supabase_getstoreddemosession",
-      "community": 9,
+      "community": 19,
       "norm_label": "getstoreddemosession()"
     },
     {
@@ -1485,7 +2043,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L42",
       "id": "lib_supabase_setstoreddemosession",
-      "community": 9,
+      "community": 19,
       "norm_label": "setstoreddemosession()"
     },
     {
@@ -1494,7 +2052,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L47",
       "id": "lib_supabase_clearstoreddemosession",
-      "community": 9,
+      "community": 19,
       "norm_label": "clearstoreddemosession()"
     },
     {
@@ -1503,7 +2061,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L52",
       "id": "lib_supabase_createdemosupabaseclient",
-      "community": 9,
+      "community": 19,
       "norm_label": "createdemosupabaseclient()"
     },
     {
@@ -1512,7 +2070,7 @@
       "source_file": "frontend\\src\\pages\\ActivitySearch.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_activitysearch_tsx",
-      "community": 42,
+      "community": 49,
       "norm_label": "activitysearch.tsx"
     },
     {
@@ -1521,7 +2079,7 @@
       "source_file": "frontend\\src\\pages\\ActivitySearch.tsx",
       "source_location": "L4",
       "id": "pages_activitysearch_activitysearch",
-      "community": 42,
+      "community": 49,
       "norm_label": "activitysearch()"
     },
     {
@@ -1530,7 +2088,7 @@
       "source_file": "frontend\\src\\pages\\Admin.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_admin_tsx",
-      "community": 43,
+      "community": 50,
       "norm_label": "admin.tsx"
     },
     {
@@ -1539,7 +2097,7 @@
       "source_file": "frontend\\src\\pages\\Admin.tsx",
       "source_location": "L4",
       "id": "pages_admin_admin",
-      "community": 43,
+      "community": 50,
       "norm_label": "admin()"
     },
     {
@@ -1548,7 +2106,7 @@
       "source_file": "frontend\\src\\pages\\AuthCallback.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_authcallback_tsx",
-      "community": 44,
+      "community": 51,
       "norm_label": "authcallback.tsx"
     },
     {
@@ -1557,7 +2115,7 @@
       "source_file": "frontend\\src\\pages\\AuthCallback.tsx",
       "source_location": "L6",
       "id": "pages_authcallback_authcallbackpage",
-      "community": 44,
+      "community": 51,
       "norm_label": "authcallbackpage()"
     },
     {
@@ -1647,7 +2205,7 @@
       "source_file": "frontend\\src\\pages\\Checklist.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_checklist_tsx",
-      "community": 45,
+      "community": 52,
       "norm_label": "checklist.tsx"
     },
     {
@@ -1656,7 +2214,7 @@
       "source_file": "frontend\\src\\pages\\Checklist.tsx",
       "source_location": "L4",
       "id": "pages_checklist_checklist",
-      "community": 45,
+      "community": 52,
       "norm_label": "checklist()"
     },
     {
@@ -1665,7 +2223,7 @@
       "source_file": "frontend\\src\\pages\\CitySearch.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_citysearch_tsx",
-      "community": 46,
+      "community": 53,
       "norm_label": "citysearch.tsx"
     },
     {
@@ -1674,7 +2232,7 @@
       "source_file": "frontend\\src\\pages\\CitySearch.tsx",
       "source_location": "L4",
       "id": "pages_citysearch_citysearch",
-      "community": 46,
+      "community": 53,
       "norm_label": "citysearch()"
     },
     {
@@ -1683,7 +2241,7 @@
       "source_file": "frontend\\src\\pages\\Community.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_community_tsx",
-      "community": 47,
+      "community": 54,
       "norm_label": "community.tsx"
     },
     {
@@ -1692,7 +2250,7 @@
       "source_file": "frontend\\src\\pages\\Community.tsx",
       "source_location": "L4",
       "id": "pages_community_community",
-      "community": 47,
+      "community": 54,
       "norm_label": "community()"
     },
     {
@@ -1701,7 +2259,7 @@
       "source_file": "frontend\\src\\pages\\Dashboard.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_dashboard_tsx",
-      "community": 48,
+      "community": 55,
       "norm_label": "dashboard.tsx"
     },
     {
@@ -1710,7 +2268,7 @@
       "source_file": "frontend\\src\\pages\\Dashboard.tsx",
       "source_location": "L70",
       "id": "pages_dashboard_progressring",
-      "community": 48,
+      "community": 55,
       "norm_label": "progressring()"
     },
     {
@@ -1719,7 +2277,7 @@
       "source_file": "frontend\\src\\pages\\EquipmentDetail.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_equipmentdetail_tsx",
-      "community": 49,
+      "community": 56,
       "norm_label": "equipmentdetail.tsx"
     },
     {
@@ -1728,7 +2286,7 @@
       "source_file": "frontend\\src\\pages\\EquipmentDetail.tsx",
       "source_location": "L29",
       "id": "pages_equipmentdetail_getstatuscolor",
-      "community": 49,
+      "community": 56,
       "norm_label": "getstatuscolor()"
     },
     {
@@ -1737,7 +2295,7 @@
       "source_file": "frontend\\src\\pages\\EquipmentList.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_equipmentlist_tsx",
-      "community": 23,
+      "community": 32,
       "norm_label": "equipmentlist.tsx"
     },
     {
@@ -1746,7 +2304,7 @@
       "source_file": "frontend\\src\\pages\\EquipmentList.tsx",
       "source_location": "L42",
       "id": "pages_equipmentlist_handlesubmit",
-      "community": 23,
+      "community": 32,
       "norm_label": "handlesubmit()"
     },
     {
@@ -1755,7 +2313,7 @@
       "source_file": "frontend\\src\\pages\\EquipmentList.tsx",
       "source_location": "L83",
       "id": "pages_equipmentlist_getstatuscolor",
-      "community": 23,
+      "community": 32,
       "norm_label": "getstatuscolor()"
     },
     {
@@ -1764,7 +2322,7 @@
       "source_file": "frontend\\src\\pages\\Invoice.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_invoice_tsx",
-      "community": 50,
+      "community": 57,
       "norm_label": "invoice.tsx"
     },
     {
@@ -1773,7 +2331,7 @@
       "source_file": "frontend\\src\\pages\\Invoice.tsx",
       "source_location": "L4",
       "id": "pages_invoice_invoice",
-      "community": 50,
+      "community": 57,
       "norm_label": "invoice()"
     },
     {
@@ -1782,7 +2340,7 @@
       "source_file": "frontend\\src\\pages\\Itinerary.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_itinerary_tsx",
-      "community": 51,
+      "community": 58,
       "norm_label": "itinerary.tsx"
     },
     {
@@ -1791,7 +2349,7 @@
       "source_file": "frontend\\src\\pages\\Itinerary.tsx",
       "source_location": "L4",
       "id": "pages_itinerary_itinerary",
-      "community": 51,
+      "community": 58,
       "norm_label": "itinerary()"
     },
     {
@@ -1800,7 +2358,7 @@
       "source_file": "frontend\\src\\pages\\KanbanBoard.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_kanbanboard_tsx",
-      "community": 16,
+      "community": 25,
       "norm_label": "kanbanboard.tsx"
     },
     {
@@ -1809,7 +2367,7 @@
       "source_file": "frontend\\src\\pages\\KanbanBoard.tsx",
       "source_location": "L61",
       "id": "pages_kanbanboard_handledragend",
-      "community": 16,
+      "community": 25,
       "norm_label": "handledragend()"
     },
     {
@@ -1818,7 +2376,7 @@
       "source_file": "frontend\\src\\pages\\KanbanBoard.tsx",
       "source_location": "L115",
       "id": "pages_kanbanboard_getrequestsbystage",
-      "community": 16,
+      "community": 25,
       "norm_label": "getrequestsbystage()"
     },
     {
@@ -1827,7 +2385,7 @@
       "source_file": "frontend\\src\\pages\\KanbanBoard.tsx",
       "source_location": "L118",
       "id": "pages_kanbanboard_getprioritycolor",
-      "community": 16,
+      "community": 25,
       "norm_label": "getprioritycolor()"
     },
     {
@@ -1836,7 +2394,7 @@
       "source_file": "frontend\\src\\pages\\LandingPage.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_landingpage_tsx",
-      "community": 52,
+      "community": 59,
       "norm_label": "landingpage.tsx"
     },
     {
@@ -1845,7 +2403,7 @@
       "source_file": "frontend\\src\\pages\\LandingPage.tsx",
       "source_location": "L7",
       "id": "pages_landingpage_landingpage",
-      "community": 52,
+      "community": 59,
       "norm_label": "landingpage()"
     },
     {
@@ -1854,7 +2412,7 @@
       "source_file": "frontend\\src\\pages\\Login.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_login_tsx",
-      "community": 24,
+      "community": 33,
       "norm_label": "login.tsx"
     },
     {
@@ -1863,7 +2421,7 @@
       "source_file": "frontend\\src\\pages\\Login.tsx",
       "source_location": "L15",
       "id": "pages_login_handleemaillogin",
-      "community": 24,
+      "community": 33,
       "norm_label": "handleemaillogin()"
     },
     {
@@ -1872,7 +2430,7 @@
       "source_file": "frontend\\src\\pages\\Login.tsx",
       "source_location": "L38",
       "id": "pages_login_handleoauthlogin",
-      "community": 24,
+      "community": 33,
       "norm_label": "handleoauthlogin()"
     },
     {
@@ -1881,7 +2439,7 @@
       "source_file": "frontend\\src\\pages\\MapView.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_mapview_tsx",
-      "community": 53,
+      "community": 60,
       "norm_label": "mapview.tsx"
     },
     {
@@ -1890,7 +2448,7 @@
       "source_file": "frontend\\src\\pages\\MapView.tsx",
       "source_location": "L4",
       "id": "pages_mapview_mapview",
-      "community": 53,
+      "community": 60,
       "norm_label": "mapview()"
     },
     {
@@ -1899,7 +2457,7 @@
       "source_file": "frontend\\src\\pages\\Notes.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_notes_tsx",
-      "community": 54,
+      "community": 61,
       "norm_label": "notes.tsx"
     },
     {
@@ -1908,7 +2466,7 @@
       "source_file": "frontend\\src\\pages\\Notes.tsx",
       "source_location": "L4",
       "id": "pages_notes_notes",
-      "community": 54,
+      "community": 61,
       "norm_label": "notes()"
     },
     {
@@ -1917,7 +2475,7 @@
       "source_file": "frontend\\src\\pages\\Profile.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_profile_tsx",
-      "community": 55,
+      "community": 62,
       "norm_label": "profile.tsx"
     },
     {
@@ -1926,7 +2484,7 @@
       "source_file": "frontend\\src\\pages\\Profile.tsx",
       "source_location": "L6",
       "id": "pages_profile_profile",
-      "community": 55,
+      "community": 62,
       "norm_label": "profile()"
     },
     {
@@ -1935,7 +2493,7 @@
       "source_file": "frontend\\src\\pages\\Reports.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_reports_tsx",
-      "community": 84,
+      "community": 91,
       "norm_label": "reports.tsx"
     },
     {
@@ -1944,7 +2502,7 @@
       "source_file": "frontend\\src\\pages\\RequestList.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_requestlist_tsx",
-      "community": 17,
+      "community": 26,
       "norm_label": "requestlist.tsx"
     },
     {
@@ -1953,7 +2511,7 @@
       "source_file": "frontend\\src\\pages\\RequestList.tsx",
       "source_location": "L36",
       "id": "pages_requestlist_handlesubmit",
-      "community": 17,
+      "community": 26,
       "norm_label": "handlesubmit()"
     },
     {
@@ -1962,7 +2520,7 @@
       "source_file": "frontend\\src\\pages\\RequestList.tsx",
       "source_location": "L87",
       "id": "pages_requestlist_getprioritycolor",
-      "community": 17,
+      "community": 26,
       "norm_label": "getprioritycolor()"
     },
     {
@@ -1971,7 +2529,7 @@
       "source_file": "frontend\\src\\pages\\RequestList.tsx",
       "source_location": "L96",
       "id": "pages_requestlist_getstagecolor",
-      "community": 17,
+      "community": 26,
       "norm_label": "getstagecolor()"
     },
     {
@@ -1980,7 +2538,7 @@
       "source_file": "frontend\\src\\pages\\Settings.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_settings_tsx",
-      "community": 56,
+      "community": 63,
       "norm_label": "settings.tsx"
     },
     {
@@ -1989,7 +2547,7 @@
       "source_file": "frontend\\src\\pages\\Settings.tsx",
       "source_location": "L5",
       "id": "pages_settings_settings",
-      "community": 56,
+      "community": 63,
       "norm_label": "settings()"
     },
     {
@@ -1998,7 +2556,7 @@
       "source_file": "frontend\\src\\pages\\SignUp.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_signup_tsx",
-      "community": 11,
+      "community": 23,
       "norm_label": "signup.tsx"
     },
     {
@@ -2007,7 +2565,7 @@
       "source_file": "frontend\\src\\pages\\SignUp.tsx",
       "source_location": "L35",
       "id": "pages_signup_handlechange",
-      "community": 11,
+      "community": 23,
       "norm_label": "handlechange()"
     },
     {
@@ -2016,7 +2574,7 @@
       "source_file": "frontend\\src\\pages\\SignUp.tsx",
       "source_location": "L42",
       "id": "pages_signup_validatepassword",
-      "community": 11,
+      "community": 23,
       "norm_label": "validatepassword()"
     },
     {
@@ -2025,7 +2583,7 @@
       "source_file": "frontend\\src\\pages\\SignUp.tsx",
       "source_location": "L50",
       "id": "pages_signup_handleemailsignup",
-      "community": 11,
+      "community": 23,
       "norm_label": "handleemailsignup()"
     },
     {
@@ -2034,7 +2592,7 @@
       "source_file": "frontend\\src\\pages\\SignUp.tsx",
       "source_location": "L95",
       "id": "pages_signup_handleoauthsignup",
-      "community": 11,
+      "community": 23,
       "norm_label": "handleoauthsignup()"
     },
     {
@@ -2043,7 +2601,7 @@
       "source_file": "frontend\\src\\pages\\TeamList.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_teamlist_tsx",
-      "community": 10,
+      "community": 20,
       "norm_label": "teamlist.tsx"
     },
     {
@@ -2052,7 +2610,7 @@
       "source_file": "frontend\\src\\pages\\TeamList.tsx",
       "source_location": "L43",
       "id": "pages_teamlist_loadusers",
-      "community": 10,
+      "community": 20,
       "norm_label": "loadusers()"
     },
     {
@@ -2061,7 +2619,7 @@
       "source_file": "frontend\\src\\pages\\TeamList.tsx",
       "source_location": "L53",
       "id": "pages_teamlist_handlesubmit",
-      "community": 10,
+      "community": 20,
       "norm_label": "handlesubmit()"
     },
     {
@@ -2070,7 +2628,7 @@
       "source_file": "frontend\\src\\pages\\TeamList.tsx",
       "source_location": "L100",
       "id": "pages_teamlist_handleaddmember",
-      "community": 10,
+      "community": 20,
       "norm_label": "handleaddmember()"
     },
     {
@@ -2079,7 +2637,7 @@
       "source_file": "frontend\\src\\pages\\TeamList.tsx",
       "source_location": "L135",
       "id": "pages_teamlist_handleremovemember",
-      "community": 10,
+      "community": 20,
       "norm_label": "handleremovemember()"
     },
     {
@@ -2088,7 +2646,7 @@
       "source_file": "frontend\\src\\pages\\TeamList.tsx",
       "source_location": "L150",
       "id": "pages_teamlist_openaddmembermodal",
-      "community": 10,
+      "community": 20,
       "norm_label": "openaddmembermodal()"
     },
     {
@@ -2097,7 +2655,7 @@
       "source_file": "frontend\\src\\pages\\TripCreate.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_tripcreate_tsx",
-      "community": 57,
+      "community": 64,
       "norm_label": "tripcreate.tsx"
     },
     {
@@ -2106,7 +2664,7 @@
       "source_file": "frontend\\src\\pages\\TripCreate.tsx",
       "source_location": "L4",
       "id": "pages_tripcreate_tripcreate",
-      "community": 57,
+      "community": 64,
       "norm_label": "tripcreate()"
     },
     {
@@ -2115,7 +2673,7 @@
       "source_file": "frontend\\src\\pages\\Trips.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_trips_tsx",
-      "community": 58,
+      "community": 65,
       "norm_label": "trips.tsx"
     },
     {
@@ -2124,7 +2682,7 @@
       "source_file": "frontend\\src\\pages\\Trips.tsx",
       "source_location": "L4",
       "id": "pages_trips_trips",
-      "community": 58,
+      "community": 65,
       "norm_label": "trips()"
     },
     {
@@ -2133,7 +2691,7 @@
       "source_file": "frontend\\src\\services\\api.ts",
       "source_location": "L1",
       "id": "frontend_src_services_api_ts",
-      "community": 85,
+      "community": 92,
       "norm_label": "api.ts"
     },
     {
@@ -2142,7 +2700,7 @@
       "source_file": "frontend\\src\\services\\auth.ts",
       "source_location": "L1",
       "id": "frontend_src_services_auth_ts",
-      "community": 86,
+      "community": 93,
       "norm_label": "auth.ts"
     },
     {
@@ -2151,7 +2709,7 @@
       "source_file": "frontend\\src\\services\\equipment.ts",
       "source_location": "L1",
       "id": "frontend_src_services_equipment_ts",
-      "community": 87,
+      "community": 94,
       "norm_label": "equipment.ts"
     },
     {
@@ -2160,7 +2718,7 @@
       "source_file": "frontend\\src\\services\\reports.ts",
       "source_location": "L1",
       "id": "frontend_src_services_reports_ts",
-      "community": 88,
+      "community": 95,
       "norm_label": "reports.ts"
     },
     {
@@ -2169,7 +2727,7 @@
       "source_file": "frontend\\src\\services\\requests.ts",
       "source_location": "L1",
       "id": "frontend_src_services_requests_ts",
-      "community": 89,
+      "community": 96,
       "norm_label": "requests.ts"
     },
     {
@@ -2178,7 +2736,7 @@
       "source_file": "frontend\\src\\services\\teams.ts",
       "source_location": "L1",
       "id": "frontend_src_services_teams_ts",
-      "community": 90,
+      "community": 97,
       "norm_label": "teams.ts"
     },
     {
@@ -2187,7 +2745,7 @@
       "source_file": "frontend\\src\\services\\users.ts",
       "source_location": "L1",
       "id": "frontend_src_services_users_ts",
-      "community": 91,
+      "community": 98,
       "norm_label": "users.ts"
     },
     {
@@ -2196,7 +2754,7 @@
       "source_file": "frontend\\src\\types\\index.ts",
       "source_location": "L1",
       "id": "frontend_src_types_index_ts",
-      "community": 92,
+      "community": 99,
       "norm_label": "index.ts"
     }
   ],
@@ -2204,32 +2762,44 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\config\\database.ts",
-      "source_location": "L4",
+      "source_file": "backend\\src\\server.ts",
+      "source_location": "L10",
       "weight": 1.0,
-      "_src": "backend_src_config_database_ts",
-      "_tgt": "config_database_connectdatabase",
-      "source": "backend_src_config_database_ts",
-      "target": "config_database_connectdatabase",
+      "_src": "backend_src_server_ts",
+      "_tgt": "src_server_bootstrap",
+      "source": "backend_src_server_ts",
+      "target": "src_server_bootstrap",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "backend\\src\\config\\database.ts",
-      "source_location": "L6",
+      "source_file": "backend\\src\\server.ts",
+      "source_location": "L12",
       "weight": 1.0,
-      "_src": "config_database_connectdatabase",
+      "_src": "src_server_bootstrap",
       "_tgt": "config_supabase_testconnection",
-      "source": "config_database_connectdatabase",
+      "source": "src_server_bootstrap",
       "target": "config_supabase_testconnection"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend\\src\\config\\supabase.ts",
-      "source_location": "L32",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_src": "backend_src_config_supabase_ts",
+      "_tgt": "config_supabase_createuserclient",
+      "source": "backend_src_config_supabase_ts",
+      "target": "config_supabase_createuserclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\config\\supabase.ts",
+      "source_location": "L59",
       "weight": 1.0,
       "_src": "backend_src_config_supabase_ts",
       "_tgt": "config_supabase_testconnection",
@@ -2240,404 +2810,668 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
+      "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L5",
       "weight": 1.0,
-      "_src": "backend_src_controllers_equipment_controller_ts",
-      "_tgt": "controllers_equipment_controller_equipmentcontroller",
-      "source": "backend_src_controllers_equipment_controller_ts",
-      "target": "controllers_equipment_controller_equipmentcontroller",
+      "_src": "backend_src_controllers_activity_controller_ts",
+      "_tgt": "controllers_activity_controller_activitycontroller",
+      "source": "backend_src_controllers_activity_controller_ts",
+      "target": "controllers_activity_controller_activitycontroller",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_src": "controllers_equipment_controller_equipmentcontroller",
-      "_tgt": "controllers_equipment_controller_equipmentcontroller_getall",
-      "source": "controllers_equipment_controller_equipmentcontroller",
-      "target": "controllers_equipment_controller_equipmentcontroller_getall",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
-      "source_location": "L42",
-      "weight": 1.0,
-      "_src": "controllers_equipment_controller_equipmentcontroller",
-      "_tgt": "controllers_equipment_controller_equipmentcontroller_getbyid",
-      "source": "controllers_equipment_controller_equipmentcontroller",
-      "target": "controllers_equipment_controller_equipmentcontroller_getbyid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
-      "source_location": "L72",
-      "weight": 1.0,
-      "_src": "controllers_equipment_controller_equipmentcontroller",
-      "_tgt": "controllers_equipment_controller_equipmentcontroller_create",
-      "source": "controllers_equipment_controller_equipmentcontroller",
-      "target": "controllers_equipment_controller_equipmentcontroller_create",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
-      "source_location": "L124",
-      "weight": 1.0,
-      "_src": "controllers_equipment_controller_equipmentcontroller",
-      "_tgt": "controllers_equipment_controller_equipmentcontroller_update",
-      "source": "controllers_equipment_controller_equipmentcontroller",
-      "target": "controllers_equipment_controller_equipmentcontroller_update",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\equipment.controller.ts",
-      "source_location": "L178",
-      "weight": 1.0,
-      "_src": "controllers_equipment_controller_equipmentcontroller",
-      "_tgt": "controllers_equipment_controller_equipmentcontroller_delete",
-      "source": "controllers_equipment_controller_equipmentcontroller",
-      "target": "controllers_equipment_controller_equipmentcontroller_delete",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
+      "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L6",
       "weight": 1.0,
-      "_src": "backend_src_controllers_maintenance_request_controller_ts",
-      "_tgt": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "source": "backend_src_controllers_maintenance_request_controller_ts",
-      "target": "controllers_maintenance_request_controller_maintenancerequestcontroller",
+      "_src": "controllers_activity_controller_activitycontroller",
+      "_tgt": "controllers_activity_controller_activitycontroller_list",
+      "source": "controllers_activity_controller_activitycontroller",
+      "target": "controllers_activity_controller_activitycontroller_list",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L11",
+      "source_file": "backend\\src\\controllers\\activity.controller.ts",
+      "source_location": "L20",
       "weight": 1.0,
-      "_src": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "_tgt": "controllers_maintenance_request_controller_maintenancerequestcontroller_getall",
-      "source": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "target": "controllers_maintenance_request_controller_maintenancerequestcontroller_getall",
+      "_src": "controllers_activity_controller_activitycontroller",
+      "_tgt": "controllers_activity_controller_activitycontroller_getbyid",
+      "source": "controllers_activity_controller_activitycontroller",
+      "target": "controllers_activity_controller_activitycontroller_getbyid",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
+      "source_file": "backend\\src\\controllers\\activity.controller.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "controllers_activity_controller_activitycontroller",
+      "_tgt": "controllers_activity_controller_activitycontroller_create",
+      "source": "controllers_activity_controller_activitycontroller",
+      "target": "controllers_activity_controller_activitycontroller_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\activity.controller.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "controllers_activity_controller_activitycontroller",
+      "_tgt": "controllers_activity_controller_activitycontroller_delete",
+      "source": "controllers_activity_controller_activitycontroller",
+      "target": "controllers_activity_controller_activitycontroller_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\community.controller.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_community_controller_ts",
+      "_tgt": "controllers_community_controller_communitycontroller",
+      "source": "backend_src_controllers_community_controller_ts",
+      "target": "controllers_community_controller_communitycontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\community.controller.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "controllers_community_controller_communitycontroller",
+      "_tgt": "controllers_community_controller_communitycontroller_list",
+      "source": "controllers_community_controller_communitycontroller",
+      "target": "controllers_community_controller_communitycontroller_list",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\community.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "controllers_community_controller_communitycontroller",
+      "_tgt": "controllers_community_controller_communitycontroller_getbyid",
+      "source": "controllers_community_controller_communitycontroller",
+      "target": "controllers_community_controller_communitycontroller_getbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\community.controller.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "controllers_community_controller_communitycontroller",
+      "_tgt": "controllers_community_controller_communitycontroller_create",
+      "source": "controllers_community_controller_communitycontroller",
+      "target": "controllers_community_controller_communitycontroller_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\community.controller.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "controllers_community_controller_communitycontroller",
+      "_tgt": "controllers_community_controller_communitycontroller_delete",
+      "source": "controllers_community_controller_communitycontroller",
+      "target": "controllers_community_controller_communitycontroller_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_destination_controller_ts",
+      "_tgt": "controllers_destination_controller_destinationcontroller",
+      "source": "backend_src_controllers_destination_controller_ts",
+      "target": "controllers_destination_controller_destinationcontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "controllers_destination_controller_destinationcontroller",
+      "_tgt": "controllers_destination_controller_destinationcontroller_list",
+      "source": "controllers_destination_controller_destinationcontroller",
+      "target": "controllers_destination_controller_destinationcontroller_list",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "controllers_destination_controller_destinationcontroller",
+      "_tgt": "controllers_destination_controller_destinationcontroller_getbyid",
+      "source": "controllers_destination_controller_destinationcontroller",
+      "target": "controllers_destination_controller_destinationcontroller_getbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "controllers_destination_controller_destinationcontroller",
+      "_tgt": "controllers_destination_controller_destinationcontroller_create",
+      "source": "controllers_destination_controller_destinationcontroller",
+      "target": "controllers_destination_controller_destinationcontroller_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "controllers_destination_controller_destinationcontroller",
+      "_tgt": "controllers_destination_controller_destinationcontroller_update",
+      "source": "controllers_destination_controller_destinationcontroller",
+      "target": "controllers_destination_controller_destinationcontroller_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\destination.controller.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "controllers_destination_controller_destinationcontroller",
+      "_tgt": "controllers_destination_controller_destinationcontroller_delete",
+      "source": "controllers_destination_controller_destinationcontroller",
+      "target": "controllers_destination_controller_destinationcontroller_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_invoice_controller_ts",
+      "_tgt": "controllers_invoice_controller_invoicecontroller",
+      "source": "backend_src_controllers_invoice_controller_ts",
+      "target": "controllers_invoice_controller_invoicecontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "controllers_invoice_controller_invoicecontroller",
+      "_tgt": "controllers_invoice_controller_invoicecontroller_listbytrip",
+      "source": "controllers_invoice_controller_invoicecontroller",
+      "target": "controllers_invoice_controller_invoicecontroller_listbytrip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "controllers_invoice_controller_invoicecontroller",
+      "_tgt": "controllers_invoice_controller_invoicecontroller_getbyid",
+      "source": "controllers_invoice_controller_invoicecontroller",
+      "target": "controllers_invoice_controller_invoicecontroller_getbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "controllers_invoice_controller_invoicecontroller",
+      "_tgt": "controllers_invoice_controller_invoicecontroller_create",
+      "source": "controllers_invoice_controller_invoicecontroller",
+      "target": "controllers_invoice_controller_invoicecontroller_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "controllers_invoice_controller_invoicecontroller",
+      "_tgt": "controllers_invoice_controller_invoicecontroller_update",
+      "source": "controllers_invoice_controller_invoicecontroller",
+      "target": "controllers_invoice_controller_invoicecontroller_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "controllers_invoice_controller_invoicecontroller",
+      "_tgt": "controllers_invoice_controller_invoicecontroller_delete",
+      "source": "controllers_invoice_controller_invoicecontroller",
+      "target": "controllers_invoice_controller_invoicecontroller_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
       "source_location": "L46",
       "weight": 1.0,
-      "_src": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "_tgt": "controllers_maintenance_request_controller_maintenancerequestcontroller_getbyid",
-      "source": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "target": "controllers_maintenance_request_controller_maintenancerequestcontroller_getbyid",
+      "_src": "controllers_invoice_controller_invoicecontroller",
+      "_tgt": "controllers_invoice_controller_invoicecontroller_additem",
+      "source": "controllers_invoice_controller_invoicecontroller",
+      "target": "controllers_invoice_controller_invoicecontroller_additem",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L70",
+      "source_file": "backend\\src\\controllers\\invoice.controller.ts",
+      "source_location": "L55",
       "weight": 1.0,
-      "_src": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "_tgt": "controllers_maintenance_request_controller_maintenancerequestcontroller_create",
-      "source": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "target": "controllers_maintenance_request_controller_maintenancerequestcontroller_create",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L131",
-      "weight": 1.0,
-      "_src": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "_tgt": "controllers_maintenance_request_controller_maintenancerequestcontroller_update",
-      "source": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "target": "controllers_maintenance_request_controller_maintenancerequestcontroller_update",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L163",
-      "weight": 1.0,
-      "_src": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "_tgt": "controllers_maintenance_request_controller_maintenancerequestcontroller_updatestage",
-      "source": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "target": "controllers_maintenance_request_controller_maintenancerequestcontroller_updatestage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L194",
-      "weight": 1.0,
-      "_src": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "_tgt": "controllers_maintenance_request_controller_maintenancerequestcontroller_delete",
-      "source": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "target": "controllers_maintenance_request_controller_maintenancerequestcontroller_delete",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L218",
-      "weight": 1.0,
-      "_src": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "_tgt": "controllers_maintenance_request_controller_maintenancerequestcontroller_getoverdue",
-      "source": "controllers_maintenance_request_controller_maintenancerequestcontroller",
-      "target": "controllers_maintenance_request_controller_maintenancerequestcontroller_getoverdue",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-request.controller.ts",
-      "source_location": "L76",
-      "weight": 1.0,
-      "_src": "controllers_maintenance_request_controller_maintenancerequestcontroller_create",
-      "_tgt": "controllers_maintenance_request_controller_maintenancerequestcontroller_getbyid",
-      "source": "controllers_maintenance_request_controller_maintenancerequestcontroller_getbyid",
-      "target": "controllers_maintenance_request_controller_maintenancerequestcontroller_create",
+      "_src": "controllers_invoice_controller_invoicecontroller",
+      "_tgt": "controllers_invoice_controller_invoicecontroller_removeitem",
+      "source": "controllers_invoice_controller_invoicecontroller",
+      "target": "controllers_invoice_controller_invoicecontroller_removeitem",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
       "source_location": "L5",
       "weight": 1.0,
-      "_src": "backend_src_controllers_maintenance_team_controller_ts",
-      "_tgt": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "source": "backend_src_controllers_maintenance_team_controller_ts",
-      "target": "controllers_maintenance_team_controller_maintenanceteamcontroller",
+      "_src": "backend_src_controllers_itinerary_controller_ts",
+      "_tgt": "controllers_itinerary_controller_itinerarycontroller",
+      "source": "backend_src_controllers_itinerary_controller_ts",
+      "target": "controllers_itinerary_controller_itinerarycontroller",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L10",
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L6",
       "weight": 1.0,
-      "_src": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "_tgt": "controllers_maintenance_team_controller_maintenanceteamcontroller_getall",
-      "source": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "target": "controllers_maintenance_team_controller_maintenanceteamcontroller_getall",
+      "_src": "controllers_itinerary_controller_itinerarycontroller",
+      "_tgt": "controllers_itinerary_controller_itinerarycontroller_listbytrip",
+      "source": "controllers_itinerary_controller_itinerarycontroller",
+      "target": "controllers_itinerary_controller_itinerarycontroller_listbytrip",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L35",
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L13",
       "weight": 1.0,
-      "_src": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "_tgt": "controllers_maintenance_team_controller_maintenanceteamcontroller_getbyid",
-      "source": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "target": "controllers_maintenance_team_controller_maintenanceteamcontroller_getbyid",
+      "_src": "controllers_itinerary_controller_itinerarycontroller",
+      "_tgt": "controllers_itinerary_controller_itinerarycontroller_getbyid",
+      "source": "controllers_itinerary_controller_itinerarycontroller",
+      "target": "controllers_itinerary_controller_itinerarycontroller_getbyid",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L59",
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L21",
       "weight": 1.0,
-      "_src": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "_tgt": "controllers_maintenance_team_controller_maintenanceteamcontroller_create",
-      "source": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "target": "controllers_maintenance_team_controller_maintenanceteamcontroller_create",
+      "_src": "controllers_itinerary_controller_itinerarycontroller",
+      "_tgt": "controllers_itinerary_controller_itinerarycontroller_create",
+      "source": "controllers_itinerary_controller_itinerarycontroller",
+      "target": "controllers_itinerary_controller_itinerarycontroller_create",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L83",
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L30",
       "weight": 1.0,
-      "_src": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "_tgt": "controllers_maintenance_team_controller_maintenanceteamcontroller_update",
-      "source": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "target": "controllers_maintenance_team_controller_maintenanceteamcontroller_update",
+      "_src": "controllers_itinerary_controller_itinerarycontroller",
+      "_tgt": "controllers_itinerary_controller_itinerarycontroller_update",
+      "source": "controllers_itinerary_controller_itinerarycontroller",
+      "target": "controllers_itinerary_controller_itinerarycontroller_update",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L108",
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L39",
       "weight": 1.0,
-      "_src": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "_tgt": "controllers_maintenance_team_controller_maintenanceteamcontroller_delete",
-      "source": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "target": "controllers_maintenance_team_controller_maintenanceteamcontroller_delete",
+      "_src": "controllers_itinerary_controller_itinerarycontroller",
+      "_tgt": "controllers_itinerary_controller_itinerarycontroller_delete",
+      "source": "controllers_itinerary_controller_itinerarycontroller",
+      "target": "controllers_itinerary_controller_itinerarycontroller_delete",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L132",
+      "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
+      "source_location": "L46",
       "weight": 1.0,
-      "_src": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "_tgt": "controllers_maintenance_team_controller_maintenanceteamcontroller_addmember",
-      "source": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "target": "controllers_maintenance_team_controller_maintenanceteamcontroller_addmember",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\maintenance-team.controller.ts",
-      "source_location": "L163",
-      "weight": 1.0,
-      "_src": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "_tgt": "controllers_maintenance_team_controller_maintenanceteamcontroller_removemember",
-      "source": "controllers_maintenance_team_controller_maintenanceteamcontroller",
-      "target": "controllers_maintenance_team_controller_maintenanceteamcontroller_removemember",
+      "_src": "controllers_itinerary_controller_itinerarycontroller",
+      "_tgt": "controllers_itinerary_controller_itinerarycontroller_reorder",
+      "source": "controllers_itinerary_controller_itinerarycontroller",
+      "target": "controllers_itinerary_controller_itinerarycontroller_reorder",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\user.controller.ts",
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
       "source_location": "L5",
       "weight": 1.0,
-      "_src": "backend_src_controllers_user_controller_ts",
-      "_tgt": "controllers_user_controller_usercontroller",
-      "source": "backend_src_controllers_user_controller_ts",
-      "target": "controllers_user_controller_usercontroller",
+      "_src": "backend_src_controllers_note_controller_ts",
+      "_tgt": "controllers_note_controller_notecontroller",
+      "source": "backend_src_controllers_note_controller_ts",
+      "target": "controllers_note_controller_notecontroller",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\user.controller.ts",
-      "source_location": "L10",
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
+      "source_location": "L6",
       "weight": 1.0,
-      "_src": "controllers_user_controller_usercontroller",
-      "_tgt": "controllers_user_controller_usercontroller_getall",
-      "source": "controllers_user_controller_usercontroller",
-      "target": "controllers_user_controller_usercontroller_getall",
+      "_src": "controllers_note_controller_notecontroller",
+      "_tgt": "controllers_note_controller_notecontroller_listbytrip",
+      "source": "controllers_note_controller_notecontroller",
+      "target": "controllers_note_controller_notecontroller_listbytrip",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\controllers\\user.controller.ts",
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "controllers_note_controller_notecontroller",
+      "_tgt": "controllers_note_controller_notecontroller_getbyid",
+      "source": "controllers_note_controller_notecontroller",
+      "target": "controllers_note_controller_notecontroller_getbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "controllers_note_controller_notecontroller",
+      "_tgt": "controllers_note_controller_notecontroller_create",
+      "source": "controllers_note_controller_notecontroller",
+      "target": "controllers_note_controller_notecontroller_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "controllers_note_controller_notecontroller",
+      "_tgt": "controllers_note_controller_notecontroller_update",
+      "source": "controllers_note_controller_notecontroller",
+      "target": "controllers_note_controller_notecontroller_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\note.controller.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "controllers_note_controller_notecontroller",
+      "_tgt": "controllers_note_controller_notecontroller_delete",
+      "source": "controllers_note_controller_notecontroller",
+      "target": "controllers_note_controller_notecontroller_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_packing_controller_ts",
+      "_tgt": "controllers_packing_controller_packingcontroller",
+      "source": "backend_src_controllers_packing_controller_ts",
+      "target": "controllers_packing_controller_packingcontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "controllers_packing_controller_packingcontroller",
+      "_tgt": "controllers_packing_controller_packingcontroller_listbytrip",
+      "source": "controllers_packing_controller_packingcontroller",
+      "target": "controllers_packing_controller_packingcontroller_listbytrip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "controllers_packing_controller_packingcontroller",
+      "_tgt": "controllers_packing_controller_packingcontroller_create",
+      "source": "controllers_packing_controller_packingcontroller",
+      "target": "controllers_packing_controller_packingcontroller_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "controllers_packing_controller_packingcontroller",
+      "_tgt": "controllers_packing_controller_packingcontroller_update",
+      "source": "controllers_packing_controller_packingcontroller",
+      "target": "controllers_packing_controller_packingcontroller_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_src": "controllers_packing_controller_packingcontroller",
+      "_tgt": "controllers_packing_controller_packingcontroller_togglepacked",
+      "source": "controllers_packing_controller_packingcontroller",
+      "target": "controllers_packing_controller_packingcontroller_togglepacked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L38",
       "weight": 1.0,
-      "_src": "controllers_user_controller_usercontroller",
-      "_tgt": "controllers_user_controller_usercontroller_getbyid",
-      "source": "controllers_user_controller_usercontroller",
-      "target": "controllers_user_controller_usercontroller_getbyid",
+      "_src": "controllers_packing_controller_packingcontroller",
+      "_tgt": "controllers_packing_controller_packingcontroller_delete",
+      "source": "controllers_packing_controller_packingcontroller",
+      "target": "controllers_packing_controller_packingcontroller_delete",
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
+      "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\jobs\\index.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_src": "backend_src_jobs_index_ts",
-      "_tgt": "jobs_index_startoverduecheckjob",
-      "source": "backend_src_jobs_index_ts",
-      "target": "jobs_index_startoverduecheckjob",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\jobs\\index.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "_src": "backend_src_jobs_index_ts",
-      "_tgt": "jobs_index_startpreventivegeneratorjob",
-      "source": "backend_src_jobs_index_ts",
-      "target": "jobs_index_startpreventivegeneratorjob",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\jobs\\index.ts",
-      "source_location": "L43",
-      "weight": 1.0,
-      "_src": "backend_src_jobs_index_ts",
-      "_tgt": "jobs_index_startcronjobs",
-      "source": "backend_src_jobs_index_ts",
-      "target": "jobs_index_startcronjobs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\jobs\\index.ts",
+      "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L45",
       "weight": 1.0,
-      "_src": "jobs_index_startcronjobs",
-      "_tgt": "jobs_index_startoverduecheckjob",
-      "source": "jobs_index_startoverduecheckjob",
-      "target": "jobs_index_startcronjobs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\jobs\\index.ts",
-      "source_location": "L46",
-      "weight": 1.0,
-      "_src": "jobs_index_startcronjobs",
-      "_tgt": "jobs_index_startpreventivegeneratorjob",
-      "source": "jobs_index_startpreventivegeneratorjob",
-      "target": "jobs_index_startcronjobs",
+      "_src": "controllers_packing_controller_packingcontroller",
+      "_tgt": "controllers_packing_controller_packingcontroller_bulkcreate",
+      "source": "controllers_packing_controller_packingcontroller",
+      "target": "controllers_packing_controller_packingcontroller_bulkcreate",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\jobs\\overdue-check.job.ts",
-      "source_location": "L4",
+      "source_file": "backend\\src\\controllers\\profile.controller.ts",
+      "source_location": "L5",
       "weight": 1.0,
-      "_src": "backend_src_jobs_overdue_check_job_ts",
-      "_tgt": "jobs_overdue_check_job_startoverduecheckjob",
-      "source": "backend_src_jobs_overdue_check_job_ts",
-      "target": "jobs_overdue_check_job_startoverduecheckjob",
+      "_src": "backend_src_controllers_profile_controller_ts",
+      "_tgt": "controllers_profile_controller_profilecontroller",
+      "source": "backend_src_controllers_profile_controller_ts",
+      "target": "controllers_profile_controller_profilecontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\profile.controller.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "controllers_profile_controller_profilecontroller",
+      "_tgt": "controllers_profile_controller_profilecontroller_getme",
+      "source": "controllers_profile_controller_profilecontroller",
+      "target": "controllers_profile_controller_profilecontroller_getme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\profile.controller.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "controllers_profile_controller_profilecontroller",
+      "_tgt": "controllers_profile_controller_profilecontroller_updateme",
+      "source": "controllers_profile_controller_profilecontroller",
+      "target": "controllers_profile_controller_profilecontroller_updateme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\profile.controller.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "controllers_profile_controller_profilecontroller",
+      "_tgt": "controllers_profile_controller_profilecontroller_list",
+      "source": "controllers_profile_controller_profilecontroller",
+      "target": "controllers_profile_controller_profilecontroller_list",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\jobs\\preventive-generator.job.ts",
-      "source_location": "L4",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L5",
       "weight": 1.0,
-      "_src": "backend_src_jobs_preventive_generator_job_ts",
-      "_tgt": "jobs_preventive_generator_job_startpreventivegeneratorjob",
-      "source": "backend_src_jobs_preventive_generator_job_ts",
-      "target": "jobs_preventive_generator_job_startpreventivegeneratorjob",
+      "_src": "backend_src_controllers_trip_controller_ts",
+      "_tgt": "controllers_trip_controller_tripcontroller",
+      "source": "backend_src_controllers_trip_controller_ts",
+      "target": "controllers_trip_controller_tripcontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "controllers_trip_controller_tripcontroller",
+      "_tgt": "controllers_trip_controller_tripcontroller_list",
+      "source": "controllers_trip_controller_tripcontroller",
+      "target": "controllers_trip_controller_tripcontroller_list",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "controllers_trip_controller_tripcontroller",
+      "_tgt": "controllers_trip_controller_tripcontroller_getbyid",
+      "source": "controllers_trip_controller_tripcontroller",
+      "target": "controllers_trip_controller_tripcontroller_getbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "controllers_trip_controller_tripcontroller",
+      "_tgt": "controllers_trip_controller_tripcontroller_create",
+      "source": "controllers_trip_controller_tripcontroller",
+      "target": "controllers_trip_controller_tripcontroller_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "controllers_trip_controller_tripcontroller",
+      "_tgt": "controllers_trip_controller_tripcontroller_update",
+      "source": "controllers_trip_controller_tripcontroller",
+      "target": "controllers_trip_controller_tripcontroller_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "controllers_trip_controller_tripcontroller",
+      "_tgt": "controllers_trip_controller_tripcontroller_delete",
+      "source": "controllers_trip_controller_tripcontroller",
+      "target": "controllers_trip_controller_tripcontroller_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\controllers\\trip.controller.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_src": "controllers_trip_controller_tripcontroller",
+      "_tgt": "controllers_trip_controller_tripcontroller_stats",
+      "source": "controllers_trip_controller_tripcontroller",
+      "target": "controllers_trip_controller_tripcontroller_stats",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend\\src\\middleware\\auth.middleware.ts",
-      "source_location": "L12",
+      "source_location": "L26",
       "weight": 1.0,
       "_src": "backend_src_middleware_auth_middleware_ts",
       "_tgt": "middleware_auth_middleware_authenticate",
@@ -2649,25 +3483,13 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend\\src\\middleware\\auth.middleware.ts",
-      "source_location": "L52",
+      "source_location": "L76",
       "weight": 1.0,
       "_src": "backend_src_middleware_auth_middleware_ts",
       "_tgt": "middleware_auth_middleware_authorize",
       "source": "backend_src_middleware_auth_middleware_ts",
       "target": "middleware_auth_middleware_authorize",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "backend\\src\\middleware\\auth.middleware.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "_src": "middleware_auth_middleware_authenticate",
-      "_tgt": "utils_jwt_verifytoken",
-      "source": "middleware_auth_middleware_authenticate",
-      "target": "utils_jwt_verifytoken"
     },
     {
       "relation": "contains",
@@ -2744,313 +3566,769 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
+      "source_file": "backend\\src\\services\\activity.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_services_activity_service_ts",
+      "_tgt": "services_activity_service_activityservice",
+      "source": "backend_src_services_activity_service_ts",
+      "target": "services_activity_service_activityservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\activity.service.ts",
       "source_location": "L5",
       "weight": 1.0,
-      "_src": "backend_src_services_equipment_service_ts",
-      "_tgt": "services_equipment_service_equipmentservice",
-      "source": "backend_src_services_equipment_service_ts",
-      "target": "services_equipment_service_equipmentservice",
+      "_src": "services_activity_service_activityservice",
+      "_tgt": "services_activity_service_activityservice_list",
+      "source": "services_activity_service_activityservice",
+      "target": "services_activity_service_activityservice_list",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
-      "source_location": "L9",
+      "source_file": "backend\\src\\services\\activity.service.ts",
+      "source_location": "L24",
       "weight": 1.0,
-      "_src": "services_equipment_service_equipmentservice",
-      "_tgt": "services_equipment_service_equipmentservice_getall",
-      "source": "services_equipment_service_equipmentservice",
-      "target": "services_equipment_service_equipmentservice_getall",
+      "_src": "services_activity_service_activityservice",
+      "_tgt": "services_activity_service_activityservice_getbyid",
+      "source": "services_activity_service_activityservice",
+      "target": "services_activity_service_activityservice_getbyid",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
-      "source_location": "L47",
+      "source_file": "backend\\src\\services\\activity.service.ts",
+      "source_location": "L34",
       "weight": 1.0,
-      "_src": "services_equipment_service_equipmentservice",
-      "_tgt": "services_equipment_service_equipmentservice_getbyid",
-      "source": "services_equipment_service_equipmentservice",
-      "target": "services_equipment_service_equipmentservice_getbyid",
+      "_src": "services_activity_service_activityservice",
+      "_tgt": "services_activity_service_activityservice_create",
+      "source": "services_activity_service_activityservice",
+      "target": "services_activity_service_activityservice_create",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
-      "source_location": "L70",
+      "source_file": "backend\\src\\services\\activity.service.ts",
+      "source_location": "L44",
       "weight": 1.0,
-      "_src": "services_equipment_service_equipmentservice",
-      "_tgt": "services_equipment_service_equipmentservice_create",
-      "source": "services_equipment_service_equipmentservice",
-      "target": "services_equipment_service_equipmentservice_create",
+      "_src": "services_activity_service_activityservice",
+      "_tgt": "services_activity_service_activityservice_update",
+      "source": "services_activity_service_activityservice",
+      "target": "services_activity_service_activityservice_update",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
+      "source_file": "backend\\src\\services\\activity.service.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "services_activity_service_activityservice",
+      "_tgt": "services_activity_service_activityservice_delete",
+      "source": "services_activity_service_activityservice",
+      "target": "services_activity_service_activityservice_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\community.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_services_community_service_ts",
+      "_tgt": "services_community_service_communityservice",
+      "source": "backend_src_services_community_service_ts",
+      "target": "services_community_service_communityservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\community.service.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "services_community_service_communityservice",
+      "_tgt": "services_community_service_communityservice_list",
+      "source": "services_community_service_communityservice",
+      "target": "services_community_service_communityservice_list",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\community.service.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "services_community_service_communityservice",
+      "_tgt": "services_community_service_communityservice_getbyid",
+      "source": "services_community_service_communityservice",
+      "target": "services_community_service_communityservice_getbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\community.service.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "services_community_service_communityservice",
+      "_tgt": "services_community_service_communityservice_create",
+      "source": "services_community_service_communityservice",
+      "target": "services_community_service_communityservice_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\community.service.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_src": "services_community_service_communityservice",
+      "_tgt": "services_community_service_communityservice_delete",
+      "source": "services_community_service_communityservice",
+      "target": "services_community_service_communityservice_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\destination.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_services_destination_service_ts",
+      "_tgt": "services_destination_service_destinationservice",
+      "source": "backend_src_services_destination_service_ts",
+      "target": "services_destination_service_destinationservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\destination.service.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "services_destination_service_destinationservice",
+      "_tgt": "services_destination_service_destinationservice_list",
+      "source": "services_destination_service_destinationservice",
+      "target": "services_destination_service_destinationservice_list",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\destination.service.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "services_destination_service_destinationservice",
+      "_tgt": "services_destination_service_destinationservice_getbyid",
+      "source": "services_destination_service_destinationservice",
+      "target": "services_destination_service_destinationservice_getbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\destination.service.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "services_destination_service_destinationservice",
+      "_tgt": "services_destination_service_destinationservice_create",
+      "source": "services_destination_service_destinationservice",
+      "target": "services_destination_service_destinationservice_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\destination.service.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_src": "services_destination_service_destinationservice",
+      "_tgt": "services_destination_service_destinationservice_update",
+      "source": "services_destination_service_destinationservice",
+      "target": "services_destination_service_destinationservice_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\destination.service.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "services_destination_service_destinationservice",
+      "_tgt": "services_destination_service_destinationservice_delete",
+      "source": "services_destination_service_destinationservice",
+      "target": "services_destination_service_destinationservice_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_services_invoice_service_ts",
+      "_tgt": "services_invoice_service_invoiceservice",
+      "source": "backend_src_services_invoice_service_ts",
+      "target": "services_invoice_service_invoiceservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "services_invoice_service_invoiceservice",
+      "_tgt": "services_invoice_service_invoiceservice_listbytrip",
+      "source": "services_invoice_service_invoiceservice",
+      "target": "services_invoice_service_invoiceservice_listbytrip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "services_invoice_service_invoiceservice",
+      "_tgt": "services_invoice_service_invoiceservice_getbyid",
+      "source": "services_invoice_service_invoiceservice",
+      "target": "services_invoice_service_invoiceservice_getbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "services_invoice_service_invoiceservice",
+      "_tgt": "services_invoice_service_invoiceservice_create",
+      "source": "services_invoice_service_invoiceservice",
+      "target": "services_invoice_service_invoiceservice_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_src": "services_invoice_service_invoiceservice",
+      "_tgt": "services_invoice_service_invoiceservice_update",
+      "source": "services_invoice_service_invoiceservice",
+      "target": "services_invoice_service_invoiceservice_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_src": "services_invoice_service_invoiceservice",
+      "_tgt": "services_invoice_service_invoiceservice_delete",
+      "source": "services_invoice_service_invoiceservice",
+      "target": "services_invoice_service_invoiceservice_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_src": "services_invoice_service_invoiceservice",
+      "_tgt": "services_invoice_service_invoiceservice_additem",
+      "source": "services_invoice_service_invoiceservice",
+      "target": "services_invoice_service_invoiceservice_additem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_src": "services_invoice_service_invoiceservice",
+      "_tgt": "services_invoice_service_invoiceservice_removeitem",
+      "source": "services_invoice_service_invoiceservice",
+      "target": "services_invoice_service_invoiceservice_removeitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_src": "services_invoice_service_invoiceservice",
+      "_tgt": "services_invoice_service_invoiceservice_recalculatetotal",
+      "source": "services_invoice_service_invoiceservice",
+      "target": "services_invoice_service_invoiceservice_recalculatetotal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_src": "services_invoice_service_invoiceservice_recalculatetotal",
+      "_tgt": "services_invoice_service_invoiceservice_update",
+      "source": "services_invoice_service_invoiceservice_update",
+      "target": "services_invoice_service_invoiceservice_recalculatetotal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_src": "services_invoice_service_invoiceservice_removeitem",
+      "_tgt": "services_invoice_service_invoiceservice_delete",
+      "source": "services_invoice_service_invoiceservice_delete",
+      "target": "services_invoice_service_invoiceservice_removeitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_src": "services_invoice_service_invoiceservice_additem",
+      "_tgt": "services_invoice_service_invoiceservice_recalculatetotal",
+      "source": "services_invoice_service_invoiceservice_additem",
+      "target": "services_invoice_service_invoiceservice_recalculatetotal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\invoice.service.ts",
       "source_location": "L94",
       "weight": 1.0,
-      "_src": "services_equipment_service_equipmentservice",
-      "_tgt": "services_equipment_service_equipmentservice_update",
-      "source": "services_equipment_service_equipmentservice",
-      "target": "services_equipment_service_equipmentservice_update",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
-      "source_location": "L123",
-      "weight": 1.0,
-      "_src": "services_equipment_service_equipmentservice",
-      "_tgt": "services_equipment_service_equipmentservice_delete",
-      "source": "services_equipment_service_equipmentservice",
-      "target": "services_equipment_service_equipmentservice_delete",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\equipment.service.ts",
-      "source_location": "L146",
-      "weight": 1.0,
-      "_src": "services_equipment_service_equipmentservice",
-      "_tgt": "services_equipment_service_equipmentservice_getopenrequestscount",
-      "source": "services_equipment_service_equipmentservice",
-      "target": "services_equipment_service_equipmentservice_getopenrequestscount",
+      "_src": "services_invoice_service_invoiceservice_removeitem",
+      "_tgt": "services_invoice_service_invoiceservice_recalculatetotal",
+      "source": "services_invoice_service_invoiceservice_removeitem",
+      "target": "services_invoice_service_invoiceservice_recalculatetotal",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L5",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L4",
       "weight": 1.0,
-      "_src": "backend_src_services_maintenance_request_service_ts",
-      "_tgt": "services_maintenance_request_service_maintenancerequestservice",
-      "source": "backend_src_services_maintenance_request_service_ts",
-      "target": "services_maintenance_request_service_maintenancerequestservice",
+      "_src": "backend_src_services_itinerary_service_ts",
+      "_tgt": "services_itinerary_service_itineraryservice",
+      "source": "backend_src_services_itinerary_service_ts",
+      "target": "services_itinerary_service_itineraryservice",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L9",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L6",
       "weight": 1.0,
-      "_src": "services_maintenance_request_service_maintenancerequestservice",
-      "_tgt": "services_maintenance_request_service_maintenancerequestservice_getall",
-      "source": "services_maintenance_request_service_maintenancerequestservice",
-      "target": "services_maintenance_request_service_maintenancerequestservice_getall",
+      "_src": "services_itinerary_service_itineraryservice",
+      "_tgt": "services_itinerary_service_itineraryservice_listbytrip",
+      "source": "services_itinerary_service_itineraryservice",
+      "target": "services_itinerary_service_itineraryservice_listbytrip",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L74",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L17",
       "weight": 1.0,
-      "_src": "services_maintenance_request_service_maintenancerequestservice",
-      "_tgt": "services_maintenance_request_service_maintenancerequestservice_getbyid",
-      "source": "services_maintenance_request_service_maintenancerequestservice",
-      "target": "services_maintenance_request_service_maintenancerequestservice_getbyid",
+      "_src": "services_itinerary_service_itineraryservice",
+      "_tgt": "services_itinerary_service_itineraryservice_getbyid",
+      "source": "services_itinerary_service_itineraryservice",
+      "target": "services_itinerary_service_itineraryservice_getbyid",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L109",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L27",
       "weight": 1.0,
-      "_src": "services_maintenance_request_service_maintenancerequestservice",
-      "_tgt": "services_maintenance_request_service_maintenancerequestservice_create",
-      "source": "services_maintenance_request_service_maintenancerequestservice",
-      "target": "services_maintenance_request_service_maintenancerequestservice_create",
+      "_src": "services_itinerary_service_itineraryservice",
+      "_tgt": "services_itinerary_service_itineraryservice_create",
+      "source": "services_itinerary_service_itineraryservice",
+      "target": "services_itinerary_service_itineraryservice_create",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L141",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L37",
       "weight": 1.0,
-      "_src": "services_maintenance_request_service_maintenancerequestservice",
-      "_tgt": "services_maintenance_request_service_maintenancerequestservice_update",
-      "source": "services_maintenance_request_service_maintenancerequestservice",
-      "target": "services_maintenance_request_service_maintenancerequestservice_update",
+      "_src": "services_itinerary_service_itineraryservice",
+      "_tgt": "services_itinerary_service_itineraryservice_update",
+      "source": "services_itinerary_service_itineraryservice",
+      "target": "services_itinerary_service_itineraryservice_update",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L177",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L48",
       "weight": 1.0,
-      "_src": "services_maintenance_request_service_maintenancerequestservice",
-      "_tgt": "services_maintenance_request_service_maintenancerequestservice_delete",
-      "source": "services_maintenance_request_service_maintenancerequestservice",
-      "target": "services_maintenance_request_service_maintenancerequestservice_delete",
+      "_src": "services_itinerary_service_itineraryservice",
+      "_tgt": "services_itinerary_service_itineraryservice_delete",
+      "source": "services_itinerary_service_itineraryservice",
+      "target": "services_itinerary_service_itineraryservice_delete",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L200",
+      "source_file": "backend\\src\\services\\itinerary.service.ts",
+      "source_location": "L57",
       "weight": 1.0,
-      "_src": "services_maintenance_request_service_maintenancerequestservice",
-      "_tgt": "services_maintenance_request_service_maintenancerequestservice_getoverdue",
-      "source": "services_maintenance_request_service_maintenancerequestservice",
-      "target": "services_maintenance_request_service_maintenancerequestservice_getoverdue",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L207",
-      "weight": 1.0,
-      "_src": "services_maintenance_request_service_maintenancerequestservice",
-      "_tgt": "services_maintenance_request_service_maintenancerequestservice_updatestage",
-      "source": "services_maintenance_request_service_maintenancerequestservice",
-      "target": "services_maintenance_request_service_maintenancerequestservice_updatestage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L201",
-      "weight": 1.0,
-      "_src": "services_maintenance_request_service_maintenancerequestservice_getoverdue",
-      "_tgt": "services_maintenance_request_service_maintenancerequestservice_getall",
-      "source": "services_maintenance_request_service_maintenancerequestservice_getall",
-      "target": "services_maintenance_request_service_maintenancerequestservice_getoverdue",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-request.service.ts",
-      "source_location": "L208",
-      "weight": 1.0,
-      "_src": "services_maintenance_request_service_maintenancerequestservice_updatestage",
-      "_tgt": "services_maintenance_request_service_maintenancerequestservice_update",
-      "source": "services_maintenance_request_service_maintenancerequestservice_update",
-      "target": "services_maintenance_request_service_maintenancerequestservice_updatestage",
+      "_src": "services_itinerary_service_itineraryservice",
+      "_tgt": "services_itinerary_service_itineraryservice_reorder",
+      "source": "services_itinerary_service_itineraryservice",
+      "target": "services_itinerary_service_itineraryservice_reorder",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_services_note_service_ts",
+      "_tgt": "services_note_service_noteservice",
+      "source": "backend_src_services_note_service_ts",
+      "target": "services_note_service_noteservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\note.service.ts",
       "source_location": "L5",
       "weight": 1.0,
-      "_src": "backend_src_services_maintenance_team_service_ts",
-      "_tgt": "services_maintenance_team_service_maintenanceteamservice",
-      "source": "backend_src_services_maintenance_team_service_ts",
-      "target": "services_maintenance_team_service_maintenanceteamservice",
+      "_src": "services_note_service_noteservice",
+      "_tgt": "services_note_service_noteservice_listbytrip",
+      "source": "services_note_service_noteservice",
+      "target": "services_note_service_noteservice_listbytrip",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L9",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L15",
       "weight": 1.0,
-      "_src": "services_maintenance_team_service_maintenanceteamservice",
-      "_tgt": "services_maintenance_team_service_maintenanceteamservice_getall",
-      "source": "services_maintenance_team_service_maintenanceteamservice",
-      "target": "services_maintenance_team_service_maintenanceteamservice_getall",
+      "_src": "services_note_service_noteservice",
+      "_tgt": "services_note_service_noteservice_getbyid",
+      "source": "services_note_service_noteservice",
+      "target": "services_note_service_noteservice_getbyid",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L50",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L25",
       "weight": 1.0,
-      "_src": "services_maintenance_team_service_maintenanceteamservice",
-      "_tgt": "services_maintenance_team_service_maintenanceteamservice_getbyid",
-      "source": "services_maintenance_team_service_maintenanceteamservice",
-      "target": "services_maintenance_team_service_maintenanceteamservice_getbyid",
+      "_src": "services_note_service_noteservice",
+      "_tgt": "services_note_service_noteservice_create",
+      "source": "services_note_service_noteservice",
+      "target": "services_note_service_noteservice_create",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L86",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L35",
       "weight": 1.0,
-      "_src": "services_maintenance_team_service_maintenanceteamservice",
-      "_tgt": "services_maintenance_team_service_maintenanceteamservice_create",
-      "source": "services_maintenance_team_service_maintenanceteamservice",
-      "target": "services_maintenance_team_service_maintenanceteamservice_create",
+      "_src": "services_note_service_noteservice",
+      "_tgt": "services_note_service_noteservice_update",
+      "source": "services_note_service_noteservice",
+      "target": "services_note_service_noteservice_update",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L110",
+      "source_file": "backend\\src\\services\\note.service.ts",
+      "source_location": "L46",
       "weight": 1.0,
-      "_src": "services_maintenance_team_service_maintenanceteamservice",
-      "_tgt": "services_maintenance_team_service_maintenanceteamservice_update",
-      "source": "services_maintenance_team_service_maintenanceteamservice",
-      "target": "services_maintenance_team_service_maintenanceteamservice_update",
+      "_src": "services_note_service_noteservice",
+      "_tgt": "services_note_service_noteservice_delete",
+      "source": "services_note_service_noteservice",
+      "target": "services_note_service_noteservice_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_services_packing_service_ts",
+      "_tgt": "services_packing_service_packingservice",
+      "source": "backend_src_services_packing_service_ts",
+      "target": "services_packing_service_packingservice",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L135",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L5",
       "weight": 1.0,
-      "_src": "services_maintenance_team_service_maintenanceteamservice",
-      "_tgt": "services_maintenance_team_service_maintenanceteamservice_delete",
-      "source": "services_maintenance_team_service_maintenanceteamservice",
-      "target": "services_maintenance_team_service_maintenanceteamservice_delete",
+      "_src": "services_packing_service_packingservice",
+      "_tgt": "services_packing_service_packingservice_listbytrip",
+      "source": "services_packing_service_packingservice",
+      "target": "services_packing_service_packingservice_listbytrip",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L158",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L16",
       "weight": 1.0,
-      "_src": "services_maintenance_team_service_maintenanceteamservice",
-      "_tgt": "services_maintenance_team_service_maintenanceteamservice_addmember",
-      "source": "services_maintenance_team_service_maintenanceteamservice",
-      "target": "services_maintenance_team_service_maintenanceteamservice_addmember",
+      "_src": "services_packing_service_packingservice",
+      "_tgt": "services_packing_service_packingservice_create",
+      "source": "services_packing_service_packingservice",
+      "target": "services_packing_service_packingservice_create",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L186",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L26",
       "weight": 1.0,
-      "_src": "services_maintenance_team_service_maintenanceteamservice",
-      "_tgt": "services_maintenance_team_service_maintenanceteamservice_removemember",
-      "source": "services_maintenance_team_service_maintenanceteamservice",
-      "target": "services_maintenance_team_service_maintenanceteamservice_removemember",
+      "_src": "services_packing_service_packingservice",
+      "_tgt": "services_packing_service_packingservice_update",
+      "source": "services_packing_service_packingservice",
+      "target": "services_packing_service_packingservice_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "services_packing_service_packingservice",
+      "_tgt": "services_packing_service_packingservice_delete",
+      "source": "services_packing_service_packingservice",
+      "target": "services_packing_service_packingservice_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "services_packing_service_packingservice",
+      "_tgt": "services_packing_service_packingservice_togglepacked",
+      "source": "services_packing_service_packingservice",
+      "target": "services_packing_service_packingservice_togglepacked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_src": "services_packing_service_packingservice",
+      "_tgt": "services_packing_service_packingservice_bulkcreate",
+      "source": "services_packing_service_packingservice",
+      "target": "services_packing_service_packingservice_bulkcreate",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\services\\maintenance-team.service.ts",
-      "source_location": "L188",
+      "source_file": "backend\\src\\services\\packing.service.ts",
+      "source_location": "L55",
       "weight": 1.0,
-      "_src": "services_maintenance_team_service_maintenanceteamservice_removemember",
-      "_tgt": "services_maintenance_team_service_maintenanceteamservice_delete",
-      "source": "services_maintenance_team_service_maintenanceteamservice_delete",
-      "target": "services_maintenance_team_service_maintenanceteamservice_removemember",
+      "_src": "services_packing_service_packingservice_togglepacked",
+      "_tgt": "services_packing_service_packingservice_update",
+      "source": "services_packing_service_packingservice_update",
+      "target": "services_packing_service_packingservice_togglepacked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\profile.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_services_profile_service_ts",
+      "_tgt": "services_profile_service_profileservice",
+      "source": "backend_src_services_profile_service_ts",
+      "target": "services_profile_service_profileservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\profile.service.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "services_profile_service_profileservice",
+      "_tgt": "services_profile_service_profileservice_getbyid",
+      "source": "services_profile_service_profileservice",
+      "target": "services_profile_service_profileservice_getbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\profile.service.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "services_profile_service_profileservice",
+      "_tgt": "services_profile_service_profileservice_upsert",
+      "source": "services_profile_service_profileservice",
+      "target": "services_profile_service_profileservice_upsert",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\profile.service.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "services_profile_service_profileservice",
+      "_tgt": "services_profile_service_profileservice_update",
+      "source": "services_profile_service_profileservice",
+      "target": "services_profile_service_profileservice_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\profile.service.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "services_profile_service_profileservice",
+      "_tgt": "services_profile_service_profileservice_list",
+      "source": "services_profile_service_profileservice",
+      "target": "services_profile_service_profileservice_list",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_services_trip_service_ts",
+      "_tgt": "services_trip_service_tripservice",
+      "source": "backend_src_services_trip_service_ts",
+      "target": "services_trip_service_tripservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "services_trip_service_tripservice",
+      "_tgt": "services_trip_service_tripservice_listbyowner",
+      "source": "services_trip_service_tripservice",
+      "target": "services_trip_service_tripservice_listbyowner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "services_trip_service_tripservice",
+      "_tgt": "services_trip_service_tripservice_getbyid",
+      "source": "services_trip_service_tripservice",
+      "target": "services_trip_service_tripservice_getbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "services_trip_service_tripservice",
+      "_tgt": "services_trip_service_tripservice_getbyidadmin",
+      "source": "services_trip_service_tripservice",
+      "target": "services_trip_service_tripservice_getbyidadmin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_src": "services_trip_service_tripservice",
+      "_tgt": "services_trip_service_tripservice_create",
+      "source": "services_trip_service_tripservice",
+      "target": "services_trip_service_tripservice_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_src": "services_trip_service_tripservice",
+      "_tgt": "services_trip_service_tripservice_update",
+      "source": "services_trip_service_tripservice",
+      "target": "services_trip_service_tripservice_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_src": "services_trip_service_tripservice",
+      "_tgt": "services_trip_service_tripservice_delete",
+      "source": "services_trip_service_tripservice",
+      "target": "services_trip_service_tripservice_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\services\\trip.service.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_src": "services_trip_service_tripservice",
+      "_tgt": "services_trip_service_tripservice_getstats",
+      "source": "services_trip_service_tripservice",
+      "target": "services_trip_service_tripservice_getstats",
       "confidence_score": 1.0
     },
     {
@@ -3108,82 +4386,10 @@
       "source_file": "frontend\\src\\pages\\CalendarView.tsx",
       "source_location": "L171",
       "weight": 1.0,
-      "_src": "pages_calendarview_getdaterange",
-      "_tgt": "utils_dateutils_adddays",
+      "_src": "utils_dateutils_adddays",
+      "_tgt": "pages_calendarview_getdaterange",
       "source": "utils_dateutils_adddays",
       "target": "pages_calendarview_getdaterange"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\utils\\encryption.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_src": "backend_src_utils_encryption_ts",
-      "_tgt": "utils_encryption_hashpassword",
-      "source": "backend_src_utils_encryption_ts",
-      "target": "utils_encryption_hashpassword",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\utils\\encryption.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_src": "backend_src_utils_encryption_ts",
-      "_tgt": "utils_encryption_comparepassword",
-      "source": "backend_src_utils_encryption_ts",
-      "target": "utils_encryption_comparepassword",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\utils\\jwt.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_src": "backend_src_utils_jwt_ts",
-      "_tgt": "utils_jwt_generatetoken",
-      "source": "backend_src_utils_jwt_ts",
-      "target": "utils_jwt_generatetoken",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\utils\\jwt.ts",
-      "source_location": "L17",
-      "weight": 1.0,
-      "_src": "backend_src_utils_jwt_ts",
-      "_tgt": "utils_jwt_generaterefreshtoken",
-      "source": "backend_src_utils_jwt_ts",
-      "target": "utils_jwt_generaterefreshtoken",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\utils\\jwt.ts",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_src": "backend_src_utils_jwt_ts",
-      "_tgt": "utils_jwt_verifytoken",
-      "source": "backend_src_utils_jwt_ts",
-      "target": "utils_jwt_verifytoken",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "backend\\src\\utils\\jwt.ts",
-      "source_location": "L27",
-      "weight": 1.0,
-      "_src": "backend_src_utils_jwt_ts",
-      "_tgt": "utils_jwt_verifyrefreshtoken",
-      "source": "backend_src_utils_jwt_ts",
-      "target": "utils_jwt_verifyrefreshtoken",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
