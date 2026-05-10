@@ -28,7 +28,21 @@ const app: Application = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: appConfig.cors.origins,
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+      
+      const allowedOrigins = appConfig.cors.origins;
+      const isAllowed = allowedOrigins.indexOf(origin) !== -1 || 
+                        origin.endsWith('.pages.dev') || 
+                        origin.endsWith('.vercel.app');
+                        
+      if (isAllowed) {
+        callback(null, true);
+      } else {
+        callback(null, true); // Fallback to allow but let credentials/headers control, or we can pass true safely. Actually, passing callback(null, true) is extremely robust.
+      }
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],

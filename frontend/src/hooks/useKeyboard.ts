@@ -11,6 +11,8 @@ type KeyCombo = {
 export function useKeyboard(combo: KeyCombo, callback: (e: KeyboardEvent) => void) {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (!event.key || !combo.key) return;
+
       const match =
         event.key.toLowerCase() === combo.key.toLowerCase() &&
         (combo.ctrlKey === undefined || event.ctrlKey === combo.ctrlKey) &&
