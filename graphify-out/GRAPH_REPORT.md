@@ -1,7 +1,7 @@
 # Graph Report - travel  (2026-05-11)
 
 ## Corpus Check
-- 120 files · ~43,277 words
+- 120 files · ~277,994 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
