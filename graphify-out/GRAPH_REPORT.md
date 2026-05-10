@@ -1,285 +1,138 @@
-# Traveloop Knowledge Graph Report
+# Graph Report - travel  (2026-05-10)
 
-**Date Generated**: 2025-05-10 | **Corpus**: Traveloop Travel Planning Platform (Full-Stack System)
+## Corpus Check
+- 97 files · ~24,809 words
+- Verdict: corpus is large enough that graph structure adds value.
 
----
+## Summary
+- 244 nodes · 159 edges · 14 communities detected
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.8)
+- Token cost: 0 input · 0 output
 
-## Executive Summary
+## Community Hubs (Navigation)
+- [[_COMMUNITY_Community 0|Community 0]]
+- [[_COMMUNITY_Community 1|Community 1]]
+- [[_COMMUNITY_Community 2|Community 2]]
+- [[_COMMUNITY_Community 3|Community 3]]
+- [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
+- [[_COMMUNITY_Community 6|Community 6]]
+- [[_COMMUNITY_Community 7|Community 7]]
+- [[_COMMUNITY_Community 11|Community 11]]
+- [[_COMMUNITY_Community 12|Community 12]]
+- [[_COMMUNITY_Community 13|Community 13]]
+- [[_COMMUNITY_Community 14|Community 14]]
+- [[_COMMUNITY_Community 15|Community 15]]
+- [[_COMMUNITY_Community 22|Community 22]]
 
-**Graph Statistics**:
-- **Nodes**: 39 major components across Frontend and Backend
-- **Edges**: 57 relationships (42 EXTRACTED, 13 INFERRED, 2 cross-cutting)
-- **Communities**: 2 major clusters (Frontend: 13 nodes, Backend: 26 nodes)
-- **Cohesion**: Frontend (0.89), Backend (0.92)
+## God Nodes (most connected - your core abstractions)
+1. `MaintenanceRequestController` - 8 edges
+2. `MaintenanceTeamController` - 8 edges
+3. `MaintenanceRequestService` - 8 edges
+4. `MaintenanceTeamService` - 8 edges
+5. `EquipmentService` - 7 edges
+6. `EquipmentController` - 6 edges
+7. `UserController` - 3 edges
+8. `startCronJobs()` - 3 edges
+9. `connectDatabase()` - 2 edges
+10. `testConnection()` - 2 edges
 
-Traveloop is a **monorepo-based travel planning platform** with clear separation between React-powered frontend and Node.js/Express backend. The architecture follows an **MVC pattern** with structured database access.
+## Surprising Connections (you probably didn't know these)
+- `connectDatabase()` --calls--> `testConnection()`  [INFERRED]
+  backend\src\config\database.ts → backend\src\config\supabase.ts
+- `authenticate()` --calls--> `verifyToken()`  [INFERRED]
+  backend\src\middleware\auth.middleware.ts → backend\src\utils\jwt.ts
+- `getDateRange()` --calls--> `addDays()`  [INFERRED]
+  frontend\src\pages\CalendarView.tsx → backend\src\utils\dateUtils.ts
 
----
+## Communities
 
-## System Architecture
+### Community 0 - "Community 0"
+Cohesion: 0.14
+Nodes (2): getDateRange(), addDays()
 
-### Community 0: Frontend Layer (React + TypeScript)
-**Responsibility**: User Interface, State Management, API Communication
+### Community 1 - "Community 1"
+Cohesion: 0.25
+Nodes (1): MaintenanceRequestController
 
-**Core Components**:
-1. **React Application** (frontend/) - Vite-bundled React 18.2 with TypeScript
-2. **Context API** - AuthContext, AppContext for global state
-3. **Pages** - 12 major feature pages (Kanban, Calendar, Dashboard, etc.)
-4. **Services** - API client, equipment, requests, teams, users, reports
-5. **Components** - UI library, Layout, Protected routes
+### Community 2 - "Community 2"
+Cohesion: 0.22
+Nodes (1): MaintenanceTeamController
 
-**Key Technologies**:
-- Framework: React 18.2 + TypeScript
-- Build: Vite 5.0 (fast dev server, optimized builds)
-- Styling: Tailwind CSS 3.3
-- Routing: React Router 6
-- State: Context API (simpler than Redux for this scale)
+### Community 3 - "Community 3"
+Cohesion: 0.28
+Nodes (1): MaintenanceRequestService
 
-**Port**: 5173 (development)
+### Community 4 - "Community 4"
+Cohesion: 0.25
+Nodes (1): MaintenanceTeamService
 
-### Community 1: Backend Layer (Node.js + Express)
-**Responsibility**: Business Logic, Data Persistence, Automation, Security
+### Community 5 - "Community 5"
+Cohesion: 0.25
+Nodes (1): EquipmentService
 
-**Core Components**:
-1. **Express Server** (app.ts) - REST API orchestrator
-2. **Services** - Maintenance request, Equipment, Team, User services
-3. **Routes** - API endpoints for all resources
-4. **Database** - PostgreSQL + Prisma ORM
-5. **Middleware** - Authentication, validation, error handling, CORS
-6. **Jobs** - Cron jobs for overdue checks and preventive maintenance generation
-7. **Utils** - JWT, encryption, date utilities
+### Community 6 - "Community 6"
+Cohesion: 0.25
+Nodes (2): authenticate(), verifyToken()
 
-**Key Technologies**:
-- Runtime: Node.js 20+
-- Framework: Express.js 4.18 (lightweight, battle-tested)
-- Database: PostgreSQL 15
-- ORM: Prisma 5.7 (type-safe, excellent migrations)
-- Auth: JWT + bcrypt (stateless, scalable)
+### Community 7 - "Community 7"
+Cohesion: 0.29
+Nodes (1): EquipmentController
 
-**Port**: 3000 (default)
+### Community 11 - "Community 11"
+Cohesion: 0.5
+Nodes (2): handleEmailSignUp(), validatePassword()
 
----
+### Community 12 - "Community 12"
+Cohesion: 0.5
+Nodes (2): connectDatabase(), testConnection()
 
-## Critical Flows
+### Community 13 - "Community 13"
+Cohesion: 0.5
+Nodes (1): UserController
 
-### 1. **Authentication Flow**
-```
-Login Page → Auth Service → API Client → Backend/auth routes
-    ↓                                        ↓
-React Form Submission    JWT Validation   Database Query
-    ↓                                        ↓
-AuthContext (Global)  ← JWT Token ← bcrypt Password Verification
-    ↓
-Protected Routes (Authorization Guard)
-```
+### Community 14 - "Community 14"
+Cohesion: 0.83
+Nodes (3): startCronJobs(), startOverdueCheckJob(), startPreventiveGeneratorJob()
 
-**Security Implementation**:
-- `AuthContext.tsx` - Frontend state for logged-in user
-- `auth.middleware.ts` - Backend JWT verification on every request
-- `auth.validator.ts` - Input validation (email, password)
-- `role-based-access` - RBAC matrix (ADMIN, MANAGER, TECHNICIAN)
+### Community 15 - "Community 15"
+Cohesion: 0.5
+Nodes (1): AppError
 
-### 2. **Maintenance Request Management**
-```
-Kanban/Calendar Views → Request Service → API → Backend Routes
-        ↓                                       ↓
-User Drag-Drop      Request Validator   Request Service
-        ↓                                       ↓
-State Update        Input Validation    Database Operation
-        ↓                                       ↓
-Optimistic Render         Success       Request Object (CRUD)
-```
+### Community 22 - "Community 22"
+Cohesion: 1.0
+Nodes (2): getInitials(), UserMenuDropdown()
 
-**State Machine** (enforced in backend):
-```
-NEW → IN_PROGRESS → REPAIRED/SCRAP
-```
-- No backward transitions
-- Duration tracking required before completion
-- SCRAP moves equipment to UNUSABLE state
-
-### 3. **Cron Job Automation**
-```
-Midnight (UTC)              Monday 8:00 AM
-        ↓                          ↓
-   overdue-check.job        preventive-generator.job
-        ↓                          ↓
-Query overdue requests   Auto-create preventive tasks
-        ↓                          ↓
-Flag in Dashboard       Calendar populated
-```
-
----
-
-## God Nodes (Most Connected)
-
-These 5 nodes bridge the most domains and represent architectural bottlenecks:
-
-| Node | Degree | Bridges | Role |
-|------|--------|---------|------|
-| **Backend (Express)** | 8 in/out | API Layer | Core orchestrator for all business logic |
-| **Database (PostgreSQL)** | 8 in/out | Persistence Layer | Single source of truth for all data |
-| **API Client Service** | 7 in/out | Frontend-Backend Bridge | All frontend-backend communication flows through here |
-| **Request Management Service** | 6 in/out | Business Logic Hub | Central domain service for maintenance workflows |
-| **Auth System** | 6 in/out | Security Layer | Guards all authenticated endpoints |
-
-**Implication**: The backend is tightly coupled to the database and request management. Scaling requires careful coordination of these three components.
-
----
-
-## Surprising Connections
-
-### 1. **Frontend Pages → Request Management** (Unexpected Coupling)
-- Kanban, Calendar, Reports all fetch from the same `maintenance-request.service.ts`
-- **Finding**: High cohesion BUT risk of bottleneck if request service grows
-- **Recommendation**: Consider event-driven architecture (WebSocket updates) if real-time updates needed
-
-### 2. **Cron Jobs → Frontend State** (Indirect Update Path)
-- `overdue-check.job` (backend) → Database mutations → Frontend polls/refetches
-- **Finding**: No real-time push from backend; frontend must poll or request page refresh
-- **Recommendation**: Add WebSocket support or Server-Sent Events (SSE) for live updates
-
-### 3. **Role-Based Access Control Spans All Routes**
-- `auth.middleware.ts` applied to `request_routes`, `equipment_routes`, `team_routes`, `user_routes`
-- **Finding**: Consistent security, but if RBAC rules change, all routes affected simultaneously
-- **Recommendation**: Document RBAC matrix clearly; unit test permission checks
-
-### 4. **UI Component Library → Tailwind (Direct Styling Dependency)**
-- All UI components (Button, Card, Input, Modal, etc.) depend on Tailwind classes
-- **Finding**: No runtime styling, pure CSS-in-class approach (good for performance)
-- **Recommendation**: Maintain Tailwind config carefully; breaking changes affect all components
-
----
+## Knowledge Gaps
+- **Thin community `Community 0`** (14 nodes): `dateUtils.ts`, `CalendarView.tsx`, `getDateRange()`, `getEventsForDate()`, `getEventsForTimeSlot()`, `goToToday()`, `handleCreateEvent()`, `handleTimeSlotClick()`, `navigateBack()`, `navigateForward()`, `addDays()`, `calculateOverdue()`, `formatDate()`, `getDaysDifference()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 1`** (9 nodes): `maintenance-request.controller.ts`, `MaintenanceRequestController`, `.create()`, `.delete()`, `.getAll()`, `.getById()`, `.getOverdue()`, `.update()`, `.updateStage()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 2`** (9 nodes): `maintenance-team.controller.ts`, `MaintenanceTeamController`, `.addMember()`, `.create()`, `.delete()`, `.getAll()`, `.getById()`, `.removeMember()`, `.update()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 3`** (9 nodes): `maintenance-request.service.ts`, `MaintenanceRequestService`, `.create()`, `.delete()`, `.getAll()`, `.getById()`, `.getOverdue()`, `.update()`, `.updateStage()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 4`** (9 nodes): `maintenance-team.service.ts`, `MaintenanceTeamService`, `.addMember()`, `.create()`, `.delete()`, `.getAll()`, `.getById()`, `.removeMember()`, `.update()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 5`** (8 nodes): `equipment.service.ts`, `EquipmentService`, `.create()`, `.delete()`, `.getAll()`, `.getById()`, `.getOpenRequestsCount()`, `.update()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 6`** (8 nodes): `auth.middleware.ts`, `jwt.ts`, `authenticate()`, `authorize()`, `generateRefreshToken()`, `generateToken()`, `verifyRefreshToken()`, `verifyToken()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 7`** (7 nodes): `equipment.controller.ts`, `EquipmentController`, `.create()`, `.delete()`, `.getAll()`, `.getById()`, `.update()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 11`** (5 nodes): `SignUp.tsx`, `handleChange()`, `handleEmailSignUp()`, `handleOAuthSignUp()`, `validatePassword()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 12`** (4 nodes): `database.ts`, `supabase.ts`, `connectDatabase()`, `testConnection()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 13`** (4 nodes): `user.controller.ts`, `UserController`, `.getAll()`, `.getById()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 15`** (4 nodes): `error.middleware.ts`, `AppError`, `.constructor()`, `errorHandler()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 22`** (3 nodes): `getInitials()`, `UserMenuDropdown()`, `UserMenuDropdown.tsx`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
+_Questions this graph is uniquely positioned to answer:_
 
-1. **"How does a maintenance request flow from creation to completion?"**
-   - Path: RequestList.tsx → api.ts → request.routes.ts → request.service.ts → Prisma → Database
-   - Crosses all 3 major layers; reveals workflow validation, team assignment, state machine enforcement
-
-2. **"What happens when the overdue-check job runs at midnight?"**
-   - Path: overdue-check.job → request.service.ts → Database → (indirect) Dashboard
-   - Shows automation layer; reveals polling vs push dilemma
-
-3. **"How is user authentication enforced across the API?"**
-   - Path: AuthContext.tsx → auth.service.ts → JWT token → auth.middleware.ts → role_based_access
-   - Reveals security architecture; shows how frontend and backend coordinate on permissions
-
-4. **"Which pages depend on the equipment service vs request service?"**
-   - Equipment routes: EquipmentList, EquipmentDetail, Equipment creation
-   - Request routes: Kanban, Calendar, RequestList, Reports
-   - Shows domain separation; reveals where team assignment happens
-
-5. **"What's the data flow for a team's workload metrics?"**
-   - Path: Dashboard → api.ts (reports) → backend → team.service.ts → Database grouping
-   - Shows analytics layer; aggregation and filtering logic
-
----
-
-## Architecture Patterns Detected
-
-### ✅ **Clean Architecture**
-- Frontend and Backend are loosely coupled (REST API boundary)
-- Each layer has clear responsibilities
-- Data flows in one direction (Frontend → Backend → Database)
-
-### ✅ **MVC in Backend**
-- **Model**: Prisma schema (database)
-- **View**: REST JSON responses
-- **Controller**: Routes (request handlers)
-- **Service**: Business logic (request.service.ts, etc.)
-
-### ✅ **Context API in Frontend**
-- Global state for auth (AuthContext)
-- App-level state (AppContext)
-- Avoids prop drilling
-- Sufficient for this scale (not Redux-heavy)
-
-### ✅ **Middleware-Oriented Backend**
-- auth.middleware.ts - JWT verification
-- validation.middleware.ts - Input validation
-- error.middleware.ts - Centralized error handling
-- logger.middleware.ts - Request logging
-
-### ⚠️ **Single Database (Potential Bottleneck)**
-- All services (request, equipment, team, user) query same PostgreSQL instance
-- Scaling requires either:
-  - Database replication (read replicas for dashboards)
-  - Event sourcing (for audit trail)
-  - Or accept single source of truth model
-
-### ⚠️ **Polling-Based Frontend Updates**
-- No WebSocket or SSE for real-time updates
-- Cron jobs run backend; frontend doesn't know immediately
-- Works for this scale but limits real-time collaboration
-
----
-
-## Risk Assessment
-
-### 🔴 High Priority
-1. **Auth Middleware is Critical Path**
-   - Every request goes through `auth.middleware.ts`
-   - Bug here = system-wide breach
-   - **Mitigation**: Unit test all RBAC branches; add request signature verification
-
-2. **Request State Machine Enforcement**
-   - Workflow validation in backend is non-negotiable
-   - **Mitigation**: Add database constraints (CHECK clauses) + service-level validation
-
-### 🟡 Medium Priority
-1. **Request Service is Bottleneck**
-   - Multiple pages depend on `maintenance-request.service.ts`
-   - Changes here affect Kanban, Calendar, Reports simultaneously
-   - **Mitigation**: Comprehensive test suite; feature-flag breaking changes
-
-2. **Cron Jobs Are Fire-and-Forget**
-   - No retry logic visible (overdue-check, preventive-generator)
-   - Job failure = silent data inconsistency
-   - **Mitigation**: Add job logging, success/failure callbacks
-
-### 🟢 Low Priority
-1. **Frontend Bundler (Vite) Dependency**
-   - Single build tool; no fallback
-   - **Mitigation**: Keep Vite updated; test builds in CI/CD
-
----
-
-## Metrics & Coverage
-
-| Layer | Nodes | Edges | Density | Cohesion |
-|-------|-------|-------|---------|----------|
-| **Frontend** | 13 | 18 | 0.23 | 0.89 |
-| **Backend** | 26 | 39 | 0.12 | 0.92 |
-| **Cross-Layer** | 2 | 3 | N/A | 0.75 |
-
-**Interpretation**:
-- Backend has lower density (more nodes, fewer edges) = good specialization
-- Frontend has higher density = tightly integrated pages (expected for React SPA)
-- Cross-layer density low = good separation (Frontend and Backend loosely coupled via REST)
-
----
-
-## Token Cost
-
-**Extraction Parameters**:
-- Code files analyzed: 87
-- Documentation: 4
-- Configuration: 12
-- Estimated input tokens: ~18,000
-- Estimated output tokens: ~4,200
-
-**Cost**: ~$0.34 (Claude 3 Haiku pricing)
-
----
-
-## Next Steps
-
-1. **Deep Dive Questions** - Ask to trace any of the 5 suggested questions
-2. **Visualization** - Open `graph.html` for interactive node exploration
-3. **Export Formats** - Available: `graph.json` (GraphRAG-ready), Obsidian vault, Cypher (Neo4j)
-4. **Live Queries** - Use `/graphify query` to explore the graph dynamically
-
----
-
-**Generated by graphify** | Timestamp: 2025-05-10T13:41:28Z | [Learn more →](https://github.com/safishamsi/graphify)
+- **Should `Community 0` be split into smaller, more focused modules?**
+  _Cohesion score 0.14 - nodes in this community are weakly interconnected._

@@ -11,3 +11,4 @@ dist-ssr
 .vscode
 ai-agents/
 docs/
+.agents/

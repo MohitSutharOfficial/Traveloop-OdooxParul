@@ -4,75 +4,85 @@ import express, { Application } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
-// Import routes
-import equipmentRoutes from './routes/equipment.routes';
-import maintenanceRequestRoutes from './routes/maintenance-request.routes';
-import maintenanceTeamRoutes from './routes/maintenance-team.routes';
-import userRoutes from './routes/user.routes';
-
-// Load environment variables
+// Load env before anything else
 dotenv.config();
+
+// Import routes
+import profileRoutes from './routes/profile.routes';
+import tripRoutes from './routes/trip.routes';
+import destinationRoutes from './routes/destination.routes';
+import itineraryRoutes from './routes/itinerary.routes';
+import activityRoutes from './routes/activity.routes';
+import packingRoutes from './routes/packing.routes';
+import noteRoutes from './routes/note.routes';
+import invoiceRoutes from './routes/invoice.routes';
+import communityRoutes from './routes/community.routes';
+
+import { appConfig } from './config/app';
 
 const app: Application = express();
 
-// Security middleware
+// ─── Security ────────────────────────────────────────────
 app.use(helmet());
-app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS?.split(',') || '*',
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: appConfig.cors.origins,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
+);
 
-// Logging middleware
-if (process.env.NODE_ENV === 'development') {
+// ─── Logging ─────────────────────────────────────────────
+if (appConfig.isDev) {
   app.use(morgan('dev'));
+} else {
+  app.use(morgan('combined'));
 }
 
-// Body parser middleware
-app.use(express.json());
+// ─── Body parsing ────────────────────────────────────────
+app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-// Health check endpoint
+// ─── Health check ────────────────────────────────────────
 app.get('/health', (_req, res) => {
-  res.status(200).json({
+  res.json({
     success: true,
     message: 'Traveloop API is running',
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV,
+    environment: appConfig.nodeEnv,
+    version: appConfig.apiVersion,
   });
 });
 
-// API routes
-const apiVersion = process.env.API_VERSION || 'v1';
+// ─── API routes ──────────────────────────────────────────
+const prefix = `/api/${appConfig.apiVersion}`;
 
-// Register routes
-app.use(`/api/${apiVersion}/equipment`, equipmentRoutes);
-app.use(`/api/${apiVersion}/maintenance-requests`, maintenanceRequestRoutes);
-app.use(`/api/${apiVersion}/maintenance-teams`, maintenanceTeamRoutes);
-app.use(`/api/${apiVersion}/users`, userRoutes);
+app.use(`${prefix}/profiles`, profileRoutes);
+app.use(`${prefix}/trips`, tripRoutes);
+app.use(`${prefix}/destinations`, destinationRoutes);
+app.use(`${prefix}/itinerary`, itineraryRoutes);
+app.use(`${prefix}/activities`, activityRoutes);
+app.use(`${prefix}/packing`, packingRoutes);
+app.use(`${prefix}/notes`, noteRoutes);
+app.use(`${prefix}/invoices`, invoiceRoutes);
+app.use(`${prefix}/community`, communityRoutes);
 
-// Test endpoint
-app.get(`/api/${apiVersion}/test`, (_req, res) => {
-  res.json({
-    success: true,
-    message: 'API is working!',
-    timestamp: new Date().toISOString(),
-  });
-});
-
-// 404 handler
+// ─── 404 ─────────────────────────────────────────────────
 app.use((_req, res) => {
-  res.status(404).json({
-    success: false,
-    message: 'Route not found',
-  });
+  res.status(404).json({ success: false, error: { code: 'NOT_FOUND', message: 'Route not found' } });
 });
 
-// Global error handler
+// ─── Global error handler ────────────────────────────────
 app.use((err: any, _req: any, res: any, _next: any) => {
-  console.error(err.stack);
-  res.status(err.status || 500).json({
+  console.error('Unhandled error:', err);
+  const status = err.status || err.statusCode || 500;
+  res.status(status).json({
     success: false,
-    message: err.message || 'Internal server error',
+    error: {
+      code: 'SERVER_ERROR',
+      message: appConfig.isProd ? 'Internal server error' : err.message || 'Internal server error',
+    },
   });
 });
 

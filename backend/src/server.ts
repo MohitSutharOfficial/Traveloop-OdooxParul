@@ -1,51 +1,36 @@
 import dotenv from 'dotenv';
-import path from 'path';
+dotenv.config();
+
 import app from './app';
-
-// Load environment variables - try multiple paths
-const envPath = path.resolve(__dirname, '../../.env');
-const result = dotenv.config({ path: envPath });
-
-if (result.error) {
-  console.warn('⚠️  Warning: Could not load .env file from:', envPath);
-  console.warn('⚠️  Trying alternative path...');
-  dotenv.config(); // Try default location
-}
-
-// Validate required environment variables
-if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
-  console.error('❌ ERROR: SUPABASE_URL and SUPABASE_ANON_KEY must be set in environment');
-  console.error('📁 Expected .env file at:', envPath);
-  console.error('💡 Solution: Use start.ps1 or start-backend.bat to run the server');
-  process.exit(1);
-}
+import { testConnection } from './config/supabase';
+import { logger } from './utils/logger';
 
 const PORT = process.env.PORT || 3000;
 
-// Start server
-const server = app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
-  console.log(`✅ Health check: http://localhost:${PORT}/health`);
-  console.log(`✅ API v1: http://localhost:${PORT}/api/v1`);
-  console.log(`✅ Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`✅ Supabase: Connected`);
-});
+async function bootstrap() {
+  // Test Supabase connectivity
+  const connected = await testConnection();
+  if (!connected) {
+    logger.warn('⚠️  Supabase connection test failed — API will start but DB queries may fail');
+  }
 
-// Graceful shutdown
-process.on('SIGTERM', () => {
-  console.log('SIGTERM signal received: closing HTTP server');
-  server.close(() => {
-    console.log('HTTP server closed');
-    process.exit(0);
+  const server = app.listen(PORT, () => {
+    logger.info(`✅ Traveloop API running on http://localhost:${PORT}`);
+    logger.info(`✅ Health: http://localhost:${PORT}/health`);
+    logger.info(`✅ API v1: http://localhost:${PORT}/api/v1`);
+    logger.info(`✅ Env: ${process.env.NODE_ENV || 'development'}`);
   });
-});
 
-process.on('SIGINT', () => {
-  console.log('SIGINT signal received: closing HTTP server');
-  server.close(() => {
-    console.log('HTTP server closed');
-    process.exit(0);
-  });
-});
+  // Graceful shutdown
+  const shutdown = (signal: string) => {
+    logger.info(`${signal} received — shutting down`);
+    server.close(() => process.exit(0));
+  };
+  process.on('SIGTERM', () => shutdown('SIGTERM'));
+  process.on('SIGINT', () => shutdown('SIGINT'));
+}
 
-export default server;
+bootstrap().catch((err) => {
+  logger.error('Fatal startup error:', err);
+  process.exit(1);
+});
