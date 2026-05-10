@@ -1,0 +1,52 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: {
+        sora: ['Sora', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      },
+      colors: {
+        traveloop: {
+          primary: '#EF9F27',
+          'primary-dark': '#BA7517',
+          light: '#F5F4F0',
+          border: '#E8E6E0',
+        },
+        odoo: {
+          primary: '#7C7BAD',
+          secondary: '#9894C4',
+          accent: '#B4B1D8',
+          light: '#F0F0F3',
+          border: '#DDDDDD',
+          gray: {
+            50: '#F9FAFB',
+            100: '#F3F4F6',
+            200: '#E5E7EB',
+            300: '#D1D5DB',
+            400: '#9CA3AF',
+            500: '#6B7280',
+            600: '#4B5563',
+            700: '#374151',
+            800: '#1F2937',
+            900: '#111827',
+          },
+          success: '#00A09D',
+          warning: '#F0AD4E',
+          danger: '#D9534F',
+          info: '#00AFF5',
+        }
+      },
+      boxShadow: {
+        'odoo': '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+        'odoo-md': '0 2px 6px 0 rgba(0, 0, 0, 0.12)',
+        'odoo-lg': '0 4px 12px 0 rgba(0, 0, 0, 0.15)',
+      },
+    },
+  },
+  plugins: [],
+}

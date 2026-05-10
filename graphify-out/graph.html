@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop Knowledge Graph - Interactive Visualization</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+            color: #e0e0e0;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        #network {
+            flex: 1;
+            background: #0f0f1e;
+            position: relative;
+        }
+        .sidebar {
+            width: 320px;
+            background: #1e1e2e;
+            border-left: 1px solid #404050;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+        }
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid #404050;
+            background: #252535;
+        }
+        .sidebar-header h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .sidebar-header p {
+            font-size: 12px;
+            color: #a0a0b0;
+        }
+        .sidebar-content {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+        }
+        .node-info {
+            background: #252535;
+            border: 1px solid #404050;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        .node-info h3 {
+            color: #4dd0e1;
+            font-size: 14px;
+            margin-bottom: 8px;
+            word-break: break-word;
+        }
+        .node-info p {
+            font-size: 12px;
+            color: #a0a0b0;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        .node-label {
+            display: inline-block;
+            background: #404050;
+            color: #e0e0e0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            margin-top: 8px;
+        }
+        .community-0 { background: rgba(76, 175, 80, 0.2); color: #4caf50; }
+        .community-1 { background: rgba(33, 150, 243, 0.2); color: #2196f3; }
+        .controls {
+            padding: 16px;
+            background: #252535;
+            border-top: 1px solid #404050;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        button {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover { background: #1976d2; }
+        button.secondary {
+            background: #666;
+        }
+        button.secondary:hover { background: #777; }
+        .legend {
+            padding: 16px;
+            background: #252535;
+            border-top: 1px solid #404050;
+            font-size: 12px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .help {
+            padding: 16px;
+            background: #1a1a25;
+            border-top: 1px solid #404050;
+            font-size: 11px;
+            color: #a0a0b0;
+            line-height: 1.6;
+        }
+        .vis-label {
+            font-size: 12px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="network"></div>
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Traveloop Graph</h2>
+                <p>Click nodes to inspect | Drag to pan | Scroll to zoom</p>
+            </div>
+            <div class="sidebar-content" id="sidebar-content">
+                <p style="color: #a0a0b0; font-size: 12px;">Click on a node to view details...</p>
+            </div>
+            <div class="controls">
+                <button onclick="fitGraph()">Fit View</button>
+                <button onclick="resetPhysics()" class="secondary">Reset Physics</button>
+            </div>
+            <div class="legend">
+                <strong style="color: #fff; display: block; margin-bottom: 8px;">Communities</strong>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4caf50;"></div>
+                    <span>Frontend (React)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #2196f3;"></div>
+                    <span>Backend (Express)</span>
+                </div>
+                <div style="margin-top: 12px; border-top: 1px solid #404050; padding-top: 12px;">
+                    <strong style="color: #fff; display: block; margin-bottom: 8px;">Edge Types</strong>
+                    <div style="font-size: 11px; color: #a0a0b0;">
+                        <div>Solid: Direct dependency</div>
+                        <div>Dashed: Inferred relationship</div>
+                    </div>
+                </div>
+            </div>
+            <div class="help">
+                <strong style="color: #4dd0e1;">Tips:</strong>
+                <ul style="list-style: none; padding: 0;">
+                    <li>🔍 Click nodes for details</li>
+                    <li>🔗 Follow edges to trace flows</li>
+                    <li>⚙️ Drag to move, scroll to zoom</li>
+                    <li>🎯 God nodes have largest size</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Graph data
+        const graphData = {
+            nodes: [
+                {id: "frontend", label: "Frontend\n(React)", color: {background: "#4caf50", border: "#2e7d32"}, size: 30, community: 0, title: "Frontend (React 18 + TypeScript)"},
+                {id: "backend", label: "Backend\n(Express)", color: {background: "#2196f3", border: "#1565c0"}, size: 35, community: 1, title: "Backend (Node.js + Express) - GOD NODE"},
+                {id: "database", label: "PostgreSQL\nDatabase", color: {background: "#2196f3", border: "#1565c0"}, size: 32, community: 1, title: "PostgreSQL Database - GOD NODE"},
+                {id: "auth_system", label: "Auth System", color: {background: "#2196f3"}, size: 24, community: 1, title: "JWT + bcrypt"},
+                {id: "request_management", label: "Request\nManagement", color: {background: "#2196f3"}, size: 28, community: 1, title: "Central request service"},
+                {id: "equipment_management", label: "Equipment\nManagement", color: {background: "#2196f3"}, size: 24, community: 1, title: "Equipment service"},
+                {id: "team_management", label: "Team\nManagement", color: {background: "#2196f3"}, size: 24, community: 1, title: "Team service"},
+                {id: "kanban_board", label: "Kanban\nBoard", color: {background: "#4caf50"}, size: 24, community: 0, title: "Kanban view for corrective maintenance"},
+                {id: "calendar_view", label: "Calendar\nView", color: {background: "#4caf50"}, size: 24, community: 0, title: "Calendar view for preventive maintenance"},
+                {id: "dashboard", label: "Dashboard", color: {background: "#4caf50"}, size: 24, community: 0, title: "Analytics & KPIs"},
+                {id: "auth_context", label: "Auth Context", color: {background: "#4caf50"}, size: 22, community: 0, title: "Global auth state"},
+                {id: "api_client", label: "API Client", color: {background: "#4caf50"}, size: 30, community: 0, title: "Frontend-Backend Bridge - GOD NODE"},
+                {id: "equipment_list", label: "Equipment\nList", color: {background: "#4caf50"}, size: 20, community: 0},
+                {id: "request_list", label: "Request\nList", color: {background: "#4caf50"}, size: 20, community: 0},
+                {id: "team_list", label: "Team List", color: {background: "#4caf50"}, size: 20, community: 0},
+                {id: "overdue_job", label: "Overdue\nCheck Job", color: {background: "#ff9800"}, size: 22, community: 1, title: "Cron job - Daily"},
+                {id: "preventive_job", label: "Preventive\nGen Job", color: {background: "#ff9800"}, size: 22, community: 1, title: "Cron job - Weekly"},
+                {id: "role_based_access", label: "RBAC\nMiddleware", color: {background: "#f44336"}, size: 23, community: 1, title: "Security layer"},
+                {id: "ui_components", label: "UI\nComponents", color: {background: "#4caf50"}, size: 22, community: 0},
+                {id: "express_server", label: "Express\nServer", color: {background: "#2196f3"}, size: 26, community: 1, title: "HTTP server & router"},
+                {id: "prisma_orm", label: "Prisma\nORM", color: {background: "#2196f3"}, size: 24, community: 1},
+                {id: "user_service", label: "User\nService", color: {background: "#2196f3"}, size: 22, community: 1},
+                {id: "error_handling", label: "Error\nHandling", color: {background: "#2196f3"}, size: 22, community: 1}
+            ],
+            edges: [
+                // API calls
+                {from: "frontend", to: "api_client", arrows: "to", color: {color: "#4caf50"}, title: "uses"},
+                {from: "api_client", to: "backend", arrows: "to", color: {color: "#888"}, title: "calls"},
+                {from: "backend", to: "database", arrows: "to", color: {color: "#2196f3"}, title: "reads_writes"},
+                // Auth flow
+                {from: "backend", to: "auth_system", arrows: "to", color: {color: "#f44336"}, title: "uses"},
+                {from: "auth_system", to: "database", arrows: "to", color: {color: "#f44336"}, title: "queries"},
+                {from: "auth_context", to: "api_client", arrows: "to", color: {color: "#4caf50"}, title: "uses"},
+                // Services
+                {from: "backend", to: "request_management", arrows: "to", color: {color: "#2196f3"}, title: "delegates"},
+                {from: "backend", to: "equipment_management", arrows: "to", color: {color: "#2196f3"}, title: "delegates"},
+                {from: "backend", to: "team_management", arrows: "to", color: {color: "#2196f3"}, title: "delegates"},
+                {from: "request_management", to: "database", arrows: "to", color: {color: "#2196f3"}, title: "reads_writes"},
+                {from: "equipment_management", to: "database", arrows: "to", color: {color: "#2196f3"}, title: "reads_writes"},
+                {from: "team_management", to: "database", arrows: "to", color: {color: "#2196f3"}, title: "reads_writes"},
+                // Pages
+                {from: "kanban_board", to: "api_client", arrows: "to", color: {color: "#4caf50"}, dashes: true},
+                {from: "calendar_view", to: "api_client", arrows: "to", color: {color: "#4caf50"}, dashes: true},
+                {from: "dashboard", to: "api_client", arrows: "to", color: {color: "#4caf50"}, dashes: true},
+                {from: "request_list", to: "api_client", arrows: "to", color: {color: "#4caf50"}, dashes: true},
+                {from: "equipment_list", to: "api_client", arrows: "to", color: {color: "#4caf50"}, dashes: true},
+                // Jobs
+                {from: "request_management", to: "overdue_job", arrows: "to", color: {color: "#ff9800"}, dashes: true},
+                {from: "request_management", to: "preventive_job", arrows: "to", color: {color: "#ff9800"}, dashes: true},
+                // Security
+                {from: "backend", to: "role_based_access", arrows: "to", color: {color: "#f44336"}, title: "uses"},
+                {from: "role_based_access", to: "backend", arrows: "from", color: {color: "#f44336"}, dashes: true},
+                // UI
+                {from: "frontend", to: "ui_components", arrows: "to", color: {color: "#4caf50"}, dashes: true},
+                // Express setup
+                {from: "express_server", to: "backend", arrows: "from", color: {color: "#2196f3"}, dashes: true},
+                // ORM
+                {from: "backend", to: "prisma_orm", arrows: "to", color: {color: "#2196f3"}, dashes: true},
+                {from: "prisma_orm", to: "database", arrows: "to", color: {color: "#2196f3"}},
+                // User
+                {from: "backend", to: "user_service", arrows: "to", color: {color: "#2196f3"}, dashes: true},
+                {from: "user_service", to: "database", arrows: "to", color: {color: "#2196f3"}}
+            ]
+        };
+
+        const container = document.getElementById("network");
+        const options = {
+            physics: {
+                enabled: true,
+                stabilization: {
+                    iterations: 200
+                },
+                forceAtlas2Based: {
+                    gravitationalConstant: -26,
+                    centralGravity: 0.005,
+                    springLength: 200,
+                    springConstant: 0.18
+                },
+                maxVelocity: 50,
+                timestep: 0.35,
+                solver: "forceAtlas2Based"
+            },
+            interaction: {
+                navigationButtons: false,
+                keyboard: true,
+                zoomView: true,
+                dragView: true
+            },
+            nodes: {
+                font: {
+                    size: 14,
+                    color: "#fff",
+                    face: "Segoe UI"
+                },
+                borderWidth: 2,
+                shadow: {
+                    enabled: true,
+                    color: "rgba(0,0,0,0.5)",
+                    size: 10,
+                    x: 5,
+                    y: 5
+                }
+            },
+            edges: {
+                width: 2,
+                color: {highlight: "#fff"},
+                smooth: {type: "continuous"},
+                font: {size: 11, align: "middle", color: "#a0a0b0"},
+                shadow: {enabled: false}
+            }
+        };
+
+        const network = new vis.Network(container, graphData, options);
+
+        network.on("click", function(params) {
+            if (params.nodes.length > 0) {
+                const nodeId = params.nodes[0];
+                const node = graphData.nodes.find(n => n.id === nodeId);
+                if (node) {
+                    showNodeInfo(node);
+                }
+            }
+        });
+
+        function showNodeInfo(node) {
+            const community = node.community === 0 ? "Frontend (React)" : "Backend (Express)";
+            const html = `
+                <div class="node-info">
+                    <h3>${node.label}</h3>
+                    <p><strong>ID:</strong> ${node.id}</p>
+                    <p><strong>Community:</strong> <span class="community-${node.community}">${community}</span></p>
+                    <p><strong>Degree:</strong> ${graphData.edges.filter(e => e.from === node.id || e.to === node.id).length}</p>
+                    ${node.title ? `<p><strong>Description:</strong> ${node.title}</p>` : ""}
+                </div>
+            `;
+            document.getElementById("sidebar-content").innerHTML = html;
+        }
+
+        function fitGraph() {
+            network.fit({
+                animation: {
+                    duration: 400,
+                    easingFunction: "easeInOutQuad"
+                }
+            });
+        }
+
+        function resetPhysics() {
+            network.physics.stopSimulation();
+            network.physics.startSimulation();
+        }
+
+        // Initial fit
+        setTimeout(fitGraph, 500);
+    </script>
+</body>
+</html>
