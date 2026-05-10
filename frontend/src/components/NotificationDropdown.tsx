@@ -84,7 +84,7 @@ export default function NotificationDropdown() {
   const getTypeColor = (type: Notification['type']) => {
     switch (type) {
       case 'warning':
-        return 'bg-amber-50 text-amber-700 dark:bg-amber-400/10 dark:text-amber-300';
+        return 'bg-fuchsia-50 text-fuchsia-700 dark:bg-fuchsia-400/10 dark:text-fuchsia-300';
       case 'success':
         return 'bg-emerald-50 text-emerald-700 dark:bg-emerald-400/10 dark:text-emerald-300';
       default:
@@ -97,12 +97,12 @@ export default function NotificationDropdown() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="relative rounded-[10px] p-2 text-stone-600 transition hover:bg-[#F5F4F0] hover:text-[#EF9F27] dark:text-stone-300 dark:hover:bg-stone-800"
+        className="relative rounded-[10px] p-2 text-stone-600 transition hover:bg-[#F5F4F0] hover:text-[#714B67] dark:text-stone-300 dark:hover:bg-stone-800"
         title="Travel notifications"
       >
         <Bell size={20} />
         {unreadCount > 0 && (
-          <span className="absolute -right-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#EF9F27] text-[10px] font-semibold text-white">
+          <span className="absolute -right-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#714B67] text-[10px] font-semibold text-white">
             {unreadCount > 9 ? '9+' : unreadCount}
           </span>
         )}
@@ -112,7 +112,7 @@ export default function NotificationDropdown() {
         <div className="absolute right-0 z-50 mt-2 w-[22rem] overflow-hidden rounded-[14px] border border-[#E8E6E0] bg-white shadow-lg dark:border-stone-700 dark:bg-stone-900 sm:w-96">
           <div className="flex items-center justify-between border-b border-[#E8E6E0] px-4 py-3 dark:border-stone-700">
             <div className="flex items-center gap-2">
-              <Bell size={18} className="text-[#EF9F27]" />
+              <Bell size={18} className="text-[#714B67]" />
               <h3 className="font-sora text-sm font-semibold text-[#1C1917] dark:text-stone-100">
                 Notifications
               </h3>
@@ -121,7 +121,7 @@ export default function NotificationDropdown() {
               <button
                 type="button"
                 onClick={markAllAsRead}
-                className="flex items-center gap-1 text-xs font-medium text-[#BA7517] hover:underline dark:text-amber-300"
+                className="flex items-center gap-1 text-xs font-medium text-[#5D3E55] hover:underline dark:text-fuchsia-300"
               >
                 <CheckCheck size={14} />
                 Mark all read
@@ -140,7 +140,7 @@ export default function NotificationDropdown() {
                 <div
                   key={notification.id}
                   className={`border-b border-[#E8E6E0] px-4 py-3 transition hover:bg-[#F5F4F0] dark:border-stone-800 dark:hover:bg-stone-800 ${
-                    !notification.read ? 'bg-amber-50/50 dark:bg-amber-400/5' : ''
+                    !notification.read ? 'bg-fuchsia-50/50 dark:bg-fuchsia-400/5' : ''
                   }`}
                 >
                   <div className="flex items-start gap-3">
@@ -173,7 +173,7 @@ export default function NotificationDropdown() {
                           <button
                             type="button"
                             onClick={() => markAsRead(notification.id)}
-                            className="text-xs font-medium text-[#BA7517] hover:underline dark:text-amber-300"
+                            className="text-xs font-medium text-[#5D3E55] hover:underline dark:text-fuchsia-300"
                           >
                             Mark as read
                           </button>

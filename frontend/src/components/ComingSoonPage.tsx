@@ -30,7 +30,7 @@ export default function ComingSoonPage({ title, subtitle, icon: Icon }: ComingSo
         </div>
 
         <div className="traveloop-card flex min-h-[320px] flex-col items-center justify-center text-center">
-          <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-amber-50 text-[#EF9F27] dark:bg-amber-400/10">
+          <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-fuchsia-50 text-[#714B67] dark:bg-fuchsia-400/10">
             <Icon size={30} />
           </div>
           <h2 className="font-sora text-xl font-semibold text-[#1C1917] dark:text-stone-100">

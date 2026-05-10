@@ -9,7 +9,25 @@ export const updateProfileSchema = Joi.object({
   country: Joi.string().max(120).allow('', null),
   preferred_travel_style: Joi.string().valid('adventure', 'relaxation', 'cultural', 'business'),
   avatar_url: Joi.string().uri().allow('', null),
-}).min(1);
+}).options({ stripUnknown: true }).min(1).options({ stripUnknown: true });
+
+export const updateAdminUserSchema = Joi.object({
+  first_name: Joi.string().max(120),
+  last_name: Joi.string().max(120),
+  city: Joi.string().max(120).allow('', null),
+  country: Joi.string().max(120).allow('', null),
+  is_admin: Joi.boolean(),
+}).options({ stripUnknown: true }).min(1).options({ stripUnknown: true });
+
+export const createAdminUserSchema = Joi.object({
+  email: Joi.string().email().required(),
+  password: Joi.string().min(8).required(),
+  first_name: Joi.string().max(120).required(),
+  last_name: Joi.string().max(120).required(),
+  city: Joi.string().max(120).allow('', null),
+  country: Joi.string().max(120).allow('', null),
+  is_admin: Joi.boolean().default(false),
+}).options({ stripUnknown: true });
 
 // ─── Destinations ────────────────────────────────────────
 export const createDestinationSchema = Joi.object({
@@ -19,7 +37,7 @@ export const createDestinationSchema = Joi.object({
   image_url: Joi.string().uri().allow('', null),
   description: Joi.string().allow('', null),
   average_daily_budget: Joi.number().positive().allow(null),
-});
+}).options({ stripUnknown: true });
 
 // ─── Trips ───────────────────────────────────────────────
 export const createTripSchema = Joi.object({
@@ -31,7 +49,7 @@ export const createTripSchema = Joi.object({
   status: Joi.string().valid('draft', 'upcoming', 'active', 'completed', 'cancelled').default('draft'),
   budget_total: Joi.number().min(0).default(0),
   currency: Joi.string().length(3).default('USD'),
-});
+}).options({ stripUnknown: true });
 
 export const updateTripSchema = Joi.object({
   name: Joi.string().max(180),
@@ -44,7 +62,7 @@ export const updateTripSchema = Joi.object({
   budget_total: Joi.number().min(0),
   budget_spent: Joi.number().min(0),
   currency: Joi.string().length(3),
-}).min(1);
+}).options({ stripUnknown: true }).min(1).options({ stripUnknown: true });
 
 // ─── Itinerary Items ─────────────────────────────────────
 export const createItineraryItemSchema = Joi.object({
@@ -57,7 +75,7 @@ export const createItineraryItemSchema = Joi.object({
   notes: Joi.string().allow('', null),
   cost: Joi.number().min(0).default(0),
   sort_order: Joi.number().integer().default(0),
-});
+}).options({ stripUnknown: true });
 
 export const updateItineraryItemSchema = Joi.object({
   item_type: Joi.string().valid('flight', 'hotel', 'activity', 'meal', 'transfer', 'note'),
@@ -68,7 +86,7 @@ export const updateItineraryItemSchema = Joi.object({
   notes: Joi.string().allow('', null),
   cost: Joi.number().min(0),
   sort_order: Joi.number().integer(),
-}).min(1);
+}).options({ stripUnknown: true }).min(1).options({ stripUnknown: true });
 
 // ─── Activities ──────────────────────────────────────────
 export const createActivitySchema = Joi.object({
@@ -79,7 +97,7 @@ export const createActivitySchema = Joi.object({
   price_from: Joi.number().min(0).allow(null),
   rating: Joi.number().min(0).max(5).allow(null),
   image_url: Joi.string().uri().allow('', null),
-});
+}).options({ stripUnknown: true });
 
 // ─── Packing Items ───────────────────────────────────────
 export const createPackingItemSchema = Joi.object({
@@ -87,26 +105,26 @@ export const createPackingItemSchema = Joi.object({
   label: Joi.string().max(160).required(),
   category: Joi.string().max(120).allow('', null),
   sort_order: Joi.number().integer().default(0),
-});
+}).options({ stripUnknown: true });
 
 export const updatePackingItemSchema = Joi.object({
   label: Joi.string().max(160),
   category: Joi.string().max(120).allow('', null),
   is_packed: Joi.boolean(),
   sort_order: Joi.number().integer(),
-}).min(1);
+}).options({ stripUnknown: true }).min(1).options({ stripUnknown: true });
 
 // ─── Trip Notes ──────────────────────────────────────────
 export const createTripNoteSchema = Joi.object({
   trip_id: Joi.string().uuid().required(),
   title: Joi.string().max(180).required(),
   body: Joi.string().allow('', null),
-});
+}).options({ stripUnknown: true });
 
 export const updateTripNoteSchema = Joi.object({
   title: Joi.string().max(180),
   body: Joi.string().allow('', null),
-}).min(1);
+}).options({ stripUnknown: true }).min(1).options({ stripUnknown: true });
 
 // ─── Invoices ────────────────────────────────────────────
 export const createInvoiceSchema = Joi.object({
@@ -120,16 +138,16 @@ export const createInvoiceSchema = Joi.object({
     Joi.object({
       description: Joi.string().max(220).required(),
       amount: Joi.number().min(0).required(),
-    })
+    }).options({ stripUnknown: true })
   ).allow(null),
-});
+}).options({ stripUnknown: true });
 
 export const updateInvoiceSchema = Joi.object({
   status: Joi.string().valid('draft', 'issued', 'paid', 'void'),
   total: Joi.number().min(0),
   issued_at: Joi.date().iso().allow(null),
   paid_at: Joi.date().iso().allow(null),
-}).min(1);
+}).options({ stripUnknown: true }).min(1).options({ stripUnknown: true });
 
 // ─── Community Posts ─────────────────────────────────────
 export const createCommunityPostSchema = Joi.object({
@@ -137,14 +155,14 @@ export const createCommunityPostSchema = Joi.object({
   body: Joi.string().required(),
   destination: Joi.string().max(180).allow('', null),
   image_url: Joi.string().uri().allow('', null),
-});
+}).options({ stripUnknown: true });
 
 // ─── Pagination / ID ─────────────────────────────────────
 export const paginationSchema = Joi.object({
   page: Joi.number().integer().min(1).default(1),
   limit: Joi.number().integer().min(1).max(100).default(20),
-});
+}).options({ stripUnknown: true });
 
 export const uuidParamSchema = Joi.object({
   id: Joi.string().uuid().required(),
-});
+}).options({ stripUnknown: true });

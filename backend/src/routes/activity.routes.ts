@@ -10,6 +10,7 @@ router.get('/:id', ActivityController.getById);
 
 // Authenticated
 router.post('/', authenticate, ActivityController.create);
+router.patch('/:id', authenticate, ActivityController.update);
 router.delete('/:id', authenticate, ActivityController.delete);
 
 export default router;

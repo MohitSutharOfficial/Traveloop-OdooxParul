@@ -36,4 +36,18 @@ export class CommunityController {
       res.json({ success: true, message: 'Post deleted' });
     } catch (err) { next(err); }
   }
+
+  static async like(req: Request, res: Response, next: NextFunction) {
+    try {
+      await CommunityService.like(req.params.id, req.user!.id);
+      res.json({ success: true, message: 'Post liked' });
+    } catch (err) { next(err); }
+  }
+
+  static async unlike(req: Request, res: Response, next: NextFunction) {
+    try {
+      await CommunityService.unlike(req.params.id, req.user!.id);
+      res.json({ success: true, message: 'Post unliked' });
+    } catch (err) { next(err); }
+  }
 }

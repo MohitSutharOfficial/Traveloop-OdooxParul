@@ -61,29 +61,33 @@ export default function SignUpPage() {
 
     try {
       const fullName = `${formData.firstName} ${formData.lastName}`.trim();
-      const { data, error: signUpError } = await supabase.auth.signUp({
-        email: formData.email,
-        password: formData.password,
-        options: {
-          data: {
-            first_name: formData.firstName,
-            last_name: formData.lastName,
-            full_name: fullName,
-            phone: formData.phone,
-            city: formData.city,
-            country: formData.country,
-            travel_style: formData.travelStyle,
-            role: 'TRAVELER',
-          },
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
+      
+      // Call backend auth endpoint with Resend email
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+      const response = await fetch(`${apiUrl}/auth/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+          fullName,
+        }),
       });
 
-      if (signUpError) throw signUpError;
+      const data = await response.json();
 
-      if (data.user) {
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to create account');
+      }
+
+      // Also create user profile in Supabase (after email verification)
+      // For now, just show success
+      if (data.success) {
         setSuccess(true);
-        setTimeout(() => navigate('/dashboard'), 2000);
+      } else {
+        throw new Error(data.message || 'Failed to create account');
       }
     } catch (err: any) {
       setError(err.message || 'Failed to create account');
@@ -114,19 +118,63 @@ export default function SignUpPage() {
   if (success) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#F5F4F0] p-4 dark:bg-stone-950">
-        <div className="traveloop-card w-full max-w-md text-center">
-          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 dark:bg-emerald-400/10">
-            <CheckCircle className="h-7 w-7 text-emerald-600 dark:text-emerald-300" />
+        <div className="traveloop-card w-full max-w-md">
+          <div className="mb-4 text-center">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 dark:bg-emerald-400/10">
+              <CheckCircle className="h-7 w-7 text-emerald-600 dark:text-emerald-300" />
+            </div>
+            <h2 className="font-sora text-xl font-semibold text-[#1C1917] dark:text-stone-100">
+              Account Created Successfully!
+            </h2>
           </div>
-          <h2 className="font-sora text-xl font-semibold text-[#1C1917] dark:text-stone-100">
-            Welcome to Traveloop
-          </h2>
-          <p className="mt-2 text-sm text-stone-600 dark:text-stone-300">
-            Your account is ready. Taking you to your dashboard...
-          </p>
-          <button onClick={() => navigate('/dashboard')} className="traveloop-button-primary mt-6 w-full">
-            Go to Dashboard
-          </button>
+
+          <div className="space-y-4">
+            <div className="rounded-[10px] bg-blue-50 p-4 dark:bg-blue-500/10">
+              <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">📧 Email Confirmation Required</p>
+              <p className="text-sm text-blue-800 dark:text-blue-200">
+                A confirmation email has been sent to <strong>{formData.email}</strong>. Click the confirmation link in your email to activate your account.
+              </p>
+            </div>
+
+            <div className="space-y-3 border-t border-[#E8E6E0] pt-4 dark:border-stone-700">
+              <div className="flex gap-3">
+                <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#714B67] text-xs font-semibold text-white">1</div>
+                <div>
+                  <p className="text-sm font-medium text-[#1C1917] dark:text-stone-100">Check your email</p>
+                  <p className="text-xs text-stone-600 dark:text-stone-400">Look for the confirmation email (check spam folder if needed)</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#714B67] text-xs font-semibold text-white">2</div>
+                <div>
+                  <p className="text-sm font-medium text-[#1C1917] dark:text-stone-100">Click the confirmation link</p>
+                  <p className="text-xs text-stone-600 dark:text-stone-400">Verify your email by clicking the link in the message</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#714B67] text-xs font-semibold text-white">3</div>
+                <div>
+                  <p className="text-sm font-medium text-[#1C1917] dark:text-stone-100">Start exploring</p>
+                  <p className="text-xs text-stone-600 dark:text-stone-400">After confirmation, you can log in to your account</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex gap-3 pt-2">
+              <button
+                onClick={() => navigate('/login')}
+                className="traveloop-button-primary flex-1"
+              >
+                Go to Login
+              </button>
+              <button
+                onClick={() => setSuccess(false)}
+                className="traveloop-button-secondary flex-1"
+              >
+                Back
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -137,7 +185,7 @@ export default function SignUpPage() {
       <div className="mx-auto flex min-h-[calc(100vh-2rem)] w-full max-w-4xl items-center justify-center">
         <div className="w-full">
           <div className="mb-6 text-center">
-            <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-[14px] bg-amber-50 text-[#EF9F27] dark:bg-amber-400/10">
+            <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-[14px] bg-fuchsia-50 text-[#714B67] dark:bg-fuchsia-400/10">
               <Plane size={28} />
             </div>
             <h1 className="font-sora text-3xl font-bold text-[#1C1917] dark:text-stone-100">
@@ -341,23 +389,37 @@ export default function SignUpPage() {
                 type="button"
                 onClick={() => handleOAuthSignUp('google')}
                 disabled={loading}
-                className="traveloop-button-secondary h-10 text-xs"
+                className="traveloop-button-secondary h-10 text-xs flex items-center justify-center gap-2"
               >
-                Google
+                {loading ? (
+                  <>
+                    <Loader2 className="h-3 w-3 animate-spin" />
+                    <span>Google</span>
+                  </>
+                ) : (
+                  'Google'
+                )}
               </button>
               <button
                 type="button"
                 onClick={() => handleOAuthSignUp('github')}
                 disabled={loading}
-                className="traveloop-button-secondary h-10 text-xs"
+                className="traveloop-button-secondary h-10 text-xs flex items-center justify-center gap-2"
               >
-                GitHub
+                {loading ? (
+                  <>
+                    <Loader2 className="h-3 w-3 animate-spin" />
+                    <span>GitHub</span>
+                  </>
+                ) : (
+                  'GitHub'
+                )}
               </button>
             </div>
 
             <p className="mt-6 text-center text-sm text-stone-600 dark:text-stone-300">
               Already have an account?{' '}
-              <Link to="/login" className="font-medium text-[#BA7517] hover:text-[#EF9F27]">
+              <Link to="/login" className="font-medium text-[#5D3E55] hover:text-[#714B67]">
                 Sign in
               </Link>
             </p>

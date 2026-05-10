@@ -1,7 +1,7 @@
 import { AlertCircle, ArrowLeft, CheckCircle, Loader2, Mail, Plane } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
+import { authService } from '../services/auth';
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState('');
@@ -15,11 +15,8 @@ export default function ForgotPasswordPage() {
     setError(null);
 
     try {
-      const { error: resetError } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/reset-password`,
-      });
-
-      if (resetError) throw resetError;
+      const response = await authService.forgotPassword(email);
+      if (!response.success) throw new Error(response.message);
 
       setSuccess(true);
     } catch (err: any) {
@@ -53,7 +50,7 @@ export default function ForgotPasswordPage() {
     <div className="flex min-h-screen items-center justify-center bg-[#F5F4F0] p-4 dark:bg-stone-950">
       <div className="w-full max-w-md">
         <div className="mb-6 text-center">
-          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-[14px] bg-amber-50 text-[#EF9F27] dark:bg-amber-400/10">
+          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-[14px] bg-fuchsia-50 text-[#714B67] dark:bg-fuchsia-400/10">
             <Plane size={28} />
           </div>
           <h1 className="font-sora text-3xl font-bold text-[#1C1917] dark:text-stone-100">Traveloop</h1>
@@ -61,7 +58,7 @@ export default function ForgotPasswordPage() {
         </div>
 
         <div className="traveloop-card">
-          <Link to="/login" className="mb-6 inline-flex items-center gap-2 text-sm text-stone-600 transition hover:text-[#EF9F27] dark:text-stone-300">
+          <Link to="/login" className="mb-6 inline-flex items-center gap-2 text-sm text-stone-600 transition hover:text-[#714B67] dark:text-stone-300">
             <ArrowLeft size={16} />
             Back to login
           </Link>

@@ -17,6 +17,9 @@ import { Link, matchPath, useLocation } from 'react-router-dom';
 import AppearanceDropdown from './AppearanceDropdown';
 import NotificationDropdown from './NotificationDropdown';
 import UserMenuDropdown from './UserMenuDropdown';
+import { useUiStore } from '../store/uiStore';
+import { useAuth } from '../context/AuthContext';
+import { supabase } from '../lib/supabase';
 
 interface LayoutProps {
   children: ReactNode;
@@ -33,7 +36,7 @@ const navItems = [
   { path: '/community', match: '/community', icon: Users, label: 'Community' },
   { path: '/checklist', match: '/checklist', icon: Backpack, label: 'Packing' },
   { path: '/notes', match: '/notes', icon: FileText, label: 'Notes' },
-  { path: '/invoice/1', match: '/invoice/:id', icon: Receipt, label: 'Invoice' },
+  { path: '/invoice', match: '/invoice', icon: Receipt, label: 'Invoice' },
   { path: '/profile', match: '/profile', icon: UserRound, label: 'Profile' },
   { path: '/admin', match: '/admin', icon: BarChart3, label: 'Admin' },
 ];
@@ -50,8 +53,8 @@ function NavLink({ item, compact = false }: { item: (typeof navItems)[number]; c
         compact ? 'px-3 py-2.5 text-sm' : 'px-4 py-3 text-sm'
       } ${
         isActive
-          ? 'bg-amber-50 text-[#BA7517] dark:bg-amber-400/10 dark:text-amber-300'
-          : 'text-stone-600 hover:bg-[#F5F4F0] hover:text-[#EF9F27] dark:text-stone-300 dark:hover:bg-stone-800'
+          ? 'bg-fuchsia-50 text-[#5D3E55] dark:bg-fuchsia-400/10 dark:text-fuchsia-300'
+          : 'text-stone-600 hover:bg-[#F5F4F0] hover:text-[#714B67] dark:text-stone-300 dark:hover:bg-stone-800'
       }`}
     >
       <Icon size={compact ? 17 : 19} />
@@ -62,9 +65,50 @@ function NavLink({ item, compact = false }: { item: (typeof navItems)[number]; c
 
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
+  const { toggleCommandPalette } = useUiStore();
+  const { user } = useAuth();
+  const [isAdmin, setIsAdmin] = useState(false);
   const [layoutStyle, setLayoutStyle] = useState<'top' | 'sidebar'>(() => {
     return (localStorage.getItem('layoutStyle') as 'top' | 'sidebar') || 'top';
   });
+
+  // Check if user is admin
+  useEffect(() => {
+    const checkAdminStatus = async () => {
+      if (!user) {
+        setIsAdmin(false);
+        return;
+      }
+
+      try {
+        const { data, error } = await supabase
+          .from('profiles')
+          .select('is_admin')
+          .eq('id', user.id)
+          .single();
+
+        if (!error && data) {
+          setIsAdmin(data.is_admin || false);
+        }
+      } catch (error) {
+        console.error('Error checking admin status:', error);
+        setIsAdmin(false);
+      }
+    };
+
+    checkAdminStatus();
+  }, [user]);
+
+  // Filter nav items based on admin status
+  const filteredNavItems = useMemo(() => {
+    return navItems.filter(item => {
+      // Hide admin link for non-admin users
+      if (item.path === '/admin' && !isAdmin) {
+        return false;
+      }
+      return true;
+    });
+  }, [isAdmin]);
 
   useEffect(() => {
     const handleLayoutChange = () => {
@@ -78,16 +122,16 @@ export default function Layout({ children }: LayoutProps) {
 
   const pageTitle = useMemo(() => {
     return (
-      navItems.find((item) => matchPath({ path: item.match, end: true }, location.pathname))?.label ||
+      filteredNavItems.find((item) => matchPath({ path: item.match, end: true }, location.pathname))?.label ||
       'Dashboard'
     );
-  }, [location.pathname]);
+  }, [location.pathname, filteredNavItems]);
 
   const topNavigation = (
     <nav className="sticky top-16 z-40 border-b border-[#E8E6E0] bg-white/95 shadow-sm backdrop-blur dark:border-stone-800 dark:bg-stone-900/95">
       <div className="px-2 sm:px-4">
         <div className="hide-scrollbar flex overflow-x-auto py-1">
-          {navItems.map((item) => (
+          {filteredNavItems.map((item) => (
             <NavLink key={item.match} item={item} compact />
           ))}
         </div>
@@ -100,11 +144,11 @@ export default function Layout({ children }: LayoutProps) {
       <header className="sticky top-0 z-50 border-b border-[#E8E6E0] bg-white/95 shadow-sm backdrop-blur dark:border-stone-800 dark:bg-stone-900/95">
         <div className="flex h-16 items-center gap-3 px-4 sm:px-6 lg:px-8">
           <Link to="/dashboard" className="flex min-w-0 items-center gap-3">
-            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[10px] bg-amber-50 text-[#EF9F27] dark:bg-amber-400/10">
+            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[10px] bg-fuchsia-50 text-[#714B67] dark:bg-fuchsia-400/10">
               <Plane size={20} />
             </div>
             <div className="min-w-0">
-              <p className="font-sora text-lg font-bold leading-tight text-[#EF9F27]">Traveloop</p>
+              <p className="font-sora text-lg font-bold leading-tight text-[#714B67]">Traveloop</p>
               <p className="hidden truncate text-xs text-stone-500 dark:text-stone-400 sm:block">
                 {pageTitle}
               </p>
@@ -112,14 +156,19 @@ export default function Layout({ children }: LayoutProps) {
           </Link>
 
           <div className="hidden flex-1 justify-center md:flex">
-            <div className="relative w-full max-w-xl">
-              <Search className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" size={18} />
-              <input
-                type="search"
-                placeholder="Search trips & destinations..."
-                className="traveloop-input h-10 w-full pl-10"
-              />
-            </div>
+            <button
+              onClick={toggleCommandPalette}
+              className="relative w-full max-w-xl text-left"
+            >
+              <div className="traveloop-input flex h-10 w-full items-center gap-2 bg-stone-100 hover:bg-stone-200 dark:bg-[#1C1917] dark:hover:bg-stone-800 transition-colors">
+                <Search className="text-stone-400" size={18} />
+                <span className="text-sm text-stone-500 dark:text-stone-400 flex-1">Search trips & destinations...</span>
+                <div className="hidden md:flex items-center gap-1 opacity-70">
+                  <span className="text-[10px] font-medium px-1.5 py-0.5 rounded border border-stone-200 dark:border-stone-700">⌘</span>
+                  <span className="text-[10px] font-medium px-1.5 py-0.5 rounded border border-stone-200 dark:border-stone-700">K</span>
+                </div>
+              </div>
+            </button>
           </div>
 
           <div className="ml-auto flex items-center gap-1 sm:gap-2">
@@ -139,7 +188,7 @@ export default function Layout({ children }: LayoutProps) {
               </p>
             </div>
             <div className="space-y-1">
-              {navItems.map((item) => (
+              {filteredNavItems.map((item) => (
                 <NavLink key={item.match} item={item} />
               ))}
             </div>

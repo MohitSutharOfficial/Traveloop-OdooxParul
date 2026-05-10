@@ -20,10 +20,10 @@ export default function Button({
   form,
 }: ButtonProps) {
   const baseClasses =
-    'inline-flex items-center justify-center gap-2 font-medium rounded-[10px] transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#EF9F27]/25';
+    'inline-flex items-center justify-center gap-2 font-medium rounded-[10px] transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#714B67]/25';
 
   const variantClasses = {
-    primary: 'bg-[#EF9F27] text-white hover:bg-[#BA7517]',
+    primary: 'bg-[#714B67] text-white hover:bg-[#5D3E55]',
     secondary:
       'bg-white text-[#1C1917] border border-[#E8E6E0] hover:bg-[#F5F4F0] dark:bg-stone-900 dark:text-stone-100 dark:border-stone-700 dark:hover:bg-stone-800',
     danger: 'bg-red-600 text-white hover:bg-red-700',

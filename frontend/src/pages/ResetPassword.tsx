@@ -1,10 +1,12 @@
 import { AlertCircle, CheckCircle, Loader2, Lock, Plane } from 'lucide-react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import { authService } from '../services/auth';
 
 export default function ResetPasswordPage() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const token = searchParams.get('token');
   const [formData, setFormData] = useState({
     password: '',
     confirmPassword: '',
@@ -39,6 +41,12 @@ export default function ResetPasswordPage() {
       return;
     }
 
+    if (!token) {
+      setError('Invalid or missing password reset token.');
+      setLoading(false);
+      return;
+    }
+
     const passwordError = validatePassword(formData.password);
     if (passwordError) {
       setError(passwordError);
@@ -47,11 +55,9 @@ export default function ResetPasswordPage() {
     }
 
     try {
-      const { error: updateError } = await supabase.auth.updateUser({
-        password: formData.password,
-      });
-
-      if (updateError) throw updateError;
+      const response = await authService.resetPassword(token, formData.password);
+      
+      if (!response.success) throw new Error(response.message);
 
       setSuccess(true);
       setTimeout(() => navigate('/login'), 2000);
@@ -84,7 +90,7 @@ export default function ResetPasswordPage() {
     <div className="flex min-h-screen items-center justify-center bg-[#F5F4F0] p-4 dark:bg-stone-950">
       <div className="w-full max-w-md">
         <div className="mb-6 text-center">
-          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-[14px] bg-amber-50 text-[#EF9F27] dark:bg-amber-400/10">
+          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-[14px] bg-fuchsia-50 text-[#714B67] dark:bg-fuchsia-400/10">
             <Plane size={28} />
           </div>
           <h1 className="font-sora text-3xl font-bold text-[#1C1917] dark:text-stone-100">Traveloop</h1>
@@ -101,6 +107,15 @@ export default function ResetPasswordPage() {
             <div className="mt-5 flex items-start gap-2 rounded-[10px] border border-red-200 bg-red-50 p-3 dark:border-red-900/60 dark:bg-red-950/30">
               <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-red-600" />
               <p className="text-xs text-red-700 dark:text-red-300">{error}</p>
+            </div>
+          )}
+
+          {!token && !error && (
+            <div className="mt-5 flex items-start gap-2 rounded-[10px] border border-orange-200 bg-orange-50 p-3 dark:border-orange-900/60 dark:bg-orange-950/30">
+              <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-orange-600" />
+              <p className="text-xs text-orange-700 dark:text-orange-300">
+                Missing reset token in URL. Please use the exact link from your email.
+              </p>
             </div>
           )}
 

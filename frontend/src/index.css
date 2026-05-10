@@ -7,8 +7,8 @@
 @layer base {
   :root,
   :root.light {
-    --primary: #EF9F27;
-    --primary-dark: #BA7517;
+    --primary: #714B67;
+    --primary-dark: #5D3E55;
     --surface: #FFFFFF;
     --surface-muted: #F5F4F0;
     --border: #E8E6E0;
@@ -52,7 +52,7 @@
   }
 
   .traveloop-button-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#EF9F27] px-5 py-2.5 font-medium text-white transition-all hover:bg-[#BA7517] active:scale-95 disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#714B67] px-5 py-2.5 font-medium text-white transition-all hover:bg-[#5D3E55] active:scale-95 disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   .traveloop-button-secondary {
@@ -60,7 +60,7 @@
   }
 
   .traveloop-input {
-    @apply rounded-[10px] border border-[#E8E6E0] bg-white px-3 py-2 text-sm text-[#1C1917] placeholder-stone-400 transition focus:border-[#EF9F27] focus:outline-none focus:ring-2 focus:ring-[#EF9F27]/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:placeholder-stone-500;
+    @apply rounded-[10px] border border-[#E8E6E0] bg-white px-3 py-2 text-sm text-[#1C1917] placeholder-stone-400 transition focus:border-[#714B67] focus:outline-none focus:ring-2 focus:ring-[#714B67]/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:placeholder-stone-500;
   }
 
   .traveloop-label {
@@ -68,7 +68,7 @@
   }
 
   .traveloop-badge-upcoming {
-    @apply rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-400/10 dark:text-amber-300;
+    @apply rounded-full bg-fuchsia-50 px-2.5 py-0.5 text-xs font-medium text-fuchsia-800 dark:bg-fuchsia-400/10 dark:text-fuchsia-300;
   }
 
   .traveloop-badge-completed {
@@ -84,7 +84,7 @@
   }
 
   .odoo-button-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#EF9F27] px-5 py-2.5 font-medium text-white transition-all hover:bg-[#BA7517] active:scale-95 disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#714B67] px-5 py-2.5 font-medium text-white transition-all hover:bg-[#5D3E55] active:scale-95 disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   .odoo-button-secondary {
@@ -92,7 +92,7 @@
   }
 
   .odoo-input {
-    @apply w-full rounded-[10px] border border-[#E8E6E0] bg-white px-3 py-2 text-sm text-[#1C1917] placeholder-stone-400 transition focus:border-[#EF9F27] focus:outline-none focus:ring-2 focus:ring-[#EF9F27]/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:placeholder-stone-500;
+    @apply w-full rounded-[10px] border border-[#E8E6E0] bg-white px-3 py-2 text-sm text-[#1C1917] placeholder-stone-400 transition focus:border-[#714B67] focus:outline-none focus:ring-2 focus:ring-[#714B67]/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:placeholder-stone-500;
   }
 
   .odoo-label {
@@ -121,7 +121,7 @@
   }
 
   .odoo-badge-warning {
-    @apply bg-amber-50 text-amber-800 dark:bg-amber-400/10 dark:text-amber-300;
+    @apply bg-fuchsia-50 text-fuchsia-800 dark:bg-fuchsia-400/10 dark:text-fuchsia-300;
   }
 
   .odoo-badge-danger {

@@ -34,6 +34,13 @@ export class ActivityController {
     } catch (err) { next(err); }
   }
 
+  static async update(req: Request, res: Response, next: NextFunction) {
+    try {
+      const activity = await ActivityService.update(req.params.id, req.body);
+      res.json({ success: true, data: activity });
+    } catch (err) { next(err); }
+  }
+
   static async delete(req: Request, res: Response, next: NextFunction) {
     try {
       await ActivityService.delete(req.params.id);

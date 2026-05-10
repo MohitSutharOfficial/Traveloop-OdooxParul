@@ -45,7 +45,7 @@ export default function ConfirmDialog({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[100] p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-md w-full animate-scale-in">
+      <div className="bg-white rounded-md shadow-xl max-w-md w-full animate-scale-in">
         <div className="p-6">
           <div className="flex items-start gap-4">
             <div className={`flex-shrink-0 w-12 h-12 ${style.iconBg} rounded-full flex items-center justify-center`}>

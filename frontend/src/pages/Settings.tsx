@@ -87,7 +87,7 @@ export default function Settings() {
               Use the appearance icon in the top navigation bar to customize theme and layout
             </p>
             
-            <div className="bg-gray-50 p-4 rounded-lg">
+            <div className="bg-gray-50 p-4 rounded-md">
               <p className="text-sm text-gray-700">
                 <strong>Available Options:</strong> Light Mode, Dark Mode, System Preference
               </p>

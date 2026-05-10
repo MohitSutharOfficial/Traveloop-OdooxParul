@@ -1,6 +1,9 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+import dns from 'node:dns';
+dns.setDefaultResultOrder('ipv4first');
+
 import app from './app';
 import { testConnection } from './config/supabase';
 import { logger } from './utils/logger';

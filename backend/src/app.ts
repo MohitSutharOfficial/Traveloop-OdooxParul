@@ -8,6 +8,7 @@ import morgan from 'morgan';
 dotenv.config();
 
 // Import routes
+import authRoutes from './routes/auth.routes';
 import profileRoutes from './routes/profile.routes';
 import tripRoutes from './routes/trip.routes';
 import destinationRoutes from './routes/destination.routes';
@@ -17,6 +18,7 @@ import packingRoutes from './routes/packing.routes';
 import noteRoutes from './routes/note.routes';
 import invoiceRoutes from './routes/invoice.routes';
 import communityRoutes from './routes/community.routes';
+import adminRoutes from './routes/admin.routes';
 
 import { appConfig } from './config/app';
 
@@ -58,6 +60,7 @@ app.get('/health', (_req, res) => {
 // ─── API routes ──────────────────────────────────────────
 const prefix = `/api/${appConfig.apiVersion}`;
 
+app.use(`${prefix}/auth`, authRoutes);
 app.use(`${prefix}/profiles`, profileRoutes);
 app.use(`${prefix}/trips`, tripRoutes);
 app.use(`${prefix}/destinations`, destinationRoutes);
@@ -67,6 +70,7 @@ app.use(`${prefix}/packing`, packingRoutes);
 app.use(`${prefix}/notes`, noteRoutes);
 app.use(`${prefix}/invoices`, invoiceRoutes);
 app.use(`${prefix}/community`, communityRoutes);
+app.use(`${prefix}/admin`, adminRoutes);
 
 // ─── 404 ─────────────────────────────────────────────────
 app.use((_req, res) => {

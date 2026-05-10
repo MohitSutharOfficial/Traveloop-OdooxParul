@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { supabase } from '../config/supabase';
+import { supabase, supabaseAdmin } from '../config/supabase';
 import { logger } from '../utils/logger';
 
 /**
@@ -62,6 +62,43 @@ export const authenticate = async (
       role: user.role || 'authenticated',
     };
     req.accessToken = token;
+
+    next();
+  } catch (err) {
+    next(err);
+  }
+};
+
+/**
+ * Ensures the authenticated user has admin privileges in `profiles.is_admin`.
+ */
+export const requireAdmin = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    if (!req.user) {
+      res.status(401).json({
+        success: false,
+        error: { code: 'UNAUTHORIZED', message: 'Authentication required' },
+      });
+      return;
+    }
+
+    const { data, error } = await supabaseAdmin
+      .from('profiles')
+      .select('is_admin')
+      .eq('id', req.user.id)
+      .single();
+
+    if (error || !data?.is_admin) {
+      res.status(403).json({
+        success: false,
+        error: { code: 'FORBIDDEN', message: 'Admin access required' },
+      });
+      return;
+    }
 
     next();
   } catch (err) {

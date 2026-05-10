@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import DocumentTitle from './components/DocumentTitle';
 import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
+import CommandPalette from './components/shared/CommandPalette';
 import { AppProvider } from './context/AppContext';
 import { AuthProvider } from './context/AuthContext';
 import AuthCallback from './pages/AuthCallback';
@@ -30,6 +31,7 @@ export default function App() {
       <AppProvider>
         <Router>
           <DocumentTitle />
+          <CommandPalette />
           <Routes>
             {/* Landing Page */}
             <Route path="/" element={<LandingPage />} />
@@ -58,7 +60,7 @@ export default function App() {
                       <Route path="/community" element={<Community />} />
                       <Route path="/checklist" element={<Checklist />} />
                       <Route path="/notes" element={<Notes />} />
-                      <Route path="/invoice/:id" element={<Invoice />} />
+                      <Route path="/invoice" element={<Invoice />} />
                       <Route path="/profile" element={<Profile />} />
                       <Route path="/admin" element={<Admin />} />
                     </Routes>

@@ -12,3 +12,6 @@ dist-ssr
 ai-agents/
 docs/
 .agents/
+.kiro/
+.claude/
+.codex/

@@ -75,7 +75,7 @@ export default function AppearanceDropdown() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="rounded-[10px] p-2 text-stone-600 transition hover:bg-[#F5F4F0] hover:text-[#EF9F27] dark:text-stone-300 dark:hover:bg-stone-800"
+        className="rounded-[10px] p-2 text-stone-600 transition hover:bg-[#F5F4F0] hover:text-[#714B67] dark:text-stone-300 dark:hover:bg-stone-800"
         title="Appearance settings"
       >
         <Palette size={20} />
@@ -106,8 +106,8 @@ export default function AppearanceDropdown() {
                       onClick={() => setTheme(option.value)}
                       className={`flex flex-col items-center gap-1 rounded-[10px] px-2 py-2 text-xs font-medium transition ${
                         isActive
-                          ? 'bg-[#EF9F27] text-white'
-                          : 'bg-[#F5F4F0] text-stone-600 hover:bg-amber-50 hover:text-[#BA7517] dark:bg-stone-800 dark:text-stone-300'
+                          ? 'bg-[#714B67] text-white'
+                          : 'bg-[#F5F4F0] text-stone-600 hover:bg-fuchsia-50 hover:text-[#5D3E55] dark:bg-stone-800 dark:text-stone-300'
                       }`}
                     >
                       <Icon size={16} />
@@ -134,8 +134,8 @@ export default function AppearanceDropdown() {
                       onClick={() => setLayoutStyle(option.value)}
                       className={`flex items-center justify-center gap-2 rounded-[10px] px-3 py-2 text-sm font-medium transition ${
                         isActive
-                          ? 'bg-[#EF9F27] text-white'
-                          : 'bg-[#F5F4F0] text-stone-600 hover:bg-amber-50 hover:text-[#BA7517] dark:bg-stone-800 dark:text-stone-300'
+                          ? 'bg-[#714B67] text-white'
+                          : 'bg-[#F5F4F0] text-stone-600 hover:bg-fuchsia-50 hover:text-[#5D3E55] dark:bg-stone-800 dark:text-stone-300'
                       }`}
                     >
                       <Icon size={16} />

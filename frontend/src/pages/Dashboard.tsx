@@ -1,256 +1,424 @@
-import { format } from 'date-fns';
-import { DollarSign, Globe, Plane, Search } from 'lucide-react';
+import { format, differenceInDays } from 'date-fns';
+import {
+  MapPin,
+  Calendar,
+  DollarSign,
+  TrendingUp,
+  ArrowRight,
+  Plus,
+  Plane,
+} from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-
-const mockTrips = [
-  {
-    id: '1',
-    name: 'Paris & Rome Adventure',
-    destination: 'Europe',
-    coverPhoto: 'https://images.unsplash.com/photo-1502602898657?w=400',
-    startDate: '2025-06-01',
-    endDate: '2025-06-14',
-    status: 'upcoming',
-    planningScore: 75,
-    budget: { total: 3000, spent: 1200, currency: 'USD' },
-  },
-  {
-    id: '2',
-    name: 'Bali Retreat',
-    destination: 'Southeast Asia',
-    coverPhoto: 'https://images.unsplash.com/photo-1537996194471?w=400',
-    startDate: '2025-07-10',
-    endDate: '2025-07-20',
-    status: 'upcoming',
-    planningScore: 45,
-    budget: { total: 2000, spent: 400, currency: 'USD' },
-  },
-  {
-    id: '3',
-    name: 'Japan Explorer',
-    destination: 'Asia',
-    coverPhoto: 'https://images.unsplash.com/photo-1540959733332?w=400',
-    startDate: '2025-03-01',
-    endDate: '2025-03-10',
-    status: 'completed',
-    planningScore: 100,
-    budget: { total: 2500, spent: 2300, currency: 'USD' },
-  },
-] as const;
-
-const topDestinations = [
-  {
-    name: 'Paris',
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400',
-    region: 'France',
-  },
-  {
-    name: 'Bali',
-    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400',
-    region: 'Indonesia',
-  },
-  {
-    name: 'Tokyo',
-    image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400',
-    region: 'Japan',
-  },
-  {
-    name: 'New York',
-    image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400',
-    region: 'United States',
-  },
-  {
-    name: 'London',
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400',
-    region: 'United Kingdom',
-  },
-] as const;
-
-function ProgressRing({ score }: { score: number }) {
-  const radius = 28;
-  const circumference = 2 * Math.PI * radius;
-  const strokeDashoffset = circumference - (score / 100) * circumference;
-
-  return (
-    <div className="relative flex h-16 w-16 items-center justify-center">
-      <svg width="64" height="64" className="absolute -rotate-90">
-        <circle cx="32" cy="32" r={radius} fill="none" stroke="currentColor" strokeWidth="5" className="text-stone-200 dark:text-stone-700" />
-        <circle
-          cx="32"
-          cy="32"
-          r={radius}
-          fill="none"
-          stroke="#EF9F27"
-          strokeWidth="5"
-          strokeDasharray={circumference}
-          strokeDashoffset={strokeDashoffset}
-          strokeLinecap="round"
-        />
-      </svg>
-      <span className="font-sora text-sm font-bold text-[#1C1917] dark:text-stone-100">{score}%</span>
-    </div>
-  );
-}
+import { useTripStore } from '../store/tripStore';
+import { destinationService, Destination } from '../services/destination.service';
+import { communityService, Post } from '../services/community.service';
+import { tripService } from '../services/trip.service';
 
 export default function Dashboard() {
   const { user } = useAuth();
+  const { trips, fetchTrips } = useTripStore();
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [destinations, setDestinations] = useState<Destination[]>([]);
+  const [communityPosts, setCommunityPosts] = useState<Post[]>([]);
+  const [stats, setStats] = useState<any>(null);
+
+  useEffect(() => {
+    const loadData = async () => {
+      setIsLoading(true);
+      try {
+        await Promise.all([
+          fetchTrips(),
+          destinationService.getDestinations().then(data => setDestinations(data.slice(0, 4))),
+          communityService.getPosts().then(res => setCommunityPosts(res.data.slice(0, 3))),
+          tripService.getStats().then(data => setStats(data))
+        ]);
+      } catch (error) {
+        console.error('Failed to load dashboard data:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    loadData();
+  }, [fetchTrips]);
+
   const firstName =
     user?.user_metadata?.first_name ||
     user?.user_metadata?.full_name?.split(' ')[0] ||
     user?.email?.split('@')[0] ||
-    'Traveler';
-  const totalSpent = mockTrips.reduce((total, trip) => total + trip.budget.spent, 0);
+    'Traveller';
+
+  const upcomingTrips = trips.filter((t) => t.status === 'upcoming');
+  const ongoingTrips = trips.filter((t) => t.status === 'ongoing');
+  const totalSpent = stats?.totalSpent || 0;
+  const totalBudget = stats?.totalBudget || 0;
+  const totalTrips = stats?.total || trips.length;
+
+  const nextTrip = upcomingTrips.sort((a, b) => 
+    new Date(a.startDate || '').getTime() - new Date(b.startDate || '').getTime()
+  )[0];
+
+  const daysUntilNextTrip = nextTrip?.startDate 
+    ? differenceInDays(new Date(nextTrip.startDate), new Date())
+    : null;
 
   return (
-    <div className="mx-auto w-full max-w-7xl space-y-7 px-1 pb-8 sm:px-3">
-      <section className="space-y-4">
-        <div>
-          <h1 className="font-sora text-3xl font-bold text-[#1C1917] dark:text-stone-100">
-            Good morning, {firstName}! Ready to explore?
-          </h1>
-          <p className="mt-1 text-sm text-stone-600 dark:text-stone-300">
-            Your trips, destinations, and budgets are ready when you are.
-          </p>
-        </div>
-
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-400" />
-          <input
-            type="search"
-            placeholder="Search trips, destinations..."
-            className="traveloop-input h-12 w-full pl-11"
-          />
-        </div>
-
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="traveloop-card">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-sm font-medium text-stone-600 dark:text-stone-300">Upcoming Trips</p>
-                <p className="mt-2 font-sora text-3xl font-bold text-[#1C1917] dark:text-stone-100">
-                  {mockTrips.filter((trip) => trip.status === 'upcoming').length}
-                </p>
-              </div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-50 text-[#EF9F27] dark:bg-amber-400/10">
-                <Plane size={24} />
-              </div>
+    <div className="min-h-screen bg-stone-50 dark:bg-stone-950">
+      {/* Header */}
+      <div className="bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800">
+        <div className="max-w-7xl mx-auto px-6 py-5">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-xl font-semibold text-stone-900 dark:text-white">
+                Welcome back, {firstName}
+              </h1>
+              <p className="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+                {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
+              </p>
             </div>
-          </div>
-
-          <div className="traveloop-card">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-sm font-medium text-stone-600 dark:text-stone-300">Countries Visited</p>
-                <p className="mt-2 font-sora text-3xl font-bold text-[#1C1917] dark:text-stone-100">
-                  12
-                </p>
-              </div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-50 text-teal-600 dark:bg-teal-400/10 dark:text-teal-300">
-                <Globe size={24} />
-              </div>
-            </div>
-          </div>
-
-          <div className="traveloop-card">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-sm font-medium text-stone-600 dark:text-stone-300">Total Budget Spent</p>
-                <p className="mt-2 font-sora text-3xl font-bold text-[#1C1917] dark:text-stone-100">
-                  ${totalSpent.toLocaleString()}
-                </p>
-              </div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-400/10 dark:text-blue-300">
-                <DollarSign size={24} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="mb-4 flex items-center justify-between gap-4">
-          <h2 className="font-sora text-xl font-semibold text-[#1C1917] dark:text-stone-100">
-            Top Regional Selections
-          </h2>
-          <Link to="/search/cities" className="text-sm font-medium text-[#BA7517] hover:text-[#EF9F27]">
-            Explore cities
-          </Link>
-        </div>
-
-        <div className="hide-scrollbar flex gap-4 overflow-x-auto pb-2">
-          {topDestinations.map((destination) => (
-            <article
-              key={destination.name}
-              className="min-w-[210px] overflow-hidden rounded-[14px] border border-[#E8E6E0] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-stone-700 dark:bg-stone-900"
+            <Link
+              to="/trip/create"
+              className="flex items-center gap-2 px-4 py-2 bg-[#714B67] hover:bg-[#8B5780] text-white text-sm font-medium rounded-md transition-colors shadow-sm"
             >
-              <img
-                src={destination.image}
-                alt={`${destination.name} destination`}
-                className="h-36 w-full object-cover"
-                loading="lazy"
-              />
-              <div className="p-4">
-                <h3 className="font-sora font-semibold text-[#1C1917] dark:text-stone-100">{destination.name}</h3>
-                <p className="mt-1 text-xs text-stone-600 dark:text-stone-300">{destination.region}</p>
+              <Plus className="h-4 w-4" />
+              New Trip
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-6">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-4 gap-4 mb-6">
+          <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-md p-4 shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Total Trips</span>
+              <div className="p-2 bg-[#714B67]/10 rounded border border-[#714B67]/20">
+                <MapPin className="h-4 w-4 text-[#714B67]" />
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
+            </div>
+            <div className="text-2xl font-bold text-stone-900 dark:text-white mb-1">
+              {isLoading ? '—' : totalTrips}
+            </div>
+            <div className="flex items-center gap-1 text-xs text-emerald-600 dark:text-emerald-400">
+              <TrendingUp className="h-3 w-3" />
+              <span>+12% vs last month</span>
+            </div>
+          </div>
 
-      <section>
-        <div className="mb-4 flex items-center justify-between gap-4">
-          <h2 className="font-sora text-xl font-semibold text-[#1C1917] dark:text-stone-100">
-            Recent Trips
-          </h2>
-          <Link to="/trips" className="text-sm font-medium text-[#BA7517] hover:text-[#EF9F27]">
-            View all
-          </Link>
+          <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-md p-4 shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Active Trips</span>
+              <div className="p-2 bg-[#714B67]/10 rounded border border-[#714B67]/20">
+                <Plane className="h-4 w-4 text-[#714B67]" />
+              </div>
+            </div>
+            <div className="text-2xl font-bold text-stone-900 dark:text-white">
+              {isLoading ? '—' : ongoingTrips.length}
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-md p-4 shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Total Spent</span>
+              <div className="p-2 bg-[#714B67]/10 rounded border border-[#714B67]/20">
+                <DollarSign className="h-4 w-4 text-[#714B67]" />
+              </div>
+            </div>
+            <div className="text-2xl font-bold text-stone-900 dark:text-white mb-1">
+              {isLoading ? '—' : `₹${totalSpent.toLocaleString('en-IN')}`}
+            </div>
+            <div className="flex items-center gap-1 text-xs text-emerald-600 dark:text-emerald-400">
+              <TrendingUp className="h-3 w-3" />
+              <span>+8% vs last month</span>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-md p-4 shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Upcoming</span>
+              <div className="p-2 bg-[#714B67]/10 rounded border border-[#714B67]/20">
+                <Calendar className="h-4 w-4 text-[#714B67]" />
+              </div>
+            </div>
+            <div className="text-2xl font-bold text-stone-900 dark:text-white">
+              {isLoading ? '—' : upcomingTrips.length}
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {mockTrips.map((trip) => (
-            <article key={trip.id} className="traveloop-card overflow-hidden !p-0 transition hover:-translate-y-0.5 hover:shadow-md">
-              <img src={trip.coverPhoto} alt={trip.name} className="h-44 w-full object-cover" loading="lazy" />
-              <div className="space-y-4 p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <h3 className="font-sora text-base font-semibold text-[#1C1917] dark:text-stone-100">
-                      {trip.name}
-                    </h3>
-                    <p className="mt-1 text-sm text-stone-600 dark:text-stone-300">{trip.destination}</p>
-                  </div>
-                  <span className={trip.status === 'upcoming' ? 'traveloop-badge-upcoming' : 'traveloop-badge-completed'}>
-                    {trip.status === 'upcoming' ? 'Upcoming' : 'Completed'}
-                  </span>
+        {/* Next Trip Alert */}
+        {nextTrip && daysUntilNextTrip !== null && daysUntilNextTrip <= 30 && (
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/50 dark:to-indigo-950/50 border border-blue-200 dark:border-blue-900 rounded-md p-4 mb-6 shadow-sm">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-md">
+                  <Calendar className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                 </div>
+                <div>
+                  <p className="text-sm font-semibold text-stone-900 dark:text-white">
+                    Your next trip is coming up!
+                  </p>
+                  <p className="text-xs text-stone-600 dark:text-stone-400 mt-0.5">
+                    <span className="font-medium">{nextTrip.name}</span> starts in{' '}
+                    <span className="font-bold text-blue-600 dark:text-blue-400">{daysUntilNextTrip} days</span>
+                  </p>
+                </div>
+              </div>
+              <Link
+                to={`/itinerary/${nextTrip.id}`}
+                className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 bg-white dark:bg-stone-900 rounded-md border border-blue-200 dark:border-blue-800 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+              >
+                View itinerary
+                <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+          </div>
+        )}
 
-                <p className="text-xs font-medium text-stone-500 dark:text-stone-400">
-                  {format(new Date(trip.startDate), 'MMM d, yyyy')} - {format(new Date(trip.endDate), 'MMM d, yyyy')}
-                </p>
+        <div className="grid grid-cols-3 gap-6">
+          {/* Recent Trips */}
+          <div className="col-span-2">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-base font-semibold text-stone-900 dark:text-white">Recent Trips</h2>
+              <Link to="/trips" className="text-xs text-[#714B67] hover:text-[#8B5780] font-medium">
+                View all →
+              </Link>
+            </div>
 
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <ProgressRing score={trip.planningScore} />
-                    <div>
-                      <p className="text-xs font-medium uppercase tracking-wide text-stone-500 dark:text-stone-400">
-                        Planning
-                      </p>
-                      <p className="text-sm font-semibold text-[#1C1917] dark:text-stone-100">
-                        {trip.budget.currency} {trip.budget.spent.toLocaleString()} spent
-                      </p>
+            {isLoading ? (
+              <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-md divide-y divide-stone-200 dark:divide-stone-800 shadow-sm">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="p-4 flex gap-3 animate-pulse">
+                    <div className="h-14 w-20 bg-stone-200 dark:bg-stone-800 rounded" />
+                    <div className="flex-1 space-y-2">
+                      <div className="h-3 bg-stone-200 dark:bg-stone-800 rounded w-1/3" />
+                      <div className="h-2 bg-stone-200 dark:bg-stone-800 rounded w-1/2" />
                     </div>
                   </div>
-                  <Link to={`/itinerary/${trip.id}`} className="traveloop-button-primary px-4 py-2 text-sm">
-                    View
-                  </Link>
-                </div>
+                ))}
               </div>
-            </article>
-          ))}
+            ) : trips.length === 0 ? (
+              <div className="bg-white dark:bg-stone-900 border border-dashed border-stone-300 dark:border-stone-700 rounded-md p-12 text-center shadow-sm">
+                <MapPin className="h-10 w-10 text-stone-300 mx-auto mb-3" />
+                <h3 className="text-sm font-medium text-stone-900 dark:text-white mb-1">No trips yet</h3>
+                <p className="text-xs text-stone-600 dark:text-stone-400 mb-4">Start planning your first adventure</p>
+                <Link
+                  to="/trip/create"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#714B67] hover:bg-[#8B5780] text-white text-sm font-medium rounded-md transition-colors shadow-sm"
+                >
+                  <Plus className="h-4 w-4" />
+                  Create Trip
+                </Link>
+              </div>
+            ) : (
+              <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-md divide-y divide-stone-200 dark:divide-stone-800 shadow-sm">
+                {trips.slice(0, 6).map((trip) => (
+                  <Link
+                    key={trip.id}
+                    to={`/itinerary/${trip.id}`}
+                    className="p-3 flex items-center gap-3 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition-colors group"
+                  >
+                    <div className="h-14 w-20 rounded overflow-hidden flex-shrink-0 shadow-sm">
+                      <img
+                        src={trip.coverPhoto || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400'}
+                        alt={trip.name}
+                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="font-medium text-sm text-stone-900 dark:text-white truncate">
+                          {trip.name}
+                        </h3>
+                        <span className={`px-1.5 py-0.5 text-[10px] font-medium rounded ${
+                          trip.status === 'upcoming' ? 'bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-400' :
+                          trip.status === 'ongoing' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-400' :
+                          'bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-400'
+                        }`}>
+                          {trip.status}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3 text-xs text-stone-600 dark:text-stone-400 mb-2">
+                        <span className="flex items-center gap-1">
+                          <MapPin className="h-3 w-3" />
+                          {trip.destination}
+                        </span>
+                        {trip.startDate && (
+                          <span className="flex items-center gap-1">
+                            <Calendar className="h-3 w-3" />
+                            {format(new Date(trip.startDate), 'MMM d, yyyy')}
+                          </span>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="flex-1 h-1 bg-stone-100 dark:bg-stone-800 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full transition-all ${
+                              trip.budget.spent > trip.budget.total
+                                ? 'bg-red-500'
+                                : trip.budget.spent > trip.budget.total * 0.8
+                                ? 'bg-orange-500'
+                                : 'bg-emerald-500'
+                            }`}
+                            style={{ width: `${Math.min((trip.budget.spent / trip.budget.total) * 100, 100)}%` }}
+                          />
+                        </div>
+                        <span className="text-[10px] text-stone-600 dark:text-stone-400 whitespace-nowrap font-medium">
+                          ₹{trip.budget.spent.toLocaleString('en-IN')} / ₹{trip.budget.total.toLocaleString('en-IN')}
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            {/* Budget Overview */}
+            <div className="mt-6">
+              <h2 className="text-base font-semibold text-stone-900 dark:text-white mb-4">Budget Overview</h2>
+              <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-md p-5 shadow-sm">
+                <div className="flex items-end justify-between mb-4">
+                  <div>
+                    <p className="text-xs text-stone-600 dark:text-stone-400 mb-1 font-medium">Total Budget</p>
+                    <p className="text-xl font-bold text-stone-900 dark:text-white">
+                      ₹{totalBudget.toLocaleString('en-IN')}
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs text-stone-600 dark:text-stone-400 mb-1 font-medium">Total Spent</p>
+                    <p className="text-xl font-bold text-stone-900 dark:text-white">
+                      ₹{totalSpent.toLocaleString('en-IN')}
+                    </p>
+                  </div>
+                </div>
+                <div className="h-2 bg-stone-100 dark:bg-stone-800 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all"
+                    style={{ width: `${totalBudget > 0 ? Math.min((totalSpent / totalBudget) * 100, 100) : 0}%` }}
+                  />
+                </div>
+                <p className="text-xs text-stone-600 dark:text-stone-400 mt-2">
+                  {totalBudget > 0 ? Math.round((totalSpent / totalBudget) * 100) : 0}% of total budget used
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <div className="space-y-6">
+            {/* Quick Actions */}
+            <div>
+              <h2 className="text-lg font-semibold text-stone-900 dark:text-white mb-4">Quick Actions</h2>
+              <div className="space-y-2">
+                <Link
+                  to="/trip/create"
+                  className="flex items-center gap-3 p-3 border border-stone-200 dark:border-stone-800 rounded hover:bg-stone-50 dark:hover:bg-stone-900/50 transition-colors"
+                >
+                  <div className="p-2 bg-[#714B67]/10 rounded border border-[#714B67]/20">
+                    <Plus className="h-4 w-4 text-[#714B67]" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-stone-900 dark:text-white">Create Trip</p>
+                    <p className="text-xs text-stone-600 dark:text-stone-400">Plan a new adventure</p>
+                  </div>
+                </Link>
+                <Link
+                  to="/search/cities"
+                  className="flex items-center gap-3 p-3 border border-stone-200 dark:border-stone-800 rounded hover:bg-stone-50 dark:hover:bg-stone-900/50 transition-colors"
+                >
+                  <div className="p-2 bg-[#714B67]/10 rounded border border-[#714B67]/20">
+                    <MapPin className="h-4 w-4 text-[#714B67]" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-stone-900 dark:text-white">Explore Destinations</p>
+                    <p className="text-xs text-stone-600 dark:text-stone-400">Find your next destination</p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+            {/* Popular Destinations */}
+            <div>
+              <h2 className="text-lg font-semibold text-stone-900 dark:text-white mb-4">Popular Destinations</h2>
+              {isLoading ? (
+                <div className="space-y-3">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="h-24 bg-stone-200 dark:bg-stone-800 rounded animate-pulse" />
+                  ))}
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {destinations.map((dest) => (
+                    <div
+                      key={dest.id}
+                      className="relative h-24 rounded overflow-hidden group cursor-pointer"
+                    >
+                      <img
+                        src={dest.image_url || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400'}
+                        alt={dest.name}
+                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-2 left-3">
+                        <p className="font-medium text-white text-sm">{dest.name}</p>
+                        <p className="text-xs text-white/80">{dest.country}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Recent Activity */}
+            <div>
+              <h2 className="text-lg font-semibold text-stone-900 dark:text-white mb-4">Recent Activity</h2>
+              {isLoading ? (
+                <div className="space-y-3">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="flex gap-3 animate-pulse">
+                      <div className="h-8 w-8 bg-stone-200 dark:bg-stone-800 rounded-full" />
+                      <div className="flex-1 space-y-2">
+                        <div className="h-3 bg-stone-200 dark:bg-stone-800 rounded w-3/4" />
+                        <div className="h-2 bg-stone-200 dark:bg-stone-800 rounded w-1/2" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {communityPosts.map((post) => (
+                    <div key={post.id} className="flex gap-3">
+                      <div className="h-8 w-8 rounded-full bg-stone-200 dark:bg-stone-800 overflow-hidden flex-shrink-0">
+                        {post.profiles?.avatar_url ? (
+                          <img src={post.profiles.avatar_url} alt={post.profiles.full_name} className="h-full w-full object-cover" />
+                        ) : (
+                          <div className="h-full w-full flex items-center justify-center text-xs font-medium text-stone-400">
+                            {post.profiles?.full_name?.charAt(0) || '?'}
+                          </div>
+                        )}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-stone-900 dark:text-white truncate">
+                          {post.profiles?.full_name || 'Anonymous'}
+                        </p>
+                        <p className="text-xs text-stone-600 dark:text-stone-400 line-clamp-2">
+                          {post.body}
+                        </p>
+                        <p className="text-xs text-stone-500 mt-1">
+                          {new Date(post.created_at).toLocaleDateString()}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

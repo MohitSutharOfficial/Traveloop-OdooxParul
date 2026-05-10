@@ -1,0 +1,24 @@
+# Traveloop Screens Implementation Task
+
+- `[x]` **Phase 1: Global Components & State**
+  - `[x]` CommandPalette (`src/components/shared/CommandPalette.tsx`)
+  - `[/]` Zustand Store (`src/store/index.ts`)
+  - `[/]` Mock Data (`src/data/mockData.ts`)
+- `[x]` **Phase 2: Core User Experience**
+  - `[x]` Dashboard (`src/pages/Dashboard.tsx`)
+  - `[x]` Trip List (`src/pages/Trips.tsx`)
+  - `[x]` Trip Create (`src/pages/TripCreate.tsx`)
+- `[x]` **Phase 3: Itinerary & Map**
+  - `[x]` Itinerary Builder (`src/pages/Itinerary.tsx`)
+  - `[x]` Map View (`src/pages/MapView.tsx`)
+- `[x]` **Phase 4: Discovery & Community**
+  - `[x]` Activity/City Search (`src/pages/ActivitySearch.tsx` / `CitySearch.tsx`)
+  - `[x]` Community Feed (`src/pages/Community.tsx`)
+- `[x]` **Phase 5: Tools & Settings**
+  - `[x]` Packing Checklist (`src/pages/Checklist.tsx`)
+  - `[x]` Trip Notes (`src/pages/Notes.tsx`)
+  - `[x]` Invoice (`src/pages/Invoice.tsx`)
+- `[x]` **Phase 6: Admin & Auth**
+  - `[x]` Admin Panel (`src/pages/Admin.tsx`)
+  - `[x]` Profile (`src/pages/Profile.tsx`)
+  - `[x]` Register (`src/pages/SignUp.tsx`)
