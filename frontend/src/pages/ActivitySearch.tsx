@@ -178,7 +178,7 @@ export default function ActivitySearch() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Price From</label>
+                  <label className="block text-sm font-medium mb-1">Price From (₹)</label>
                   <input
                     type="number"
                     min="0"
@@ -251,9 +251,9 @@ export default function ActivitySearch() {
                  </div>
               </div>
               <h3 className="font-bold font-sora text-lg mb-1">{activity.name}</h3>
-              <div className="flex items-center gap-1 text-stone-500 text-sm mb-3">
+               <div className="flex items-center gap-1 text-stone-500 text-sm mb-3">
                  <span className="font-semibold text-[#714B67]">
-                   ${activity.price_from || 0}
+                   ₹{(activity.price_from || 0).toLocaleString('en-IN')}
                  </span>
               </div>
               <p className="text-sm text-stone-600 dark:text-stone-400 mb-4 line-clamp-2">

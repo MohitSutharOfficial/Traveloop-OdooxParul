@@ -51,7 +51,7 @@ export const useTripStore = create<TripState>((set, get) => ({
         budget: {
           total: t.budget_total || 0,
           spent: t.budget_spent || 0,
-          currency: t.currency || 'USD'
+          currency: t.currency || 'INR'
         }
       }));
       set({ trips: mappedTrips, isLoading: false });

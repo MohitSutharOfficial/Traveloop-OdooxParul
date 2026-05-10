@@ -1,11 +1,11 @@
 # Graph Report - travel  (2026-05-11)
 
 ## Corpus Check
-- 120 files · ~277,994 words
+- 120 files · ~279,101 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 398 nodes · 319 edges · 30 communities detected
+- 404 nodes · 325 edges · 30 communities detected
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -33,13 +33,13 @@
 - [[_COMMUNITY_Community 20|Community 20]]
 - [[_COMMUNITY_Community 21|Community 21]]
 - [[_COMMUNITY_Community 22|Community 22]]
-- [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 23|Community 23]]
 - [[_COMMUNITY_Community 25|Community 25]]
-- [[_COMMUNITY_Community 28|Community 28]]
+- [[_COMMUNITY_Community 26|Community 26]]
 - [[_COMMUNITY_Community 29|Community 29]]
-- [[_COMMUNITY_Community 32|Community 32]]
-- [[_COMMUNITY_Community 34|Community 34]]
-- [[_COMMUNITY_Community 37|Community 37]]
+- [[_COMMUNITY_Community 30|Community 30]]
+- [[_COMMUNITY_Community 33|Community 33]]
+- [[_COMMUNITY_Community 35|Community 35]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `InvoiceService` - 9 edges
@@ -93,152 +93,152 @@ Nodes (2): cancelEdit(), saveEdit()
 
 ### Community 6 - "Community 6"
 Cohesion: 0.22
-Nodes (1): InvoiceController
+Nodes (2): geocodeAllLocations(), geocodeLocation()
 
 ### Community 7 - "Community 7"
 Cohesion: 0.22
-Nodes (1): TripService
+Nodes (1): InvoiceController
 
 ### Community 8 - "Community 8"
-Cohesion: 0.25
-Nodes (1): CommunityController
+Cohesion: 0.22
+Nodes (1): TripService
 
 ### Community 9 - "Community 9"
 Cohesion: 0.25
-Nodes (1): ItineraryController
+Nodes (1): CommunityController
 
 ### Community 10 - "Community 10"
 Cohesion: 0.25
-Nodes (1): PackingController
+Nodes (1): ItineraryController
 
 ### Community 11 - "Community 11"
 Cohesion: 0.25
-Nodes (1): TripController
+Nodes (1): PackingController
 
 ### Community 12 - "Community 12"
+Cohesion: 0.25
+Nodes (1): TripController
+
+### Community 13 - "Community 13"
 Cohesion: 0.29
 Nodes (1): CommunityService
 
-### Community 13 - "Community 13"
+### Community 14 - "Community 14"
 Cohesion: 0.25
 Nodes (1): ItineraryService
 
-### Community 14 - "Community 14"
+### Community 15 - "Community 15"
 Cohesion: 0.29
 Nodes (1): PackingService
 
-### Community 15 - "Community 15"
+### Community 16 - "Community 16"
 Cohesion: 0.29
 Nodes (1): ActivityController
 
-### Community 16 - "Community 16"
+### Community 17 - "Community 17"
 Cohesion: 0.29
 Nodes (1): AdminController
 
-### Community 17 - "Community 17"
+### Community 18 - "Community 18"
 Cohesion: 0.29
 Nodes (1): DestinationController
 
-### Community 18 - "Community 18"
+### Community 19 - "Community 19"
 Cohesion: 0.29
 Nodes (1): NoteController
 
-### Community 19 - "Community 19"
+### Community 20 - "Community 20"
 Cohesion: 0.29
 Nodes (1): ActivityService
 
-### Community 20 - "Community 20"
+### Community 21 - "Community 21"
 Cohesion: 0.33
 Nodes (1): AdminService
 
-### Community 21 - "Community 21"
+### Community 22 - "Community 22"
 Cohesion: 0.29
 Nodes (1): DestinationService
 
-### Community 22 - "Community 22"
+### Community 23 - "Community 23"
 Cohesion: 0.29
 Nodes (1): NoteService
 
-### Community 24 - "Community 24"
+### Community 25 - "Community 25"
 Cohesion: 0.33
 Nodes (2): closeModal(), handleSubmit()
 
-### Community 25 - "Community 25"
+### Community 26 - "Community 26"
 Cohesion: 0.33
 Nodes (1): ProfileService
 
-### Community 28 - "Community 28"
+### Community 29 - "Community 29"
 Cohesion: 0.4
 Nodes (2): testConnection(), bootstrap()
 
-### Community 29 - "Community 29"
+### Community 30 - "Community 30"
 Cohesion: 0.4
 Nodes (1): ProfileController
 
-### Community 32 - "Community 32"
+### Community 33 - "Community 33"
 Cohesion: 0.5
 Nodes (2): handleEmailSignUp(), validatePassword()
 
-### Community 34 - "Community 34"
+### Community 35 - "Community 35"
 Cohesion: 0.5
 Nodes (1): AppError
-
-### Community 37 - "Community 37"
-Cohesion: 0.67
-Nodes (2): geocodeAllLocations(), geocodeLocation()
 
 ## Knowledge Gaps
 - **Thin community `Community 4`** (10 nodes): `invoice.service.ts`, `InvoiceService`, `.addItem()`, `.create()`, `.delete()`, `.getById()`, `.listByTrip()`, `.recalculateTotal()`, `.removeItem()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 5`** (10 nodes): `Checklist.tsx`, `beginEdit()`, `cancelEdit()`, `handleCreate()`, `handleDelete()`, `handleResetAll()`, `handleShare()`, `handleToggle()`, `run()`, `saveEdit()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 6`** (9 nodes): `invoice.controller.ts`, `InvoiceController`, `.addItem()`, `.create()`, `.delete()`, `.getById()`, `.listByTrip()`, `.removeItem()`, `.update()`
+- **Thin community `Community 6`** (10 nodes): `MapView.tsx`, `createCustomIcon()`, `formatCost()`, `formatDateTime()`, `geocodeAllLocations()`, `geocodeLocation()`, `getItemColorBadge()`, `getItemIcon()`, `handleCardClick()`, `MapUpdater()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 7`** (9 nodes): `trip.service.ts`, `TripService`, `.create()`, `.delete()`, `.getById()`, `.getByIdAdmin()`, `.getStats()`, `.listByOwner()`, `.update()`
+- **Thin community `Community 7`** (9 nodes): `invoice.controller.ts`, `InvoiceController`, `.addItem()`, `.create()`, `.delete()`, `.getById()`, `.listByTrip()`, `.removeItem()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 8`** (8 nodes): `community.controller.ts`, `CommunityController`, `.create()`, `.delete()`, `.getById()`, `.like()`, `.list()`, `.unlike()`
+- **Thin community `Community 8`** (9 nodes): `trip.service.ts`, `TripService`, `.create()`, `.delete()`, `.getById()`, `.getByIdAdmin()`, `.getStats()`, `.listByOwner()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 9`** (8 nodes): `itinerary.controller.ts`, `ItineraryController`, `.create()`, `.delete()`, `.getById()`, `.listByTrip()`, `.reorder()`, `.update()`
+- **Thin community `Community 9`** (8 nodes): `community.controller.ts`, `CommunityController`, `.create()`, `.delete()`, `.getById()`, `.like()`, `.list()`, `.unlike()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 10`** (8 nodes): `packing.controller.ts`, `PackingController`, `.bulkCreate()`, `.create()`, `.delete()`, `.listByTrip()`, `.togglePacked()`, `.update()`
+- **Thin community `Community 10`** (8 nodes): `itinerary.controller.ts`, `ItineraryController`, `.create()`, `.delete()`, `.getById()`, `.listByTrip()`, `.reorder()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 11`** (8 nodes): `trip.controller.ts`, `TripController`, `.create()`, `.delete()`, `.getById()`, `.list()`, `.stats()`, `.update()`
+- **Thin community `Community 11`** (8 nodes): `packing.controller.ts`, `PackingController`, `.bulkCreate()`, `.create()`, `.delete()`, `.listByTrip()`, `.togglePacked()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 12`** (8 nodes): `community.service.ts`, `CommunityService`, `.create()`, `.delete()`, `.getById()`, `.like()`, `.list()`, `.unlike()`
+- **Thin community `Community 12`** (8 nodes): `trip.controller.ts`, `TripController`, `.create()`, `.delete()`, `.getById()`, `.list()`, `.stats()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 13`** (8 nodes): `itinerary.service.ts`, `ItineraryService`, `.create()`, `.delete()`, `.getById()`, `.listByTrip()`, `.reorder()`, `.update()`
+- **Thin community `Community 13`** (8 nodes): `community.service.ts`, `CommunityService`, `.create()`, `.delete()`, `.getById()`, `.like()`, `.list()`, `.unlike()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 14`** (8 nodes): `packing.service.ts`, `PackingService`, `.bulkCreate()`, `.create()`, `.delete()`, `.listByTrip()`, `.togglePacked()`, `.update()`
+- **Thin community `Community 14`** (8 nodes): `itinerary.service.ts`, `ItineraryService`, `.create()`, `.delete()`, `.getById()`, `.listByTrip()`, `.reorder()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 15`** (7 nodes): `activity.controller.ts`, `ActivityController`, `.create()`, `.delete()`, `.getById()`, `.list()`, `.update()`
+- **Thin community `Community 15`** (8 nodes): `packing.service.ts`, `PackingService`, `.bulkCreate()`, `.create()`, `.delete()`, `.listByTrip()`, `.togglePacked()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 16`** (7 nodes): `admin.controller.ts`, `AdminController`, `.createUser()`, `.dashboard()`, `.deleteUser()`, `.listUsers()`, `.updateUser()`
+- **Thin community `Community 16`** (7 nodes): `activity.controller.ts`, `ActivityController`, `.create()`, `.delete()`, `.getById()`, `.list()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 17`** (7 nodes): `destination.controller.ts`, `DestinationController`, `.create()`, `.delete()`, `.getById()`, `.list()`, `.update()`
+- **Thin community `Community 17`** (7 nodes): `admin.controller.ts`, `AdminController`, `.createUser()`, `.dashboard()`, `.deleteUser()`, `.listUsers()`, `.updateUser()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 18`** (7 nodes): `note.controller.ts`, `NoteController`, `.create()`, `.delete()`, `.getById()`, `.listByTrip()`, `.update()`
+- **Thin community `Community 18`** (7 nodes): `destination.controller.ts`, `DestinationController`, `.create()`, `.delete()`, `.getById()`, `.list()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 19`** (7 nodes): `activity.service.ts`, `ActivityService`, `.create()`, `.delete()`, `.getById()`, `.list()`, `.update()`
+- **Thin community `Community 19`** (7 nodes): `note.controller.ts`, `NoteController`, `.create()`, `.delete()`, `.getById()`, `.listByTrip()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 20`** (7 nodes): `admin.service.ts`, `AdminService`, `.createUser()`, `.deleteUser()`, `.getDashboard()`, `.listUsers()`, `.updateUser()`
+- **Thin community `Community 20`** (7 nodes): `activity.service.ts`, `ActivityService`, `.create()`, `.delete()`, `.getById()`, `.list()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 21`** (7 nodes): `destination.service.ts`, `DestinationService`, `.create()`, `.delete()`, `.getById()`, `.list()`, `.update()`
+- **Thin community `Community 21`** (7 nodes): `admin.service.ts`, `AdminService`, `.createUser()`, `.deleteUser()`, `.getDashboard()`, `.listUsers()`, `.updateUser()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 22`** (7 nodes): `note.service.ts`, `NoteService`, `.create()`, `.delete()`, `.getById()`, `.listByTrip()`, `.update()`
+- **Thin community `Community 22`** (7 nodes): `destination.service.ts`, `DestinationService`, `.create()`, `.delete()`, `.getById()`, `.list()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 24`** (7 nodes): `Notes.tsx`, `closeModal()`, `handleDelete()`, `handleSubmit()`, `openCreateModal()`, `openEditModal()`, `run()`
+- **Thin community `Community 23`** (7 nodes): `note.service.ts`, `NoteService`, `.create()`, `.delete()`, `.getById()`, `.listByTrip()`, `.update()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 25`** (6 nodes): `profile.service.ts`, `ProfileService`, `.getById()`, `.list()`, `.update()`, `.upsert()`
+- **Thin community `Community 25`** (7 nodes): `Notes.tsx`, `closeModal()`, `handleDelete()`, `handleSubmit()`, `openCreateModal()`, `openEditModal()`, `run()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 28`** (5 nodes): `supabase.ts`, `server.ts`, `createUserClient()`, `testConnection()`, `bootstrap()`
+- **Thin community `Community 26`** (6 nodes): `profile.service.ts`, `ProfileService`, `.getById()`, `.list()`, `.update()`, `.upsert()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 29`** (5 nodes): `profile.controller.ts`, `ProfileController`, `.getMe()`, `.list()`, `.updateMe()`
+- **Thin community `Community 29`** (5 nodes): `supabase.ts`, `server.ts`, `createUserClient()`, `testConnection()`, `bootstrap()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 32`** (5 nodes): `SignUp.tsx`, `handleChange()`, `handleEmailSignUp()`, `handleOAuthSignUp()`, `validatePassword()`
+- **Thin community `Community 30`** (5 nodes): `profile.controller.ts`, `ProfileController`, `.getMe()`, `.list()`, `.updateMe()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 34`** (4 nodes): `error.middleware.ts`, `AppError`, `.constructor()`, `errorHandler()`
+- **Thin community `Community 33`** (5 nodes): `SignUp.tsx`, `handleChange()`, `handleEmailSignUp()`, `handleOAuthSignUp()`, `validatePassword()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 37`** (4 nodes): `MapView.tsx`, `geocodeAllLocations()`, `geocodeLocation()`, `MapUpdater()`
+- **Thin community `Community 35`** (4 nodes): `error.middleware.ts`, `AppError`, `.constructor()`, `errorHandler()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions

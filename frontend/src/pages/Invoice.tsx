@@ -123,7 +123,7 @@ export default function Invoice() {
   const [showAddItemModal, setShowAddItemModal] = useState(false);
   const [invoiceForm, setInvoiceForm] = useState<InvoiceFormState>({
     invoice_number: createInvoiceNumber(),
-    currency: 'USD',
+    currency: 'INR',
     status: 'issued',
     issued_at: new Date().toISOString().slice(0, 10),
   });
@@ -238,7 +238,7 @@ export default function Invoice() {
     setShowCreateModal(false);
     setInvoiceForm({
       invoice_number: createInvoiceNumber(),
-      currency: 'USD',
+      currency: 'INR',
       status: 'issued',
       issued_at: new Date().toISOString().slice(0, 10),
     });

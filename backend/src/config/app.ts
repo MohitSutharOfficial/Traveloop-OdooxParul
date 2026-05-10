@@ -5,7 +5,7 @@ export const appConfig = {
   isDev: (process.env.NODE_ENV || 'development') === 'development',
   isProd: process.env.NODE_ENV === 'production',
   cors: {
-    origins: process.env.ALLOWED_ORIGINS?.split(',') || [
+    origins: process.env.ALLOWED_ORIGINS?.split(',').map((o) => o.trim()) || [
       'http://localhost:5173',
       'http://localhost:3000',
     ],

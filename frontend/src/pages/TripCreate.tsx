@@ -83,7 +83,7 @@ export default function TripCreate() {
         endDate,
         status: 'upcoming',
         planningScore: 20,
-        budget: { total: budgetTotal, spent: 0, currency: 'USD' }
+        budget: { total: budgetTotal, spent: 0, currency: 'INR' }
       });
       sessionStorage.removeItem('tripCreateState');
       if (newTrip && newTrip.id) {
@@ -211,7 +211,17 @@ export default function TripCreate() {
                         <CloudSun size={16} />
                         <span className="font-semibold text-sm">Weather Preview</span>
                       </div>
-                      <p className="text-xs opacity-80">June in {destination} is typically 22°C, Partly Cloudy.</p>
+                      <p className="text-xs opacity-80">
+                        {(() => {
+                          const normalized = destination.toLowerCase();
+                          if (normalized.includes('goa')) return 'Typically 31°C, warm and sunny beach weather.';
+                          if (normalized.includes('kochi') || normalized.includes('kerala') || normalized.includes('munnar')) return 'Typically 28°C, pleasant but tropical and humid.';
+                          if (normalized.includes('delhi') || normalized.includes('jaipur')) return 'Typically 35°C, hot and sunny.';
+                          if (normalized.includes('ladakh') || normalized.includes('leh')) return 'Typically 14°C, chilly high-altitude mountain climate.';
+                          if (normalized.includes('rome') || normalized.includes('paris')) return 'Typically 20°C, pleasant and comfortable for exploring.';
+                          return 'Typically 22°C, mild and comfortable.';
+                        })()}
+                      </p>
                     </div>
                   )}
                 </div>
@@ -225,7 +235,7 @@ export default function TripCreate() {
                     <div>
                       <label className="mb-1.5 block text-sm font-medium text-stone-700 dark:text-stone-300">Total Budget</label>
                       <div className="relative w-full max-w-xs">
-                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-500 font-medium">$</span>
+                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-500 font-medium">₹</span>
                         <input type="number" value={budgetTotal} onChange={(e) => setBudgetTotal(Number(e.target.value))} className="traveloop-input pl-7 w-full font-sora font-semibold text-lg" />
                       </div>
                     </div>
@@ -242,7 +252,7 @@ export default function TripCreate() {
                           className={`flex flex-col items-center justify-center p-3 rounded-md border ${budgetTotal === preset.amt ? 'border-[#714B67] bg-fuchsia-50 dark:bg-fuchsia-900/10' : 'border-[#E8E6E0] hover:border-stone-300 dark:border-stone-800'} transition-colors`}
                         >
                           <span className="text-[11px] font-semibold text-stone-500 uppercase">{preset.label}</span>
-                          <span className="font-sora font-bold text-stone-900 dark:text-stone-100">${preset.amt.toLocaleString()}</span>
+                          <span className="font-sora font-bold text-stone-900 dark:text-stone-100">₹{preset.amt.toLocaleString()}</span>
                         </button>
                       ))}
                     </div>
@@ -253,7 +263,7 @@ export default function TripCreate() {
                         <div key={category} className="mb-4">
                           <div className="flex justify-between text-xs mb-1 font-medium">
                             <span style={{ color: budgetColors[category as keyof typeof budgetColors] }}>{category}</span>
-                            <span className="text-stone-500">{budgetBreakdown[category as keyof typeof budgetBreakdown]}% (${Math.round(budgetTotal * (budgetBreakdown[category as keyof typeof budgetBreakdown]/100))})</span>
+                            <span className="text-stone-500">{budgetBreakdown[category as keyof typeof budgetBreakdown]}% (₹{Math.round(budgetTotal * (budgetBreakdown[category as keyof typeof budgetBreakdown]/100))})</span>
                           </div>
                           <input 
                             type="range" min="0" max="100" 
@@ -281,7 +291,7 @@ export default function TripCreate() {
                       </PieChart>
                       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                         <span className="text-[10px] uppercase font-bold text-stone-400">Total</span>
-                        <span className="font-sora font-bold text-lg">${budgetTotal}</span>
+                        <span className="font-sora font-bold text-lg">₹{budgetTotal}</span>
                       </div>
                     </div>
                     
@@ -360,7 +370,7 @@ export default function TripCreate() {
                 <div className="mt-8 rounded-md bg-stone-50 p-6 dark:bg-stone-800/50 text-center">
                   <h4 className="font-sora font-semibold mb-2">Trip Summary</h4>
                   <p className="text-sm font-bold text-[#714B67]">{name}</p>
-                  <p className="text-xs text-stone-500 mt-1">{destination} &middot; {durationDays} days &middot; ${budgetTotal} &middot; {companions.length + 1} travelers</p>
+                  <p className="text-xs text-stone-500 mt-1">{destination} &middot; {durationDays} days &middot; ₹{budgetTotal} &middot; {companions.length + 1} travelers</p>
                 </div>
 
               </motion.div>

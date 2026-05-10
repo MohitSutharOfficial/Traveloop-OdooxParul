@@ -2,7 +2,7 @@ import { format, differenceInDays } from 'date-fns';
 import {
   MapPin,
   Calendar,
-  DollarSign,
+  IndianRupee,
   TrendingUp,
   ArrowRight,
   Plus,
@@ -124,7 +124,7 @@ export default function Dashboard() {
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Total Spent</span>
               <div className="p-2 bg-[#714B67]/10 rounded border border-[#714B67]/20">
-                <DollarSign className="h-4 w-4 text-[#714B67]" />
+                <IndianRupee className="h-4 w-4 text-[#714B67]" />
               </div>
             </div>
             <div className="text-2xl font-bold text-stone-900 dark:text-white mb-1">

@@ -20,6 +20,7 @@ import UserMenuDropdown from './UserMenuDropdown';
 import { useUiStore } from '../store/uiStore';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../lib/supabase';
+import { useTripStore } from '../store/tripStore';
 
 interface LayoutProps {
   children: ReactNode;
@@ -67,6 +68,7 @@ export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const { toggleCommandPalette } = useUiStore();
   const { user } = useAuth();
+  const { trips, fetchTrips } = useTripStore();
   const [isAdmin, setIsAdmin] = useState(false);
   const [layoutStyle, setLayoutStyle] = useState<'top' | 'sidebar'>(() => {
     return (localStorage.getItem('layoutStyle') as 'top' | 'sidebar') || 'top';
@@ -99,16 +101,31 @@ export default function Layout({ children }: LayoutProps) {
     checkAdminStatus();
   }, [user]);
 
-  // Filter nav items based on admin status
+  useEffect(() => {
+    fetchTrips();
+  }, [fetchTrips]);
+
+  const firstTripId = trips[0]?.id || '';
+
+  // Filter nav items based on admin status and dynamic active trip id
   const filteredNavItems = useMemo(() => {
-    return navItems.filter(item => {
-      // Hide admin link for non-admin users
-      if (item.path === '/admin' && !isAdmin) {
-        return false;
-      }
-      return true;
-    });
-  }, [isAdmin]);
+    const items = [
+      { path: '/dashboard', match: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+      { path: '/trips', match: '/trips', icon: Plane, label: 'My Trips' },
+      { path: '/trip/create', match: '/trip/create', icon: MapPin, label: 'Plan a Trip' },
+      { path: firstTripId ? `/itinerary/${firstTripId}` : '/trips', match: '/itinerary/:id', icon: Compass, label: 'Itinerary' },
+      { path: firstTripId ? `/map/${firstTripId}` : '/trips', match: '/map/:id', icon: Map, label: 'Map View' },
+      { path: '/search/cities', match: '/search/cities', icon: Search, label: 'City Search' },
+      { path: '/search/activities', match: '/search/activities', icon: Compass, label: 'Activity Search' },
+      { path: '/community', match: '/community', icon: Users, label: 'Community' },
+      { path: '/checklist', match: '/checklist', icon: Backpack, label: 'Packing' },
+      { path: '/notes', match: '/notes', icon: FileText, label: 'Notes' },
+      { path: '/invoice', match: '/invoice', icon: Receipt, label: 'Invoice' },
+      { path: '/profile', match: '/profile', icon: UserRound, label: 'Profile' },
+      ...(isAdmin ? [{ path: '/admin', match: '/admin', icon: BarChart3, label: 'Admin' }] : []),
+    ];
+    return items;
+  }, [firstTripId, isAdmin]);
 
   useEffect(() => {
     const handleLayoutChange = () => {

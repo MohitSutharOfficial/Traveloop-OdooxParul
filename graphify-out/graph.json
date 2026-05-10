@@ -45,7 +45,7 @@
       "source_file": "backend\\src\\server.ts",
       "source_location": "L1",
       "id": "backend_src_server_ts",
-      "community": 28,
+      "community": 29,
       "norm_label": "server.ts"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "backend\\src\\server.ts",
       "source_location": "L13",
       "id": "src_server_bootstrap",
-      "community": 28,
+      "community": 29,
       "norm_label": "bootstrap()"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "backend\\src\\config\\supabase.ts",
       "source_location": "L1",
       "id": "backend_src_config_supabase_ts",
-      "community": 28,
+      "community": 29,
       "norm_label": "supabase.ts"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "backend\\src\\config\\supabase.ts",
       "source_location": "L44",
       "id": "config_supabase_createuserclient",
-      "community": 28,
+      "community": 29,
       "norm_label": "createuserclient()"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "backend\\src\\config\\supabase.ts",
       "source_location": "L59",
       "id": "config_supabase_testconnection",
-      "community": 28,
+      "community": 29,
       "norm_label": "testconnection()"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L1",
       "id": "backend_src_controllers_activity_controller_ts",
-      "community": 15,
+      "community": 16,
       "norm_label": "activity.controller.ts"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L5",
       "id": "controllers_activity_controller_activitycontroller",
-      "community": 15,
+      "community": 16,
       "norm_label": "activitycontroller"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L6",
       "id": "controllers_activity_controller_activitycontroller_list",
-      "community": 15,
+      "community": 16,
       "norm_label": ".list()"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L20",
       "id": "controllers_activity_controller_activitycontroller_getbyid",
-      "community": 15,
+      "community": 16,
       "norm_label": ".getbyid()"
     },
     {
@@ -135,7 +135,7 @@
       "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L28",
       "id": "controllers_activity_controller_activitycontroller_create",
-      "community": 15,
+      "community": 16,
       "norm_label": ".create()"
     },
     {
@@ -144,7 +144,7 @@
       "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L37",
       "id": "controllers_activity_controller_activitycontroller_update",
-      "community": 15,
+      "community": 16,
       "norm_label": ".update()"
     },
     {
@@ -153,7 +153,7 @@
       "source_file": "backend\\src\\controllers\\activity.controller.ts",
       "source_location": "L44",
       "id": "controllers_activity_controller_activitycontroller_delete",
-      "community": 15,
+      "community": 16,
       "norm_label": ".delete()"
     },
     {
@@ -162,7 +162,7 @@
       "source_file": "backend\\src\\controllers\\admin.controller.ts",
       "source_location": "L1",
       "id": "backend_src_controllers_admin_controller_ts",
-      "community": 16,
+      "community": 17,
       "norm_label": "admin.controller.ts"
     },
     {
@@ -171,7 +171,7 @@
       "source_file": "backend\\src\\controllers\\admin.controller.ts",
       "source_location": "L7",
       "id": "controllers_admin_controller_admincontroller",
-      "community": 16,
+      "community": 17,
       "norm_label": "admincontroller"
     },
     {
@@ -180,7 +180,7 @@
       "source_file": "backend\\src\\controllers\\admin.controller.ts",
       "source_location": "L8",
       "id": "controllers_admin_controller_admincontroller_createuser",
-      "community": 16,
+      "community": 17,
       "norm_label": ".createuser()"
     },
     {
@@ -189,7 +189,7 @@
       "source_file": "backend\\src\\controllers\\admin.controller.ts",
       "source_location": "L26",
       "id": "controllers_admin_controller_admincontroller_dashboard",
-      "community": 16,
+      "community": 17,
       "norm_label": ".dashboard()"
     },
     {
@@ -198,7 +198,7 @@
       "source_file": "backend\\src\\controllers\\admin.controller.ts",
       "source_location": "L35",
       "id": "controllers_admin_controller_admincontroller_listusers",
-      "community": 16,
+      "community": 17,
       "norm_label": ".listusers()"
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "backend\\src\\controllers\\admin.controller.ts",
       "source_location": "L68",
       "id": "controllers_admin_controller_admincontroller_updateuser",
-      "community": 16,
+      "community": 17,
       "norm_label": ".updateuser()"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "backend\\src\\controllers\\admin.controller.ts",
       "source_location": "L86",
       "id": "controllers_admin_controller_admincontroller_deleteuser",
-      "community": 16,
+      "community": 17,
       "norm_label": ".deleteuser()"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "backend\\src\\controllers\\community.controller.ts",
       "source_location": "L1",
       "id": "backend_src_controllers_community_controller_ts",
-      "community": 8,
+      "community": 9,
       "norm_label": "community.controller.ts"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "backend\\src\\controllers\\community.controller.ts",
       "source_location": "L5",
       "id": "controllers_community_controller_communitycontroller",
-      "community": 8,
+      "community": 9,
       "norm_label": "communitycontroller"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "backend\\src\\controllers\\community.controller.ts",
       "source_location": "L6",
       "id": "controllers_community_controller_communitycontroller_list",
-      "community": 8,
+      "community": 9,
       "norm_label": ".list()"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "backend\\src\\controllers\\community.controller.ts",
       "source_location": "L16",
       "id": "controllers_community_controller_communitycontroller_getbyid",
-      "community": 8,
+      "community": 9,
       "norm_label": ".getbyid()"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "backend\\src\\controllers\\community.controller.ts",
       "source_location": "L24",
       "id": "controllers_community_controller_communitycontroller_create",
-      "community": 8,
+      "community": 9,
       "norm_label": ".create()"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "backend\\src\\controllers\\community.controller.ts",
       "source_location": "L33",
       "id": "controllers_community_controller_communitycontroller_delete",
-      "community": 8,
+      "community": 9,
       "norm_label": ".delete()"
     },
     {
@@ -351,7 +351,7 @@
       "source_file": "backend\\src\\controllers\\community.controller.ts",
       "source_location": "L40",
       "id": "controllers_community_controller_communitycontroller_like",
-      "community": 8,
+      "community": 9,
       "norm_label": ".like()"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "backend\\src\\controllers\\community.controller.ts",
       "source_location": "L47",
       "id": "controllers_community_controller_communitycontroller_unlike",
-      "community": 8,
+      "community": 9,
       "norm_label": ".unlike()"
     },
     {
@@ -369,7 +369,7 @@
       "source_file": "backend\\src\\controllers\\destination.controller.ts",
       "source_location": "L1",
       "id": "backend_src_controllers_destination_controller_ts",
-      "community": 17,
+      "community": 18,
       "norm_label": "destination.controller.ts"
     },
     {
@@ -378,7 +378,7 @@
       "source_file": "backend\\src\\controllers\\destination.controller.ts",
       "source_location": "L5",
       "id": "controllers_destination_controller_destinationcontroller",
-      "community": 17,
+      "community": 18,
       "norm_label": "destinationcontroller"
     },
     {
@@ -387,7 +387,7 @@
       "source_file": "backend\\src\\controllers\\destination.controller.ts",
       "source_location": "L6",
       "id": "controllers_destination_controller_destinationcontroller_list",
-      "community": 17,
+      "community": 18,
       "norm_label": ".list()"
     },
     {
@@ -396,7 +396,7 @@
       "source_file": "backend\\src\\controllers\\destination.controller.ts",
       "source_location": "L16",
       "id": "controllers_destination_controller_destinationcontroller_getbyid",
-      "community": 17,
+      "community": 18,
       "norm_label": ".getbyid()"
     },
     {
@@ -405,7 +405,7 @@
       "source_file": "backend\\src\\controllers\\destination.controller.ts",
       "source_location": "L24",
       "id": "controllers_destination_controller_destinationcontroller_create",
-      "community": 17,
+      "community": 18,
       "norm_label": ".create()"
     },
     {
@@ -414,7 +414,7 @@
       "source_file": "backend\\src\\controllers\\destination.controller.ts",
       "source_location": "L33",
       "id": "controllers_destination_controller_destinationcontroller_update",
-      "community": 17,
+      "community": 18,
       "norm_label": ".update()"
     },
     {
@@ -423,7 +423,7 @@
       "source_file": "backend\\src\\controllers\\destination.controller.ts",
       "source_location": "L40",
       "id": "controllers_destination_controller_destinationcontroller_delete",
-      "community": 17,
+      "community": 18,
       "norm_label": ".delete()"
     },
     {
@@ -432,7 +432,7 @@
       "source_file": "backend\\src\\controllers\\invoice.controller.ts",
       "source_location": "L1",
       "id": "backend_src_controllers_invoice_controller_ts",
-      "community": 6,
+      "community": 7,
       "norm_label": "invoice.controller.ts"
     },
     {
@@ -441,7 +441,7 @@
       "source_file": "backend\\src\\controllers\\invoice.controller.ts",
       "source_location": "L5",
       "id": "controllers_invoice_controller_invoicecontroller",
-      "community": 6,
+      "community": 7,
       "norm_label": "invoicecontroller"
     },
     {
@@ -450,7 +450,7 @@
       "source_file": "backend\\src\\controllers\\invoice.controller.ts",
       "source_location": "L6",
       "id": "controllers_invoice_controller_invoicecontroller_listbytrip",
-      "community": 6,
+      "community": 7,
       "norm_label": ".listbytrip()"
     },
     {
@@ -459,7 +459,7 @@
       "source_file": "backend\\src\\controllers\\invoice.controller.ts",
       "source_location": "L13",
       "id": "controllers_invoice_controller_invoicecontroller_getbyid",
-      "community": 6,
+      "community": 7,
       "norm_label": ".getbyid()"
     },
     {
@@ -468,7 +468,7 @@
       "source_file": "backend\\src\\controllers\\invoice.controller.ts",
       "source_location": "L21",
       "id": "controllers_invoice_controller_invoicecontroller_create",
-      "community": 6,
+      "community": 7,
       "norm_label": ".create()"
     },
     {
@@ -477,7 +477,7 @@
       "source_file": "backend\\src\\controllers\\invoice.controller.ts",
       "source_location": "L30",
       "id": "controllers_invoice_controller_invoicecontroller_update",
-      "community": 6,
+      "community": 7,
       "norm_label": ".update()"
     },
     {
@@ -486,7 +486,7 @@
       "source_file": "backend\\src\\controllers\\invoice.controller.ts",
       "source_location": "L39",
       "id": "controllers_invoice_controller_invoicecontroller_delete",
-      "community": 6,
+      "community": 7,
       "norm_label": ".delete()"
     },
     {
@@ -495,7 +495,7 @@
       "source_file": "backend\\src\\controllers\\invoice.controller.ts",
       "source_location": "L46",
       "id": "controllers_invoice_controller_invoicecontroller_additem",
-      "community": 6,
+      "community": 7,
       "norm_label": ".additem()"
     },
     {
@@ -504,7 +504,7 @@
       "source_file": "backend\\src\\controllers\\invoice.controller.ts",
       "source_location": "L55",
       "id": "controllers_invoice_controller_invoicecontroller_removeitem",
-      "community": 6,
+      "community": 7,
       "norm_label": ".removeitem()"
     },
     {
@@ -513,7 +513,7 @@
       "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
       "source_location": "L1",
       "id": "backend_src_controllers_itinerary_controller_ts",
-      "community": 9,
+      "community": 10,
       "norm_label": "itinerary.controller.ts"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
       "source_location": "L5",
       "id": "controllers_itinerary_controller_itinerarycontroller",
-      "community": 9,
+      "community": 10,
       "norm_label": "itinerarycontroller"
     },
     {
@@ -531,7 +531,7 @@
       "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
       "source_location": "L6",
       "id": "controllers_itinerary_controller_itinerarycontroller_listbytrip",
-      "community": 9,
+      "community": 10,
       "norm_label": ".listbytrip()"
     },
     {
@@ -540,7 +540,7 @@
       "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
       "source_location": "L13",
       "id": "controllers_itinerary_controller_itinerarycontroller_getbyid",
-      "community": 9,
+      "community": 10,
       "norm_label": ".getbyid()"
     },
     {
@@ -549,7 +549,7 @@
       "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
       "source_location": "L21",
       "id": "controllers_itinerary_controller_itinerarycontroller_create",
-      "community": 9,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -558,7 +558,7 @@
       "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
       "source_location": "L30",
       "id": "controllers_itinerary_controller_itinerarycontroller_update",
-      "community": 9,
+      "community": 10,
       "norm_label": ".update()"
     },
     {
@@ -567,7 +567,7 @@
       "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
       "source_location": "L39",
       "id": "controllers_itinerary_controller_itinerarycontroller_delete",
-      "community": 9,
+      "community": 10,
       "norm_label": ".delete()"
     },
     {
@@ -576,7 +576,7 @@
       "source_file": "backend\\src\\controllers\\itinerary.controller.ts",
       "source_location": "L46",
       "id": "controllers_itinerary_controller_itinerarycontroller_reorder",
-      "community": 9,
+      "community": 10,
       "norm_label": ".reorder()"
     },
     {
@@ -585,7 +585,7 @@
       "source_file": "backend\\src\\controllers\\note.controller.ts",
       "source_location": "L1",
       "id": "backend_src_controllers_note_controller_ts",
-      "community": 18,
+      "community": 19,
       "norm_label": "note.controller.ts"
     },
     {
@@ -594,7 +594,7 @@
       "source_file": "backend\\src\\controllers\\note.controller.ts",
       "source_location": "L5",
       "id": "controllers_note_controller_notecontroller",
-      "community": 18,
+      "community": 19,
       "norm_label": "notecontroller"
     },
     {
@@ -603,7 +603,7 @@
       "source_file": "backend\\src\\controllers\\note.controller.ts",
       "source_location": "L6",
       "id": "controllers_note_controller_notecontroller_listbytrip",
-      "community": 18,
+      "community": 19,
       "norm_label": ".listbytrip()"
     },
     {
@@ -612,7 +612,7 @@
       "source_file": "backend\\src\\controllers\\note.controller.ts",
       "source_location": "L13",
       "id": "controllers_note_controller_notecontroller_getbyid",
-      "community": 18,
+      "community": 19,
       "norm_label": ".getbyid()"
     },
     {
@@ -621,7 +621,7 @@
       "source_file": "backend\\src\\controllers\\note.controller.ts",
       "source_location": "L21",
       "id": "controllers_note_controller_notecontroller_create",
-      "community": 18,
+      "community": 19,
       "norm_label": ".create()"
     },
     {
@@ -630,7 +630,7 @@
       "source_file": "backend\\src\\controllers\\note.controller.ts",
       "source_location": "L30",
       "id": "controllers_note_controller_notecontroller_update",
-      "community": 18,
+      "community": 19,
       "norm_label": ".update()"
     },
     {
@@ -639,7 +639,7 @@
       "source_file": "backend\\src\\controllers\\note.controller.ts",
       "source_location": "L39",
       "id": "controllers_note_controller_notecontroller_delete",
-      "community": 18,
+      "community": 19,
       "norm_label": ".delete()"
     },
     {
@@ -648,7 +648,7 @@
       "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L1",
       "id": "backend_src_controllers_packing_controller_ts",
-      "community": 10,
+      "community": 11,
       "norm_label": "packing.controller.ts"
     },
     {
@@ -657,7 +657,7 @@
       "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L5",
       "id": "controllers_packing_controller_packingcontroller",
-      "community": 10,
+      "community": 11,
       "norm_label": "packingcontroller"
     },
     {
@@ -666,7 +666,7 @@
       "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L6",
       "id": "controllers_packing_controller_packingcontroller_listbytrip",
-      "community": 10,
+      "community": 11,
       "norm_label": ".listbytrip()"
     },
     {
@@ -675,7 +675,7 @@
       "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L13",
       "id": "controllers_packing_controller_packingcontroller_create",
-      "community": 10,
+      "community": 11,
       "norm_label": ".create()"
     },
     {
@@ -684,7 +684,7 @@
       "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L22",
       "id": "controllers_packing_controller_packingcontroller_update",
-      "community": 10,
+      "community": 11,
       "norm_label": ".update()"
     },
     {
@@ -693,7 +693,7 @@
       "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L31",
       "id": "controllers_packing_controller_packingcontroller_togglepacked",
-      "community": 10,
+      "community": 11,
       "norm_label": ".togglepacked()"
     },
     {
@@ -702,7 +702,7 @@
       "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L38",
       "id": "controllers_packing_controller_packingcontroller_delete",
-      "community": 10,
+      "community": 11,
       "norm_label": ".delete()"
     },
     {
@@ -711,7 +711,7 @@
       "source_file": "backend\\src\\controllers\\packing.controller.ts",
       "source_location": "L45",
       "id": "controllers_packing_controller_packingcontroller_bulkcreate",
-      "community": 10,
+      "community": 11,
       "norm_label": ".bulkcreate()"
     },
     {
@@ -720,7 +720,7 @@
       "source_file": "backend\\src\\controllers\\profile.controller.ts",
       "source_location": "L1",
       "id": "backend_src_controllers_profile_controller_ts",
-      "community": 29,
+      "community": 30,
       "norm_label": "profile.controller.ts"
     },
     {
@@ -729,7 +729,7 @@
       "source_file": "backend\\src\\controllers\\profile.controller.ts",
       "source_location": "L5",
       "id": "controllers_profile_controller_profilecontroller",
-      "community": 29,
+      "community": 30,
       "norm_label": "profilecontroller"
     },
     {
@@ -738,7 +738,7 @@
       "source_file": "backend\\src\\controllers\\profile.controller.ts",
       "source_location": "L6",
       "id": "controllers_profile_controller_profilecontroller_getme",
-      "community": 29,
+      "community": 30,
       "norm_label": ".getme()"
     },
     {
@@ -747,7 +747,7 @@
       "source_file": "backend\\src\\controllers\\profile.controller.ts",
       "source_location": "L17",
       "id": "controllers_profile_controller_profilecontroller_updateme",
-      "community": 29,
+      "community": 30,
       "norm_label": ".updateme()"
     },
     {
@@ -756,7 +756,7 @@
       "source_file": "backend\\src\\controllers\\profile.controller.ts",
       "source_location": "L26",
       "id": "controllers_profile_controller_profilecontroller_list",
-      "community": 29,
+      "community": 30,
       "norm_label": ".list()"
     },
     {
@@ -765,7 +765,7 @@
       "source_file": "backend\\src\\controllers\\trip.controller.ts",
       "source_location": "L1",
       "id": "backend_src_controllers_trip_controller_ts",
-      "community": 11,
+      "community": 12,
       "norm_label": "trip.controller.ts"
     },
     {
@@ -774,7 +774,7 @@
       "source_file": "backend\\src\\controllers\\trip.controller.ts",
       "source_location": "L5",
       "id": "controllers_trip_controller_tripcontroller",
-      "community": 11,
+      "community": 12,
       "norm_label": "tripcontroller"
     },
     {
@@ -783,7 +783,7 @@
       "source_file": "backend\\src\\controllers\\trip.controller.ts",
       "source_location": "L6",
       "id": "controllers_trip_controller_tripcontroller_list",
-      "community": 11,
+      "community": 12,
       "norm_label": ".list()"
     },
     {
@@ -792,7 +792,7 @@
       "source_file": "backend\\src\\controllers\\trip.controller.ts",
       "source_location": "L21",
       "id": "controllers_trip_controller_tripcontroller_getbyid",
-      "community": 11,
+      "community": 12,
       "norm_label": ".getbyid()"
     },
     {
@@ -801,7 +801,7 @@
       "source_file": "backend\\src\\controllers\\trip.controller.ts",
       "source_location": "L29",
       "id": "controllers_trip_controller_tripcontroller_create",
-      "community": 11,
+      "community": 12,
       "norm_label": ".create()"
     },
     {
@@ -810,7 +810,7 @@
       "source_file": "backend\\src\\controllers\\trip.controller.ts",
       "source_location": "L38",
       "id": "controllers_trip_controller_tripcontroller_update",
-      "community": 11,
+      "community": 12,
       "norm_label": ".update()"
     },
     {
@@ -819,7 +819,7 @@
       "source_file": "backend\\src\\controllers\\trip.controller.ts",
       "source_location": "L47",
       "id": "controllers_trip_controller_tripcontroller_delete",
-      "community": 11,
+      "community": 12,
       "norm_label": ".delete()"
     },
     {
@@ -828,7 +828,7 @@
       "source_file": "backend\\src\\controllers\\trip.controller.ts",
       "source_location": "L54",
       "id": "controllers_trip_controller_tripcontroller_stats",
-      "community": 11,
+      "community": 12,
       "norm_label": ".stats()"
     },
     {
@@ -837,7 +837,7 @@
       "source_file": "backend\\src\\middleware\\auth.middleware.ts",
       "source_location": "L1",
       "id": "backend_src_middleware_auth_middleware_ts",
-      "community": 33,
+      "community": 34,
       "norm_label": "auth.middleware.ts"
     },
     {
@@ -846,7 +846,7 @@
       "source_file": "backend\\src\\middleware\\auth.middleware.ts",
       "source_location": "L26",
       "id": "middleware_auth_middleware_authenticate",
-      "community": 33,
+      "community": 34,
       "norm_label": "authenticate()"
     },
     {
@@ -855,7 +855,7 @@
       "source_file": "backend\\src\\middleware\\auth.middleware.ts",
       "source_location": "L75",
       "id": "middleware_auth_middleware_requireadmin",
-      "community": 33,
+      "community": 34,
       "norm_label": "requireadmin()"
     },
     {
@@ -864,7 +864,7 @@
       "source_file": "backend\\src\\middleware\\auth.middleware.ts",
       "source_location": "L113",
       "id": "middleware_auth_middleware_authorize",
-      "community": 33,
+      "community": 34,
       "norm_label": "authorize()"
     },
     {
@@ -873,7 +873,7 @@
       "source_file": "backend\\src\\middleware\\error.middleware.ts",
       "source_location": "L1",
       "id": "backend_src_middleware_error_middleware_ts",
-      "community": 34,
+      "community": 35,
       "norm_label": "error.middleware.ts"
     },
     {
@@ -882,7 +882,7 @@
       "source_file": "backend\\src\\middleware\\error.middleware.ts",
       "source_location": "L4",
       "id": "middleware_error_middleware_apperror",
-      "community": 34,
+      "community": 35,
       "norm_label": "apperror"
     },
     {
@@ -891,7 +891,7 @@
       "source_file": "backend\\src\\middleware\\error.middleware.ts",
       "source_location": "L9",
       "id": "middleware_error_middleware_apperror_constructor",
-      "community": 34,
+      "community": 35,
       "norm_label": ".constructor()"
     },
     {
@@ -900,7 +900,7 @@
       "source_file": "backend\\src\\middleware\\error.middleware.ts",
       "source_location": "L19",
       "id": "middleware_error_middleware_errorhandler",
-      "community": 34,
+      "community": 35,
       "norm_label": "errorhandler()"
     },
     {
@@ -1062,7 +1062,7 @@
       "source_file": "backend\\src\\services\\activity.service.ts",
       "source_location": "L1",
       "id": "backend_src_services_activity_service_ts",
-      "community": 19,
+      "community": 20,
       "norm_label": "activity.service.ts"
     },
     {
@@ -1071,7 +1071,7 @@
       "source_file": "backend\\src\\services\\activity.service.ts",
       "source_location": "L4",
       "id": "services_activity_service_activityservice",
-      "community": 19,
+      "community": 20,
       "norm_label": "activityservice"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_file": "backend\\src\\services\\activity.service.ts",
       "source_location": "L5",
       "id": "services_activity_service_activityservice_list",
-      "community": 19,
+      "community": 20,
       "norm_label": ".list()"
     },
     {
@@ -1089,7 +1089,7 @@
       "source_file": "backend\\src\\services\\activity.service.ts",
       "source_location": "L24",
       "id": "services_activity_service_activityservice_getbyid",
-      "community": 19,
+      "community": 20,
       "norm_label": ".getbyid()"
     },
     {
@@ -1098,7 +1098,7 @@
       "source_file": "backend\\src\\services\\activity.service.ts",
       "source_location": "L34",
       "id": "services_activity_service_activityservice_create",
-      "community": 19,
+      "community": 20,
       "norm_label": ".create()"
     },
     {
@@ -1107,7 +1107,7 @@
       "source_file": "backend\\src\\services\\activity.service.ts",
       "source_location": "L44",
       "id": "services_activity_service_activityservice_update",
-      "community": 19,
+      "community": 20,
       "norm_label": ".update()"
     },
     {
@@ -1116,7 +1116,7 @@
       "source_file": "backend\\src\\services\\activity.service.ts",
       "source_location": "L55",
       "id": "services_activity_service_activityservice_delete",
-      "community": 19,
+      "community": 20,
       "norm_label": ".delete()"
     },
     {
@@ -1125,7 +1125,7 @@
       "source_file": "backend\\src\\services\\admin.service.ts",
       "source_location": "L1",
       "id": "backend_src_services_admin_service_ts",
-      "community": 20,
+      "community": 21,
       "norm_label": "admin.service.ts"
     },
     {
@@ -1134,7 +1134,7 @@
       "source_file": "backend\\src\\services\\admin.service.ts",
       "source_location": "L23",
       "id": "services_admin_service_adminservice",
-      "community": 20,
+      "community": 21,
       "norm_label": "adminservice"
     },
     {
@@ -1143,7 +1143,7 @@
       "source_file": "backend\\src\\services\\admin.service.ts",
       "source_location": "L24",
       "id": "services_admin_service_adminservice_createuser",
-      "community": 20,
+      "community": 21,
       "norm_label": ".createuser()"
     },
     {
@@ -1152,7 +1152,7 @@
       "source_file": "backend\\src\\services\\admin.service.ts",
       "source_location": "L71",
       "id": "services_admin_service_adminservice_listusers",
-      "community": 20,
+      "community": 21,
       "norm_label": ".listusers()"
     },
     {
@@ -1161,7 +1161,7 @@
       "source_file": "backend\\src\\services\\admin.service.ts",
       "source_location": "L109",
       "id": "services_admin_service_adminservice_updateuser",
-      "community": 20,
+      "community": 21,
       "norm_label": ".updateuser()"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_file": "backend\\src\\services\\admin.service.ts",
       "source_location": "L124",
       "id": "services_admin_service_adminservice_deleteuser",
-      "community": 20,
+      "community": 21,
       "norm_label": ".deleteuser()"
     },
     {
@@ -1179,7 +1179,7 @@
       "source_file": "backend\\src\\services\\admin.service.ts",
       "source_location": "L129",
       "id": "services_admin_service_adminservice_getdashboard",
-      "community": 20,
+      "community": 21,
       "norm_label": ".getdashboard()"
     },
     {
@@ -1242,7 +1242,7 @@
       "source_file": "backend\\src\\services\\community.service.ts",
       "source_location": "L1",
       "id": "backend_src_services_community_service_ts",
-      "community": 12,
+      "community": 13,
       "norm_label": "community.service.ts"
     },
     {
@@ -1251,7 +1251,7 @@
       "source_file": "backend\\src\\services\\community.service.ts",
       "source_location": "L4",
       "id": "services_community_service_communityservice",
-      "community": 12,
+      "community": 13,
       "norm_label": "communityservice"
     },
     {
@@ -1260,7 +1260,7 @@
       "source_file": "backend\\src\\services\\community.service.ts",
       "source_location": "L5",
       "id": "services_community_service_communityservice_list",
-      "community": 12,
+      "community": 13,
       "norm_label": ".list()"
     },
     {
@@ -1269,7 +1269,7 @@
       "source_file": "backend\\src\\services\\community.service.ts",
       "source_location": "L19",
       "id": "services_community_service_communityservice_getbyid",
-      "community": 12,
+      "community": 13,
       "norm_label": ".getbyid()"
     },
     {
@@ -1278,7 +1278,7 @@
       "source_file": "backend\\src\\services\\community.service.ts",
       "source_location": "L25",
       "id": "services_community_service_communityservice_create",
-      "community": 12,
+      "community": 13,
       "norm_label": ".create()"
     },
     {
@@ -1287,7 +1287,7 @@
       "source_file": "backend\\src\\services\\community.service.ts",
       "source_location": "L31",
       "id": "services_community_service_communityservice_delete",
-      "community": 12,
+      "community": 13,
       "norm_label": ".delete()"
     },
     {
@@ -1296,7 +1296,7 @@
       "source_file": "backend\\src\\services\\community.service.ts",
       "source_location": "L36",
       "id": "services_community_service_communityservice_like",
-      "community": 12,
+      "community": 13,
       "norm_label": ".like()"
     },
     {
@@ -1305,7 +1305,7 @@
       "source_file": "backend\\src\\services\\community.service.ts",
       "source_location": "L54",
       "id": "services_community_service_communityservice_unlike",
-      "community": 12,
+      "community": 13,
       "norm_label": ".unlike()"
     },
     {
@@ -1314,7 +1314,7 @@
       "source_file": "backend\\src\\services\\destination.service.ts",
       "source_location": "L1",
       "id": "backend_src_services_destination_service_ts",
-      "community": 21,
+      "community": 22,
       "norm_label": "destination.service.ts"
     },
     {
@@ -1323,7 +1323,7 @@
       "source_file": "backend\\src\\services\\destination.service.ts",
       "source_location": "L4",
       "id": "services_destination_service_destinationservice",
-      "community": 21,
+      "community": 22,
       "norm_label": "destinationservice"
     },
     {
@@ -1332,7 +1332,7 @@
       "source_file": "backend\\src\\services\\destination.service.ts",
       "source_location": "L5",
       "id": "services_destination_service_destinationservice_list",
-      "community": 21,
+      "community": 22,
       "norm_label": ".list()"
     },
     {
@@ -1341,7 +1341,7 @@
       "source_file": "backend\\src\\services\\destination.service.ts",
       "source_location": "L24",
       "id": "services_destination_service_destinationservice_getbyid",
-      "community": 21,
+      "community": 22,
       "norm_label": ".getbyid()"
     },
     {
@@ -1350,7 +1350,7 @@
       "source_file": "backend\\src\\services\\destination.service.ts",
       "source_location": "L34",
       "id": "services_destination_service_destinationservice_create",
-      "community": 21,
+      "community": 22,
       "norm_label": ".create()"
     },
     {
@@ -1359,7 +1359,7 @@
       "source_file": "backend\\src\\services\\destination.service.ts",
       "source_location": "L44",
       "id": "services_destination_service_destinationservice_update",
-      "community": 21,
+      "community": 22,
       "norm_label": ".update()"
     },
     {
@@ -1368,7 +1368,7 @@
       "source_file": "backend\\src\\services\\destination.service.ts",
       "source_location": "L55",
       "id": "services_destination_service_destinationservice_delete",
-      "community": 21,
+      "community": 22,
       "norm_label": ".delete()"
     },
     {
@@ -1503,7 +1503,7 @@
       "source_file": "backend\\src\\services\\itinerary.service.ts",
       "source_location": "L1",
       "id": "backend_src_services_itinerary_service_ts",
-      "community": 13,
+      "community": 14,
       "norm_label": "itinerary.service.ts"
     },
     {
@@ -1512,7 +1512,7 @@
       "source_file": "backend\\src\\services\\itinerary.service.ts",
       "source_location": "L4",
       "id": "services_itinerary_service_itineraryservice",
-      "community": 13,
+      "community": 14,
       "norm_label": "itineraryservice"
     },
     {
@@ -1521,7 +1521,7 @@
       "source_file": "backend\\src\\services\\itinerary.service.ts",
       "source_location": "L6",
       "id": "services_itinerary_service_itineraryservice_listbytrip",
-      "community": 13,
+      "community": 14,
       "norm_label": ".listbytrip()"
     },
     {
@@ -1530,7 +1530,7 @@
       "source_file": "backend\\src\\services\\itinerary.service.ts",
       "source_location": "L17",
       "id": "services_itinerary_service_itineraryservice_getbyid",
-      "community": 13,
+      "community": 14,
       "norm_label": ".getbyid()"
     },
     {
@@ -1539,7 +1539,7 @@
       "source_file": "backend\\src\\services\\itinerary.service.ts",
       "source_location": "L27",
       "id": "services_itinerary_service_itineraryservice_create",
-      "community": 13,
+      "community": 14,
       "norm_label": ".create()"
     },
     {
@@ -1548,7 +1548,7 @@
       "source_file": "backend\\src\\services\\itinerary.service.ts",
       "source_location": "L37",
       "id": "services_itinerary_service_itineraryservice_update",
-      "community": 13,
+      "community": 14,
       "norm_label": ".update()"
     },
     {
@@ -1557,7 +1557,7 @@
       "source_file": "backend\\src\\services\\itinerary.service.ts",
       "source_location": "L48",
       "id": "services_itinerary_service_itineraryservice_delete",
-      "community": 13,
+      "community": 14,
       "norm_label": ".delete()"
     },
     {
@@ -1566,7 +1566,7 @@
       "source_file": "backend\\src\\services\\itinerary.service.ts",
       "source_location": "L57",
       "id": "services_itinerary_service_itineraryservice_reorder",
-      "community": 13,
+      "community": 14,
       "norm_label": ".reorder()"
     },
     {
@@ -1575,7 +1575,7 @@
       "source_file": "backend\\src\\services\\note.service.ts",
       "source_location": "L1",
       "id": "backend_src_services_note_service_ts",
-      "community": 22,
+      "community": 23,
       "norm_label": "note.service.ts"
     },
     {
@@ -1584,7 +1584,7 @@
       "source_file": "backend\\src\\services\\note.service.ts",
       "source_location": "L4",
       "id": "services_note_service_noteservice",
-      "community": 22,
+      "community": 23,
       "norm_label": "noteservice"
     },
     {
@@ -1593,7 +1593,7 @@
       "source_file": "backend\\src\\services\\note.service.ts",
       "source_location": "L5",
       "id": "services_note_service_noteservice_listbytrip",
-      "community": 22,
+      "community": 23,
       "norm_label": ".listbytrip()"
     },
     {
@@ -1602,7 +1602,7 @@
       "source_file": "backend\\src\\services\\note.service.ts",
       "source_location": "L15",
       "id": "services_note_service_noteservice_getbyid",
-      "community": 22,
+      "community": 23,
       "norm_label": ".getbyid()"
     },
     {
@@ -1611,7 +1611,7 @@
       "source_file": "backend\\src\\services\\note.service.ts",
       "source_location": "L25",
       "id": "services_note_service_noteservice_create",
-      "community": 22,
+      "community": 23,
       "norm_label": ".create()"
     },
     {
@@ -1620,7 +1620,7 @@
       "source_file": "backend\\src\\services\\note.service.ts",
       "source_location": "L35",
       "id": "services_note_service_noteservice_update",
-      "community": 22,
+      "community": 23,
       "norm_label": ".update()"
     },
     {
@@ -1629,7 +1629,7 @@
       "source_file": "backend\\src\\services\\note.service.ts",
       "source_location": "L46",
       "id": "services_note_service_noteservice_delete",
-      "community": 22,
+      "community": 23,
       "norm_label": ".delete()"
     },
     {
@@ -1638,7 +1638,7 @@
       "source_file": "backend\\src\\services\\packing.service.ts",
       "source_location": "L1",
       "id": "backend_src_services_packing_service_ts",
-      "community": 14,
+      "community": 15,
       "norm_label": "packing.service.ts"
     },
     {
@@ -1647,7 +1647,7 @@
       "source_file": "backend\\src\\services\\packing.service.ts",
       "source_location": "L4",
       "id": "services_packing_service_packingservice",
-      "community": 14,
+      "community": 15,
       "norm_label": "packingservice"
     },
     {
@@ -1656,7 +1656,7 @@
       "source_file": "backend\\src\\services\\packing.service.ts",
       "source_location": "L5",
       "id": "services_packing_service_packingservice_listbytrip",
-      "community": 14,
+      "community": 15,
       "norm_label": ".listbytrip()"
     },
     {
@@ -1665,7 +1665,7 @@
       "source_file": "backend\\src\\services\\packing.service.ts",
       "source_location": "L16",
       "id": "services_packing_service_packingservice_create",
-      "community": 14,
+      "community": 15,
       "norm_label": ".create()"
     },
     {
@@ -1674,7 +1674,7 @@
       "source_file": "backend\\src\\services\\packing.service.ts",
       "source_location": "L26",
       "id": "services_packing_service_packingservice_update",
-      "community": 14,
+      "community": 15,
       "norm_label": ".update()"
     },
     {
@@ -1683,7 +1683,7 @@
       "source_file": "backend\\src\\services\\packing.service.ts",
       "source_location": "L37",
       "id": "services_packing_service_packingservice_delete",
-      "community": 14,
+      "community": 15,
       "norm_label": ".delete()"
     },
     {
@@ -1692,7 +1692,7 @@
       "source_file": "backend\\src\\services\\packing.service.ts",
       "source_location": "L46",
       "id": "services_packing_service_packingservice_togglepacked",
-      "community": 14,
+      "community": 15,
       "norm_label": ".togglepacked()"
     },
     {
@@ -1701,7 +1701,7 @@
       "source_file": "backend\\src\\services\\packing.service.ts",
       "source_location": "L66",
       "id": "services_packing_service_packingservice_bulkcreate",
-      "community": 14,
+      "community": 15,
       "norm_label": ".bulkcreate()"
     },
     {
@@ -1710,7 +1710,7 @@
       "source_file": "backend\\src\\services\\profile.service.ts",
       "source_location": "L1",
       "id": "backend_src_services_profile_service_ts",
-      "community": 25,
+      "community": 26,
       "norm_label": "profile.service.ts"
     },
     {
@@ -1719,7 +1719,7 @@
       "source_file": "backend\\src\\services\\profile.service.ts",
       "source_location": "L4",
       "id": "services_profile_service_profileservice",
-      "community": 25,
+      "community": 26,
       "norm_label": "profileservice"
     },
     {
@@ -1728,7 +1728,7 @@
       "source_file": "backend\\src\\services\\profile.service.ts",
       "source_location": "L6",
       "id": "services_profile_service_profileservice_getbyid",
-      "community": 25,
+      "community": 26,
       "norm_label": ".getbyid()"
     },
     {
@@ -1737,7 +1737,7 @@
       "source_file": "backend\\src\\services\\profile.service.ts",
       "source_location": "L17",
       "id": "services_profile_service_profileservice_upsert",
-      "community": 25,
+      "community": 26,
       "norm_label": ".upsert()"
     },
     {
@@ -1746,7 +1746,7 @@
       "source_file": "backend\\src\\services\\profile.service.ts",
       "source_location": "L28",
       "id": "services_profile_service_profileservice_update",
-      "community": 25,
+      "community": 26,
       "norm_label": ".update()"
     },
     {
@@ -1755,7 +1755,7 @@
       "source_file": "backend\\src\\services\\profile.service.ts",
       "source_location": "L40",
       "id": "services_profile_service_profileservice_list",
-      "community": 25,
+      "community": 26,
       "norm_label": ".list()"
     },
     {
@@ -1764,7 +1764,7 @@
       "source_file": "backend\\src\\services\\trip.service.ts",
       "source_location": "L1",
       "id": "backend_src_services_trip_service_ts",
-      "community": 7,
+      "community": 8,
       "norm_label": "trip.service.ts"
     },
     {
@@ -1773,7 +1773,7 @@
       "source_file": "backend\\src\\services\\trip.service.ts",
       "source_location": "L4",
       "id": "services_trip_service_tripservice",
-      "community": 7,
+      "community": 8,
       "norm_label": "tripservice"
     },
     {
@@ -1782,7 +1782,7 @@
       "source_file": "backend\\src\\services\\trip.service.ts",
       "source_location": "L6",
       "id": "services_trip_service_tripservice_listbyowner",
-      "community": 7,
+      "community": 8,
       "norm_label": ".listbyowner()"
     },
     {
@@ -1791,7 +1791,7 @@
       "source_file": "backend\\src\\services\\trip.service.ts",
       "source_location": "L28",
       "id": "services_trip_service_tripservice_getbyid",
-      "community": 7,
+      "community": 8,
       "norm_label": ".getbyid()"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_file": "backend\\src\\services\\trip.service.ts",
       "source_location": "L40",
       "id": "services_trip_service_tripservice_getbyidadmin",
-      "community": 7,
+      "community": 8,
       "norm_label": ".getbyidadmin()"
     },
     {
@@ -1809,7 +1809,7 @@
       "source_file": "backend\\src\\services\\trip.service.ts",
       "source_location": "L51",
       "id": "services_trip_service_tripservice_create",
-      "community": 7,
+      "community": 8,
       "norm_label": ".create()"
     },
     {
@@ -1818,7 +1818,7 @@
       "source_file": "backend\\src\\services\\trip.service.ts",
       "source_location": "L62",
       "id": "services_trip_service_tripservice_update",
-      "community": 7,
+      "community": 8,
       "norm_label": ".update()"
     },
     {
@@ -1827,7 +1827,7 @@
       "source_file": "backend\\src\\services\\trip.service.ts",
       "source_location": "L75",
       "id": "services_trip_service_tripservice_delete",
-      "community": 7,
+      "community": 8,
       "norm_label": ".delete()"
     },
     {
@@ -1836,7 +1836,7 @@
       "source_file": "backend\\src\\services\\trip.service.ts",
       "source_location": "L85",
       "id": "services_trip_service_tripservice_getstats",
-      "community": 7,
+      "community": 8,
       "norm_label": ".getstats()"
     },
     {
@@ -2061,7 +2061,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_filterbar_tsx",
-      "community": 23,
+      "community": 24,
       "norm_label": "filterbar.tsx"
     },
     {
@@ -2070,7 +2070,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L13",
       "id": "components_filterbar_handletypechange",
-      "community": 23,
+      "community": 24,
       "norm_label": "handletypechange()"
     },
     {
@@ -2079,7 +2079,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L20",
       "id": "components_filterbar_handlestagechange",
-      "community": 23,
+      "community": 24,
       "norm_label": "handlestagechange()"
     },
     {
@@ -2088,7 +2088,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L27",
       "id": "components_filterbar_handlesearchchange",
-      "community": 23,
+      "community": 24,
       "norm_label": "handlesearchchange()"
     },
     {
@@ -2097,7 +2097,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L34",
       "id": "components_filterbar_handletoggleassigned",
-      "community": 23,
+      "community": 24,
       "norm_label": "handletoggleassigned()"
     },
     {
@@ -2106,7 +2106,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L41",
       "id": "components_filterbar_handletoggleoverdue",
-      "community": 23,
+      "community": 24,
       "norm_label": "handletoggleoverdue()"
     },
     {
@@ -2115,7 +2115,7 @@
       "source_file": "frontend\\src\\components\\FilterBar.tsx",
       "source_location": "L48",
       "id": "components_filterbar_clearallfilters",
-      "community": 23,
+      "community": 24,
       "norm_label": "clearallfilters()"
     },
     {
@@ -2124,7 +2124,7 @@
       "source_file": "frontend\\src\\components\\Layout.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_layout_tsx",
-      "community": 35,
+      "community": 36,
       "norm_label": "layout.tsx"
     },
     {
@@ -2133,7 +2133,7 @@
       "source_file": "frontend\\src\\components\\Layout.tsx",
       "source_location": "L44",
       "id": "components_layout_navlink",
-      "community": 35,
+      "community": 36,
       "norm_label": "navlink()"
     },
     {
@@ -2142,7 +2142,7 @@
       "source_file": "frontend\\src\\components\\Layout.tsx",
       "source_location": "L77",
       "id": "components_layout_checkadminstatus",
-      "community": 35,
+      "community": 36,
       "norm_label": "checkadminstatus()"
     },
     {
@@ -2151,7 +2151,7 @@
       "source_file": "frontend\\src\\components\\Layout.tsx",
       "source_location": "L114",
       "id": "components_layout_handlelayoutchange",
-      "community": 35,
+      "community": 36,
       "norm_label": "handlelayoutchange()"
     },
     {
@@ -2205,7 +2205,7 @@
       "source_file": "frontend\\src\\components\\UserMenuDropdown.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_usermenudropdown_tsx",
-      "community": 36,
+      "community": 37,
       "norm_label": "usermenudropdown.tsx"
     },
     {
@@ -2214,7 +2214,7 @@
       "source_file": "frontend\\src\\components\\UserMenuDropdown.tsx",
       "source_location": "L7",
       "id": "components_usermenudropdown_getinitials",
-      "community": 36,
+      "community": 37,
       "norm_label": "getinitials()"
     },
     {
@@ -2223,7 +2223,7 @@
       "source_file": "frontend\\src\\components\\UserMenuDropdown.tsx",
       "source_location": "L36",
       "id": "components_usermenudropdown_handleclickoutside",
-      "community": 36,
+      "community": 37,
       "norm_label": "handleclickoutside()"
     },
     {
@@ -2232,7 +2232,7 @@
       "source_file": "frontend\\src\\components\\UserMenuDropdown.tsx",
       "source_location": "L49",
       "id": "components_usermenudropdown_handlelogout",
-      "community": 36,
+      "community": 37,
       "norm_label": "handlelogout()"
     },
     {
@@ -2448,7 +2448,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L1",
       "id": "frontend_src_lib_supabase_ts",
-      "community": 26,
+      "community": 27,
       "norm_label": "supabase.ts"
     },
     {
@@ -2457,7 +2457,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L9",
       "id": "lib_supabase_createdemosession",
-      "community": 26,
+      "community": 27,
       "norm_label": "createdemosession()"
     },
     {
@@ -2466,7 +2466,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L37",
       "id": "lib_supabase_getstoreddemosession",
-      "community": 26,
+      "community": 27,
       "norm_label": "getstoreddemosession()"
     },
     {
@@ -2475,7 +2475,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L42",
       "id": "lib_supabase_setstoreddemosession",
-      "community": 26,
+      "community": 27,
       "norm_label": "setstoreddemosession()"
     },
     {
@@ -2484,7 +2484,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L47",
       "id": "lib_supabase_clearstoreddemosession",
-      "community": 26,
+      "community": 27,
       "norm_label": "clearstoreddemosession()"
     },
     {
@@ -2493,7 +2493,7 @@
       "source_file": "frontend\\src\\lib\\supabase.ts",
       "source_location": "L52",
       "id": "lib_supabase_createdemosupabaseclient",
-      "community": 26,
+      "community": 27,
       "norm_label": "createdemosupabaseclient()"
     },
     {
@@ -2502,7 +2502,7 @@
       "source_file": "frontend\\src\\pages\\ActivitySearch.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_activitysearch_tsx",
-      "community": 30,
+      "community": 31,
       "norm_label": "activitysearch.tsx"
     },
     {
@@ -2511,7 +2511,7 @@
       "source_file": "frontend\\src\\pages\\ActivitySearch.tsx",
       "source_location": "L25",
       "id": "pages_activitysearch_loadactivities",
-      "community": 30,
+      "community": 31,
       "norm_label": "loadactivities()"
     },
     {
@@ -2520,7 +2520,7 @@
       "source_file": "frontend\\src\\pages\\ActivitySearch.tsx",
       "source_location": "L36",
       "id": "pages_activitysearch_handleopenmodal",
-      "community": 30,
+      "community": 31,
       "norm_label": "handleopenmodal()"
     },
     {
@@ -2529,7 +2529,7 @@
       "source_file": "frontend\\src\\pages\\ActivitySearch.tsx",
       "source_location": "L61",
       "id": "pages_activitysearch_handlesubmit",
-      "community": 30,
+      "community": 31,
       "norm_label": "handlesubmit()"
     },
     {
@@ -2538,7 +2538,7 @@
       "source_file": "frontend\\src\\pages\\ActivitySearch.tsx",
       "source_location": "L82",
       "id": "pages_activitysearch_handledelete",
-      "community": 30,
+      "community": 31,
       "norm_label": "handledelete()"
     },
     {
@@ -2727,7 +2727,7 @@
       "source_file": "frontend\\src\\pages\\CitySearch.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_citysearch_tsx",
-      "community": 31,
+      "community": 32,
       "norm_label": "citysearch.tsx"
     },
     {
@@ -2736,7 +2736,7 @@
       "source_file": "frontend\\src\\pages\\CitySearch.tsx",
       "source_location": "L23",
       "id": "pages_citysearch_loaddestinations",
-      "community": 31,
+      "community": 32,
       "norm_label": "loaddestinations()"
     },
     {
@@ -2745,7 +2745,7 @@
       "source_file": "frontend\\src\\pages\\CitySearch.tsx",
       "source_location": "L34",
       "id": "pages_citysearch_handleopenmodal",
-      "community": 31,
+      "community": 32,
       "norm_label": "handleopenmodal()"
     },
     {
@@ -2754,7 +2754,7 @@
       "source_file": "frontend\\src\\pages\\CitySearch.tsx",
       "source_location": "L55",
       "id": "pages_citysearch_handlesubmit",
-      "community": 31,
+      "community": 32,
       "norm_label": "handlesubmit()"
     },
     {
@@ -2763,7 +2763,7 @@
       "source_file": "frontend\\src\\pages\\CitySearch.tsx",
       "source_location": "L76",
       "id": "pages_citysearch_handledelete",
-      "community": 31,
+      "community": 32,
       "norm_label": "handledelete()"
     },
     {
@@ -2772,7 +2772,7 @@
       "source_file": "frontend\\src\\pages\\Community.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_community_tsx",
-      "community": 27,
+      "community": 28,
       "norm_label": "community.tsx"
     },
     {
@@ -2781,7 +2781,7 @@
       "source_file": "frontend\\src\\pages\\Community.tsx",
       "source_location": "L25",
       "id": "pages_community_getcurrentuser",
-      "community": 27,
+      "community": 28,
       "norm_label": "getcurrentuser()"
     },
     {
@@ -2790,7 +2790,7 @@
       "source_file": "frontend\\src\\pages\\Community.tsx",
       "source_location": "L30",
       "id": "pages_community_loadposts",
-      "community": 27,
+      "community": 28,
       "norm_label": "loadposts()"
     },
     {
@@ -2799,7 +2799,7 @@
       "source_file": "frontend\\src\\pages\\Community.tsx",
       "source_location": "L41",
       "id": "pages_community_handlecreatepost",
-      "community": 27,
+      "community": 28,
       "norm_label": "handlecreatepost()"
     },
     {
@@ -2808,7 +2808,7 @@
       "source_file": "frontend\\src\\pages\\Community.tsx",
       "source_location": "L58",
       "id": "pages_community_handledeletepost",
-      "community": 27,
+      "community": 28,
       "norm_label": "handledeletepost()"
     },
     {
@@ -2817,7 +2817,7 @@
       "source_file": "frontend\\src\\pages\\Community.tsx",
       "source_location": "L69",
       "id": "pages_community_handleliketoggle",
-      "community": 27,
+      "community": 28,
       "norm_label": "handleliketoggle()"
     },
     {
@@ -3150,35 +3150,89 @@
       "source_file": "frontend\\src\\pages\\MapView.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_mapview_tsx",
-      "community": 37,
+      "community": 6,
       "norm_label": "mapview.tsx"
     },
     {
       "label": "geocodeLocation()",
       "file_type": "code",
       "source_file": "frontend\\src\\pages\\MapView.tsx",
-      "source_location": "L23",
+      "source_location": "L26",
       "id": "pages_mapview_geocodelocation",
-      "community": 37,
+      "community": 6,
       "norm_label": "geocodelocation()"
     },
     {
       "label": "MapUpdater()",
       "file_type": "code",
       "source_file": "frontend\\src\\pages\\MapView.tsx",
-      "source_location": "L56",
+      "source_location": "L59",
       "id": "pages_mapview_mapupdater",
-      "community": 37,
+      "community": 6,
       "norm_label": "mapupdater()"
     },
     {
       "label": "geocodeAllLocations()",
       "file_type": "code",
       "source_file": "frontend\\src\\pages\\MapView.tsx",
-      "source_location": "L101",
+      "source_location": "L117",
       "id": "pages_mapview_geocodealllocations",
-      "community": 37,
+      "community": 6,
       "norm_label": "geocodealllocations()"
+    },
+    {
+      "label": "createCustomIcon()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L166",
+      "id": "pages_mapview_createcustomicon",
+      "community": 6,
+      "norm_label": "createcustomicon()"
+    },
+    {
+      "label": "getItemIcon()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L190",
+      "id": "pages_mapview_getitemicon",
+      "community": 6,
+      "norm_label": "getitemicon()"
+    },
+    {
+      "label": "getItemColorBadge()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L202",
+      "id": "pages_mapview_getitemcolorbadge",
+      "community": 6,
+      "norm_label": "getitemcolorbadge()"
+    },
+    {
+      "label": "formatDateTime()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L214",
+      "id": "pages_mapview_formatdatetime",
+      "community": 6,
+      "norm_label": "formatdatetime()"
+    },
+    {
+      "label": "formatCost()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L227",
+      "id": "pages_mapview_formatcost",
+      "community": 6,
+      "norm_label": "formatcost()"
+    },
+    {
+      "label": "handleCardClick()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L237",
+      "id": "pages_mapview_handlecardclick",
+      "community": 6,
+      "norm_label": "handlecardclick()"
     },
     {
       "label": "Notes.tsx",
@@ -3186,7 +3240,7 @@
       "source_file": "frontend\\src\\pages\\Notes.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_notes_tsx",
-      "community": 24,
+      "community": 25,
       "norm_label": "notes.tsx"
     },
     {
@@ -3195,7 +3249,7 @@
       "source_file": "frontend\\src\\pages\\Notes.tsx",
       "source_location": "L59",
       "id": "pages_notes_run",
-      "community": 24,
+      "community": 25,
       "norm_label": "run()"
     },
     {
@@ -3204,7 +3258,7 @@
       "source_file": "frontend\\src\\pages\\Notes.tsx",
       "source_location": "L111",
       "id": "pages_notes_opencreatemodal",
-      "community": 24,
+      "community": 25,
       "norm_label": "opencreatemodal()"
     },
     {
@@ -3213,7 +3267,7 @@
       "source_file": "frontend\\src\\pages\\Notes.tsx",
       "source_location": "L117",
       "id": "pages_notes_openeditmodal",
-      "community": 24,
+      "community": 25,
       "norm_label": "openeditmodal()"
     },
     {
@@ -3222,7 +3276,7 @@
       "source_file": "frontend\\src\\pages\\Notes.tsx",
       "source_location": "L126",
       "id": "pages_notes_closemodal",
-      "community": 24,
+      "community": 25,
       "norm_label": "closemodal()"
     },
     {
@@ -3231,7 +3285,7 @@
       "source_file": "frontend\\src\\pages\\Notes.tsx",
       "source_location": "L132",
       "id": "pages_notes_handlesubmit",
-      "community": 24,
+      "community": 25,
       "norm_label": "handlesubmit()"
     },
     {
@@ -3240,7 +3294,7 @@
       "source_file": "frontend\\src\\pages\\Notes.tsx",
       "source_location": "L159",
       "id": "pages_notes_handledelete",
-      "community": 24,
+      "community": 25,
       "norm_label": "handledelete()"
     },
     {
@@ -3294,7 +3348,7 @@
       "source_file": "frontend\\src\\pages\\SignUp.tsx",
       "source_location": "L1",
       "id": "frontend_src_pages_signup_tsx",
-      "community": 32,
+      "community": 33,
       "norm_label": "signup.tsx"
     },
     {
@@ -3303,7 +3357,7 @@
       "source_file": "frontend\\src\\pages\\SignUp.tsx",
       "source_location": "L35",
       "id": "pages_signup_handlechange",
-      "community": 32,
+      "community": 33,
       "norm_label": "handlechange()"
     },
     {
@@ -3312,7 +3366,7 @@
       "source_file": "frontend\\src\\pages\\SignUp.tsx",
       "source_location": "L42",
       "id": "pages_signup_validatepassword",
-      "community": 32,
+      "community": 33,
       "norm_label": "validatepassword()"
     },
     {
@@ -3321,7 +3375,7 @@
       "source_file": "frontend\\src\\pages\\SignUp.tsx",
       "source_location": "L50",
       "id": "pages_signup_handleemailsignup",
-      "community": 32,
+      "community": 33,
       "norm_label": "handleemailsignup()"
     },
     {
@@ -3330,7 +3384,7 @@
       "source_file": "frontend\\src\\pages\\SignUp.tsx",
       "source_location": "L99",
       "id": "pages_signup_handleoauthsignup",
-      "community": 32,
+      "community": 33,
       "norm_label": "handleoauthsignup()"
     },
     {
@@ -7131,7 +7185,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\MapView.tsx",
-      "source_location": "L23",
+      "source_location": "L26",
       "weight": 1.0,
       "_src": "frontend_src_pages_mapview_tsx",
       "_tgt": "pages_mapview_geocodelocation",
@@ -7143,7 +7197,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\MapView.tsx",
-      "source_location": "L56",
+      "source_location": "L59",
       "weight": 1.0,
       "_src": "frontend_src_pages_mapview_tsx",
       "_tgt": "pages_mapview_mapupdater",
@@ -7155,7 +7209,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\MapView.tsx",
-      "source_location": "L101",
+      "source_location": "L117",
       "weight": 1.0,
       "_src": "frontend_src_pages_mapview_tsx",
       "_tgt": "pages_mapview_geocodealllocations",
@@ -7164,10 +7218,82 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L166",
+      "weight": 1.0,
+      "_src": "frontend_src_pages_mapview_tsx",
+      "_tgt": "pages_mapview_createcustomicon",
+      "source": "frontend_src_pages_mapview_tsx",
+      "target": "pages_mapview_createcustomicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_src": "frontend_src_pages_mapview_tsx",
+      "_tgt": "pages_mapview_getitemicon",
+      "source": "frontend_src_pages_mapview_tsx",
+      "target": "pages_mapview_getitemicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L202",
+      "weight": 1.0,
+      "_src": "frontend_src_pages_mapview_tsx",
+      "_tgt": "pages_mapview_getitemcolorbadge",
+      "source": "frontend_src_pages_mapview_tsx",
+      "target": "pages_mapview_getitemcolorbadge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L214",
+      "weight": 1.0,
+      "_src": "frontend_src_pages_mapview_tsx",
+      "_tgt": "pages_mapview_formatdatetime",
+      "source": "frontend_src_pages_mapview_tsx",
+      "target": "pages_mapview_formatdatetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L310",
+      "weight": 1.0,
+      "_src": "frontend_src_pages_mapview_tsx",
+      "_tgt": "pages_mapview_formatcost",
+      "source": "frontend_src_pages_mapview_tsx",
+      "target": "pages_mapview_formatcost",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\pages\\MapView.tsx",
+      "source_location": "L237",
+      "weight": 1.0,
+      "_src": "frontend_src_pages_mapview_tsx",
+      "_tgt": "pages_mapview_handlecardclick",
+      "source": "frontend_src_pages_mapview_tsx",
+      "target": "pages_mapview_handlecardclick",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\MapView.tsx",
-      "source_location": "L105",
+      "source_location": "L121",
       "weight": 1.0,
       "_src": "pages_mapview_geocodealllocations",
       "_tgt": "pages_mapview_geocodelocation",

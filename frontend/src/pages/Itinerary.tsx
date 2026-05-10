@@ -25,6 +25,9 @@ import {
   ChevronUp,
   Circle,
   CloudSun,
+  Sun,
+  CloudRain,
+  Wind,
   GripVertical,
   MapPin,
   MessageSquare,
@@ -34,10 +37,12 @@ import {
   Redo2,
   Save,
   Share,
+  Download,
   Trash2,
   Undo2,
   Utensils,
   Wallet,
+  X,
 } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -142,7 +147,7 @@ function SortableActivity({ activity, sectionId, onUpdate, onDelete }: { activit
       </div>
 
       <div className="flex w-16 shrink-0 items-center gap-1">
-        <span className="text-xs text-stone-400">$</span>
+        <span className="text-xs text-stone-400">₹</span>
         <input type="number" value={activity.cost} onChange={(e) => onUpdate(activity.id, { cost: Number(e.target.value) })} className="w-full bg-transparent text-xs font-semibold text-stone-700 outline-none dark:text-stone-300" placeholder="0" />
       </div>
 
@@ -187,7 +192,7 @@ function SortableSection({ section, onUpdateSection, onAddActivity, onUpdateActi
         <div className="flex items-center gap-4">
           <div className="text-right">
             <p className="text-[10px] font-bold uppercase tracking-wide text-stone-400">Section Budget</p>
-            <p className={`text-xs font-semibold ${spent > section.budget ? 'text-red-500' : 'text-stone-700 dark:text-stone-300'}`}>${spent} / ${section.budget}</p>
+            <p className={`text-xs font-semibold ${spent > section.budget ? 'text-red-500' : 'text-stone-700 dark:text-stone-300'}`}>₹{spent} / ₹{section.budget}</p>
           </div>
           <button onClick={() => onDeleteSection(section.id)} className="text-stone-400 hover:text-red-500">
             <Trash2 size={16} />
@@ -218,6 +223,23 @@ function SortableSection({ section, onUpdateSection, onAddActivity, onUpdateActi
 }
 
 
+const getWeatherForCity = (city: string) => {
+  const normalized = (city || '').toLowerCase();
+  if (normalized.includes('goa')) {
+    return { temp: '31°C', desc: 'Warm & sunny beach vibes', icon: 'sun' };
+  } else if (normalized.includes('kochi') || normalized.includes('kerala') || normalized.includes('munnar') || normalized.includes('alleppey')) {
+    return { temp: '28°C', desc: 'Tropical breeze & showers', icon: 'rain' };
+  } else if (normalized.includes('delhi') || normalized.includes('jaipur') || normalized.includes('agra')) {
+    return { temp: '35°C', desc: 'Hot, wear light clothing', icon: 'sun' };
+  } else if (normalized.includes('ladakh') || normalized.includes('leh')) {
+    return { temp: '14°C', desc: 'Chilly, carry layers & woolens', icon: 'wind' };
+  } else if (normalized.includes('rome') || normalized.includes('paris') || normalized.includes('tuscany')) {
+    return { temp: '20°C', desc: 'Pleasant, carry a light jacket', icon: 'cloud-sun' };
+  }
+  return { temp: '22°C', desc: 'Mild and pleasant weather', icon: 'cloud-sun' };
+};
+
+
 export default function ItineraryBuilder() {
   const { id } = useParams();
   const { trips } = useTripStore();
@@ -228,6 +250,155 @@ export default function ItineraryBuilder() {
   const [sections, setSections] = useState<Section[]>([]);
   const [history, setHistory] = useState<Section[][]>([]);
   const [historyIndex, setHistoryIndex] = useState(0);
+
+  const [isSaving, setIsSaving] = useState(false);
+  const [saveSuccess, setSaveSuccess] = useState(false);
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [shareSuccess, setShareSuccess] = useState(false);
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setShareSuccess(true);
+    setTimeout(() => setShareSuccess(false), 3000);
+  };
+
+  const handleSave = async () => {
+    if (!id) return;
+    setIsSaving(true);
+    setSaveSuccess(false);
+    try {
+      // 1. Fetch current items in DB to compare
+      const dbItems = await itineraryService.getTripItinerary(id);
+      const dbItemIds = new Set(dbItems.map((item: any) => item.id));
+
+      // 2. Extract and format all current activities from our UI sections
+      const currentUiItems: any[] = [];
+      let sortOrder = 1;
+
+      sections.forEach((section) => {
+        // Parse dates which could be e.g. "May 13, 2026" or format ISO
+        const sectionDate = new Date(section.dates);
+        section.activities.forEach((act) => {
+          let startsAtIso = '';
+          if (act.time && act.time.includes(':')) {
+            const [hrs, mins] = act.time.split(':').map(Number);
+            const d = new Date(sectionDate);
+            d.setHours(hrs, mins, 0, 0);
+            startsAtIso = d.toISOString();
+          } else {
+            const d = new Date(sectionDate);
+            d.setHours(12, 0, 0, 0); // default noon
+            startsAtIso = d.toISOString();
+          }
+
+          const endD = new Date(startsAtIso);
+          endD.setHours(endD.getHours() + 1);
+          const endsAtIso = endD.toISOString();
+
+          const itemType = act.category === 'food' ? 'meal' :
+                           act.category === 'transport' ? 'transfer' :
+                           act.category === 'sightseeing' ? 'activity' : 'note';
+
+          currentUiItems.push({
+            id: act.id,
+            trip_id: id,
+            item_type: itemType,
+            title: act.name || 'Untitled Activity',
+            location: section.city || trip?.destination || '',
+            starts_at: startsAtIso,
+            ends_at: endsAtIso,
+            cost: Number(act.cost) || 0,
+            sort_order: sortOrder++
+          });
+        });
+      });
+
+      // 3. Separate into Create, Update, Delete
+      const uiItemIds = new Set(currentUiItems.map(item => item.id));
+
+      // Delete: Items in DB but NOT in current UI
+      const itemsToDelete = dbItems.filter((item: any) => !uiItemIds.has(item.id));
+      for (const item of itemsToDelete) {
+        await itineraryService.deleteItem(item.id);
+      }
+
+      // Create or Update:
+      for (const item of currentUiItems) {
+        if (item.id.startsWith('act-')) {
+          const { id: _, ...payload } = item;
+          await itineraryService.createItem(payload);
+        } else if (dbItemIds.has(item.id)) {
+          await itineraryService.updateItem(item.id, item);
+        } else {
+          await itineraryService.createItem(item);
+        }
+      }
+
+      // 4. Update the trip's budget_spent based on the new total cost of all activities
+      const newTotalSpent = currentUiItems.reduce((sum, item) => sum + item.cost, 0);
+      await tripService.updateTrip(id, { budget_spent: newTotalSpent });
+      
+      // Update local state
+      if (trip) {
+        setTrip({
+          ...trip,
+          budget: {
+            ...trip.budget,
+            spent: newTotalSpent
+          }
+        });
+      }
+
+      // Refresh to get DB UUIDs instead of dummy local client-side IDs
+      const refreshedItems = await itineraryService.getTripItinerary(id);
+      
+      const startDate = trip?.startDate ? new Date(trip.startDate) : new Date();
+      const endDate = trip?.endDate ? new Date(trip.endDate) : new Date();
+      const daysCount = Math.max(1, differenceInDays(endDate, startDate) + 1);
+      
+      const updatedSecs = [];
+      for (let i = 0; i < daysCount; i++) {
+        const currentDate = addDays(startDate, i);
+        
+        const dayItems = refreshedItems.filter((item: any) => {
+          if (!item.starts_at) return i === 0;
+          return isSameDay(new Date(item.starts_at), currentDate);
+        });
+        
+        const mappedActivities = dayItems.map((item: any) => ({
+          id: item.id,
+          name: item.title,
+          category: item.item_type === 'meal' ? 'food' : item.item_type === 'flight' || item.item_type === 'transfer' ? 'transport' : item.item_type === 'activity' ? 'sightseeing' : 'other',
+          time: item.starts_at ? format(new Date(item.starts_at), 'HH:mm') : '',
+          duration: '1h',
+          cost: Number(item.cost) || 0,
+          done: false
+        }));
+
+        const existingSection = sections[i];
+        updatedSecs.push({
+          id: existingSection?.id || `sec-backend-${i + 1}`,
+          name: existingSection?.name || `Day ${i + 1}`,
+          city: existingSection?.city || trip?.destination || '',
+          dates: existingSection?.dates || format(currentDate, 'MMM d, yyyy'),
+          budget: existingSection?.budget || 0,
+          activities: mappedActivities
+        });
+      }
+
+      setSections(updatedSecs);
+      setHistory([updatedSecs]);
+      setHistoryIndex(0);
+
+      setSaveSuccess(true);
+      setTimeout(() => setSaveSuccess(false), 3000);
+    } catch (err) {
+      console.error('Failed to save itinerary:', err);
+      alert('Failed to save itinerary. Please try again.');
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   useEffect(() => {
     async function loadData() {
@@ -463,11 +634,19 @@ export default function ItineraryBuilder() {
               <Redo2 size={16} />
             </button>
           </div>
-          <button className="flex items-center gap-2 rounded-md px-3 py-1.5 text-xs font-semibold text-stone-600 hover:bg-stone-100 dark:text-stone-300 dark:hover:bg-stone-800">
-            <Save size={14} /> Save
+          <button 
+            onClick={handleSave} 
+            disabled={isSaving}
+            className="flex items-center gap-2 rounded-md px-3 py-1.5 text-xs font-semibold text-stone-600 hover:bg-stone-100 disabled:opacity-50 dark:text-stone-300 dark:hover:bg-stone-800"
+          >
+            <Save size={14} className={isSaving ? 'animate-spin' : ''} />
+            {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save'}
           </button>
-          <button className="traveloop-button-secondary text-xs py-1.5">View Itinerary</button>
-          <button className="traveloop-button-primary text-xs py-1.5 gap-1"><Share size={14} /> Share</button>
+          <button onClick={() => setIsPreviewOpen(true)} className="traveloop-button-secondary text-xs py-1.5">View Itinerary</button>
+          <button onClick={handleShare} className="traveloop-button-primary text-xs py-1.5 gap-1">
+            <Share size={14} /> 
+            {shareSuccess ? 'Copied!' : 'Share'}
+          </button>
         </div>
       </div>
 
@@ -521,7 +700,7 @@ export default function ItineraryBuilder() {
                   </Pie>
                 </PieChart>
                 <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                  <span className="text-[12px] font-sora font-bold">${totalSpent}</span>
+                  <span className="text-[12px] font-sora font-bold">₹{totalSpent}</span>
                   <span className="text-[9px] uppercase tracking-wider text-stone-400">Spent</span>
                 </div>
               </div>
@@ -534,7 +713,7 @@ export default function ItineraryBuilder() {
                     <div key={s.id}>
                       <div className="flex justify-between text-[10px] mb-1 font-medium">
                         <span className="truncate w-24 text-stone-600 dark:text-stone-400">{s.name}</span>
-                        <span className={over ? 'text-red-500' : 'text-stone-500'}>${sectionSpent} / ${s.budget}</span>
+                        <span className={over ? 'text-red-500' : 'text-stone-500'}>₹{sectionSpent} / ₹{s.budget}</span>
                       </div>
                       <div className="h-1 w-full bg-stone-200 dark:bg-stone-800 rounded-full overflow-hidden">
                          <div className={`h-full ${over ? 'bg-red-500' : 'bg-teal-500'}`} style={{ width: `${Math.min((sectionSpent/Math.max(s.budget,1))*100, 100)}%` }} />
@@ -548,18 +727,29 @@ export default function ItineraryBuilder() {
             {/* Weather Widget */}
             <div className="space-y-2">
               <h3 className="font-sora text-[11px] uppercase tracking-wide font-semibold text-stone-400 px-1">Weather Forecast</h3>
-              {sections.map(s => (
-                <div key={s.id} className="flex items-center justify-between rounded-md bg-blue-50 p-3 text-blue-900 dark:bg-blue-900/10 dark:text-blue-300">
-                  <div className="flex items-center gap-2">
-                    <CloudSun size={16} className="text-blue-500" />
-                    <div>
-                      <p className="text-xs font-bold">{s.city}</p>
-                      <p className="text-[10px] opacity-70">Pack a light jacket</p>
+              {sections.map(s => {
+                const weather = getWeatherForCity(s.city);
+                const renderIcon = () => {
+                  switch (weather.icon) {
+                    case 'sun': return <Sun size={16} className="text-amber-500" />;
+                    case 'rain': return <CloudRain size={16} className="text-blue-500" />;
+                    case 'wind': return <Wind size={16} className="text-teal-500" />;
+                    default: return <CloudSun size={16} className="text-blue-500" />;
+                  }
+                };
+                return (
+                  <div key={s.id} className="flex items-center justify-between rounded-md bg-blue-50 p-3 text-blue-900 dark:bg-blue-900/10 dark:text-blue-300">
+                    <div className="flex items-center gap-2">
+                      {renderIcon()}
+                      <div>
+                        <p className="text-xs font-bold">{s.city}</p>
+                        <p className="text-[10px] opacity-70">{weather.desc}</p>
+                      </div>
                     </div>
+                    <span className="font-sora text-sm font-semibold">{weather.temp}</span>
                   </div>
-                  <span className="font-sora text-sm font-semibold">22°C</span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -603,6 +793,115 @@ export default function ItineraryBuilder() {
           </div>
         </div>
       </div>
+
+      {/* Itinerary Preview Modal */}
+      <AnimatePresence>
+        {isPreviewOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-stone-900/60 p-4 backdrop-blur-sm dark:bg-black/80"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="relative flex h-[90vh] w-full max-w-4xl flex-col rounded-xl bg-[#FAF9F7] shadow-2xl overflow-hidden dark:bg-[#1C1917]"
+            >
+              {/* Cover Header */}
+              <div className="relative h-48 w-full bg-cover bg-center flex items-end p-6" style={{ backgroundImage: `url(${trip?.coverPhoto || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200'})` }}>
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/45 to-transparent" />
+                <div className="relative z-10 flex w-full items-center justify-between text-white">
+                  <div>
+                    <span className="rounded bg-teal-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">Verified Trip</span>
+                    <h1 className="font-sora text-2xl font-bold mt-1">{trip?.name || 'My Itinerary'}</h1>
+                    <p className="text-xs opacity-90 mt-0.5">{trip?.destination} &middot; {trip?.startDate ? new Date(trip.startDate).toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' }) : ''} - {trip?.endDate ? new Date(trip.endDate).toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' }) : ''}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs opacity-75">Estimated Cost</p>
+                    <p className="font-sora text-xl font-bold text-teal-400">₹{(trip?.budget?.spent || 0).toLocaleString('en-IN')}</p>
+                  </div>
+                </div>
+                {/* Close Button */}
+                <button 
+                  onClick={() => setIsPreviewOpen(false)}
+                  className="absolute right-4 top-4 rounded-full bg-black/40 p-2 text-white hover:bg-black/60 transition"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+
+              {/* Toolbar */}
+              <div className="flex items-center justify-between border-b border-[#E8E6E0] bg-white px-6 py-3 dark:border-stone-800 dark:bg-[#151312]">
+                <span className="text-xs font-semibold text-stone-500 dark:text-stone-400">READ-ONLY PREVIEW</span>
+                <div className="flex gap-2">
+                  <button 
+                    onClick={() => window.print()}
+                    className="flex items-center gap-1.5 rounded-md border border-[#E8E6E0] bg-white px-3 py-1.5 text-xs font-medium text-stone-600 hover:bg-stone-50 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-300 dark:hover:bg-stone-800"
+                  >
+                    <Download size={14} /> Print Itinerary
+                  </button>
+                  <button 
+                    onClick={() => setIsPreviewOpen(false)}
+                    className="traveloop-button-primary text-xs py-1.5 px-4"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+
+              {/* Itinerary Timeline Body */}
+              <div className="flex-1 overflow-y-auto p-6 space-y-8 print:p-0">
+                {sections.map((section, idx) => (
+                  <div key={section.id} className="relative pl-6 before:absolute before:left-2 before:top-2 before:bottom-0 before:w-0.5 before:bg-stone-200 dark:before:bg-stone-800 last:before:hidden">
+                    {/* Timeline Node */}
+                    <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full border-2 border-teal-500 bg-white dark:bg-[#1C1917]" />
+                    
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                      <div>
+                        <h3 className="font-sora text-base font-bold text-stone-800 dark:text-white">{section.name}</h3>
+                        <p className="text-xs text-stone-500">{section.dates} &middot; {section.city}</p>
+                      </div>
+                      <span className="rounded-full bg-stone-100 px-3 py-1 text-[11px] font-semibold text-stone-600 dark:bg-stone-900 dark:text-stone-400">
+                        Spent: ₹{section.activities.reduce((sum, a) => sum + a.cost, 0).toLocaleString('en-IN')}
+                      </span>
+                    </div>
+
+                    <div className="space-y-3">
+                      {section.activities.length === 0 ? (
+                        <p className="text-xs text-stone-400 italic">No activities planned for this day.</p>
+                      ) : (
+                        section.activities.map((act) => (
+                          <div key={act.id} className="flex items-center justify-between rounded-lg border border-stone-200 bg-white p-4 shadow-sm dark:border-stone-800 dark:bg-[#151312]">
+                            <div className="flex items-center gap-3">
+                              <div className="rounded-full bg-teal-50 p-2 text-teal-600 dark:bg-teal-900/10 dark:text-teal-400">
+                                {act.category === 'food' ? <Utensils size={16} /> :
+                                 act.category === 'transport' ? <Plane size={16} /> :
+                                 act.category === 'sightseeing' ? <MapPin size={16} /> : <Circle size={16} />}
+                              </div>
+                              <div>
+                                <h4 className="text-xs font-semibold text-stone-800 dark:text-white">{act.name || 'Untitled Activity'}</h4>
+                                <div className="flex items-center gap-2 mt-0.5">
+                                  {act.time && <span className="text-[10px] text-stone-500 font-medium">{act.time}</span>}
+                                  {act.duration && <span className="text-[10px] text-stone-400 font-medium">&bull; {act.duration}</span>}
+                                </div>
+                              </div>
+                            </div>
+                            <span className="font-sora text-xs font-bold text-stone-700 dark:text-stone-300">
+                              {act.cost > 0 ? `₹${act.cost.toLocaleString('en-IN')}` : 'Free'}
+                            </span>
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

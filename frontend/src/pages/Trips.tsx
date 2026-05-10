@@ -19,22 +19,27 @@ import {
   Share,
   Trash2,
 } from 'lucide-react';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { mockRecentTrips } from '../data/mockData';
 import { Trip, useTripStore } from '../store/tripStore';
 
 // Dummy Templates
 const tripTemplates = [
-  { id: 't1', name: '7 Days in Tuscany', duration: '7 days', cost: '$1,200', activities: 14, photo: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400' },
-  { id: 't2', name: 'Tokyo Highlights', duration: '5 days', cost: '$1,500', activities: 20, photo: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400' },
-  { id: 't3', name: 'Bali Budget Backpacking', duration: '14 days', cost: '$600', activities: 10, photo: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400' },
-  { id: 't4', name: 'New York Weekend', duration: '3 days', cost: '$800', activities: 8, photo: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400' },
-  { id: 't5', name: 'Swiss Alps Hiking', duration: '10 days', cost: '$2,500', activities: 12, photo: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=400' },
+  { id: 't1', name: 'Jaipur & Udaipur Heritage', duration: '6 days', cost: '₹18,000', activities: 14, photo: 'https://images.unsplash.com/photo-1477584322811-2a185c18143c?w=400' },
+  { id: 't2', name: 'Leh Ladakh High Passes', duration: '8 days', cost: '₹35,000', activities: 20, photo: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=400' },
+  { id: 't3', name: 'Goa Coastal Exploration', duration: '4 days', cost: '₹12,000', activities: 10, photo: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400' },
+  { id: 't4', name: 'Kerala Serene Backwaters', duration: '7 days', cost: '₹22,000', activities: 12, photo: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=400' },
+  { id: 't5', name: 'Kashmir Paradise Valley', duration: '9 days', cost: '₹40,000', activities: 15, photo: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=400' },
 ];
 
 export default function Trips() {
-  const { trips, deleteTrip } = useTripStore();
+  const { trips, deleteTrip, fetchTrips } = useTripStore();
+
+  useEffect(() => {
+    fetchTrips();
+  }, [fetchTrips]);
+
   const [activeTab, setActiveTab] = useState('All');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [searchQuery, setSearchQuery] = useState('');
@@ -204,7 +209,7 @@ export default function Trips() {
 
                         <div className="mt-4 pt-4 border-t border-stone-100 dark:border-stone-800">
                           <div className="flex items-center justify-between text-[11px] font-medium">
-                            <span className="text-stone-500">${trip.budget.spent.toLocaleString()} / ${trip.budget.total.toLocaleString()}</span>
+                            <span className="text-stone-500">{trip.budget.currency === 'USD' ? '$' : '₹'}{trip.budget.spent.toLocaleString('en-IN')} / {trip.budget.currency === 'USD' ? '$' : '₹'}{trip.budget.total.toLocaleString('en-IN')}</span>
                             <span className="flex items-center gap-1 text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-400/10 px-1.5 py-0.5 rounded">
                               <Leaf size={10} /> 3.2 kg CO₂
                             </span>
